@@ -1,0 +1,167 @@
+.bg-white {
+	background: #fff;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.visible {
+	visibility: visible;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.row {
+	width: 100%;
+	margin: 1vh;
+}
+
+.mt-5 {
+	margin-top: 5vh;
+}
+
+.mt-1 {
+	margin-top: 1vh;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.card {
+	width: 50%;
+	padding: 1vh;
+	border-radius: 1vh;
+	background: #fff;
+}
+
+.card-header {
+	padding: 1vh;
+	border-bottom: 1.5px solid rgb(128 128 128 / 20%);
+}
+
+.card-body {
+	padding: 1vh;
+}
+
+.card-footer {
+	padding: 1vh;
+	border-top: 1.5px solid rgb(128 128 128 / 20%);
+}
+
+.password {
+	width: 92%;
+	font-weight: 500;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	text-align: center;
+}
+
+.only-read {
+	border: none;
+	border: 1px solid #afafaf;
+	border-radius: 1vh;
+	padding: 1vh;
+	background: #afafaf6c;
+}
+
+.rango {
+	max-width: 5%;
+	min-width: 5%;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	outline: none;
+	background: none;
+	border: none;
+}
+
+.btn {
+	outline: none;
+	width: auto;
+	height: auto;
+	border-radius: 1vh;
+	padding: 1vh;
+}
+
+.btn-copy::before {
+	content: '📋';
+}
+
+.btn-copy {
+	background: #0093ad;
+	color: #fff;
+}
+
+.btn-generar {
+	background: #00ad6b;
+	color: #fff;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.alert {
+	width: 100%;
+	font-size: 12px;
+	padding: 1vh;
+	font-weight: 500;
+}
+
+.no-copy {
+	color: #721c24;
+	background: #f8d7da;
+	border-left: 2px solid #721c24;
+}
+
+.copy {
+	color: #155724;
+	background: #d4edda;
+	border-left: 2px solid #155724;
+}
+
+input:focus {
+	outline: none;
+}
+
+input[type='range'] {
+	width: 100%;
+}
+
+.label {
+	width: 92%;
+	padding: 1vh;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn-reset {
+	background: #0093ad;
+	margin-left: 2vh;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color: #fff;
+}
+
+button:disabled,
+button[disabled] {
+	border: 1px solid #999;
+	background-color: #ccc;
+	color: #666;
+}
+
+.link:hover {
+	color: #0093ad;
+}
