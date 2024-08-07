@@ -1,0 +1,51 @@
+---
+import Layout from '@layout'
+import MDGenerator from '@components/maikoldev/Generator.vue'
+---
+
+<Layout title='maikoldev'>
+	<style>
+		@font-face {
+			font-family: 'Orbitron';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url('/Orbitron-ExtraBold.woff2') format('woff2');
+		}
+		@font-face {
+			font-family: 'Jet Brains Mono';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url('/JetBrainsMono-Regular.woff2') format('woff2');
+		}
+		@font-face {
+			font-family: 'Jet Brains Mono';
+			font-style: normal;
+			font-weight: 600;
+			font-display: swap;
+			src: url('/JetBrainsMono-Bold.woff2') format('woff2');
+		}
+
+		main {
+			height: 100%;
+			background: url('/grain-dark.png');
+		}
+
+		main::before {
+			content: '';
+			background: url('/maikoldev/grid-square.svg');
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			opacity: 0.2;
+			-webkit-mask-image: radial-gradient(70% 80% at 50% 50%, black 40%, transparent 70%);
+			filter: brightness(0.4) sepia(1) hue-rotate(220deg) saturate(8);
+		}
+	</style>
+
+	<main class='flex flex-col justify-center items-center min-h-screen px-8 lg:px-0'>
+		<MDGenerator client:visible />
+	</main>
+</Layout>
