@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Economica:wght@700&display=swap');
+
+/*Container*/
+#mrvega01{
+	font-family: 'Economica', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+}
+/*Card*/
+#mrvega01 .card{
+	display: flex;
+	flex-direction: column;
+	background: rgb(255, 255, 255);
+	border-radius: 20px;
+	padding: 2em;
+	text-align: center;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+#mrvega01 .card h3{
+	font-size: 3em;
+	margin-bottom: 0.5em;
+}
+#mrvega01 .card span{
+	font-size: 1.5em;
+}
+#mrvega01 .button{
+	padding: .5em;
+	color: #fff;
+	font-weight: 600;
+	background: #ffad61;
+	transition: 0.3s background;
+}
+#mrvega01 .generateButton{
+	font-size: 1.5em;
+	margin-top: 1em;
+	border-radius: 50vw;
+}
+#mrvega01 .generateButton:hover{
+	background: #ff8a1d;
+}
+/*Range input*/
+#mrvega01 .rangeInput{
+	-webkit-appearance: none;
+	background: #ffeeae;
+	border-radius: 50vw;
+	height: 10px;
+}
+#mrvega01 .rangeInput::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	height: 20px;
+  	width: 20px;
+	background: #ffad61;
+	border-radius: 50%;
+	transition: 0.3s background;
+}
+#mrvega01 .rangeInput::-webkit-slider-thumb:hover{
+	background: #ff8a1d;
+}
+/*Text input and copy button*/
+#mrvega01 .textInput{
+	font-size: 1.5em;
+	width: 100%;
+	outline: none;
+	border-radius: 10px;
+	padding: 0 1em;
+}
+#mrvega01 .copySection{
+	margin-top: 1em;
+	border-radius: 10px;
+	display: flex;
+	border: 3px solid #ffad61;
+}
+#mrvega01 .copyButton{
+	display: flex;
+}
+/*Notification*/
+#mrvega01 .notification{
+	position: absolute;
+	font-size: 1.5em;
+	background: #ffad61;
+	padding: 0 1.5em;
+	border-radius: 50vw;
+	color: #fff;
+	transition: 0.4s transform;
+}

@@ -3,7 +3,7 @@ const { showAll = false } = Astro.props
 
 const MAX_ITEMS = 50
 
-async function getParticipants () {
+async function getParticipants() {
 	const items = await Astro.glob('../pages/entry/*/index.astro')
 
 	return items
@@ -24,10 +24,13 @@ const shownParticipants = showAll ? participants : participants.slice(0, MAX_ITE
 		shownParticipants.map((name) => (
 			<li class='inline-flex flex-shrink-0'>
 				<a
-					class='text-white hover:underline text-center flex flex-col gap-y-2 items-center justify-center w-20'
+					class='text-white visited:text-neutral-400 hover:underline text-center flex flex-col gap-y-2 items-center justify-center w-20'
 					href={'/entry/' + name}
 				>
 					<img
+						loading='lazy'
+						width='80px'
+						height='80px'
 						class='rounded-full w-full h-auto'
 						src={'https://unavatar.io/github/' + name}
 						alt={name}

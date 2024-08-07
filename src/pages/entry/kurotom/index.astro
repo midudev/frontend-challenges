@@ -1,0 +1,22 @@
+---
+import Layout from '@layout'
+import { GenerarPassword } from '@components/kurotom/GenPassword'
+---
+
+<Layout title='kurotom'>
+	<div class='flex flex-col items-center justify-center main'>
+		<GenerarPassword client:load />
+	</div>
+</Layout>
+
+<style>
+	.main {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: #fcfcfc;
+		text-align: center;
+	}
+</style>

@@ -1,0 +1,26 @@
+/*FFDE00*/
+.errorText {
+	display: flex;
+	align-items: center;
+}
+
+.errorText > svg {
+	stroke: #ffde00;
+	font-size: 1.25rem;
+}
+
+.text {
+	display: block;
+	color: #ffde00;
+	margin-left: 5px;
+	margin-top: -5px;
+	font-size: 13px;
+}
+
+.error > svg {
+	stroke: #ff005c;
+}
+
+.error .text {
+	color: #ff005c;
+}

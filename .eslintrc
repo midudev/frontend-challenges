@@ -1,5 +1,6 @@
 {
 	"env": {
+		"jest": true,
 		"es2022": true,
 		"node": true,
 		"browser": true

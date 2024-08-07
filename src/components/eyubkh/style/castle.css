@@ -1,0 +1,52 @@
+#eyubkh-castle {
+	position: absolute;
+	background-image: url('/eyubkh/castle.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 559px;
+	min-width: 309.5px;
+	transition: margin-bottom ease-in-out 1s;
+	z-index: 0;
+}
+
+#eyubkh-tower {
+	background-image: url('/eyubkh/tower.svg');
+	background-repeat: no-repeat;
+	height: 200px;
+	min-width: 90px;
+	transition: margin-bottom ease-in-out 1s;
+	z-index: 2;
+}
+
+#eyubkh-fullwall {
+	position: absolute;
+	background-image: url('/eyubkh/wall.svg');
+	background-position: top;
+	height: 151px;
+	width: 100%;
+	transition: margin-bottom ease-in-out 1s;
+	margin-bottom: -151px;
+
+	/* background-color: blue; */
+	z-index: 0;
+}
+
+#eyubkh-wall {
+	background-image: url('/eyubkh/wall.svg');
+	background-repeat: no-repeat;
+	height: 151px;
+	min-width: 378px;
+	transition: margin-bottom ease-in-out 1s;
+	margin: 0 -11px;
+	z-index: 1;
+}
+
+#eyubkh-conteiner {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: flex-end;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}

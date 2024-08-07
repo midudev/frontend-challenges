@@ -1,0 +1,117 @@
+.main-eduardoguette {
+	background: url(./assets/grain-dark.9d5983e6.png) center
+		center;
+}
+
+.main-eduardoguette::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: url(./assets/grid-square.7c0cbc15.svg) center
+		center;
+	filter: brightness(0.4) sepia(1) hue-rotate(205deg) saturate(8);
+	opacity: 0.2;
+	z-index: -1;
+	-webkit-mask-image: radial-gradient(70% 80% at 50% 50%, black 40%, transparent 70%);
+}
+
+ 
+.main-eduardoguette::after {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(45deg, rgb(0, 73, 255) 0%, rgb(255, 105, 185) 100%);
+	opacity: 0.2;
+	z-index: -2;
+	-webkit-mask-image: radial-gradient(70% 80% at 50% 50%, black -40%, transparent 60%);
+}
+.header-eduardoguette::before {
+	font-family: Menlo, monospace;
+	animation: 1s linear 0s infinite normal none running numbers-eduardoguette;
+	content: '01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100';
+	top: 0px;
+	left: 0px;
+	color: rgb(229, 225, 230);
+	font-size: 12px;
+	pointer-events: none;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	opacity: 0.3;
+	-webkit-mask-image: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0) 5%,
+		rgb(0, 0, 0) 20%,
+		rgb(0, 0, 0) 80%,
+		rgba(0, 0, 0, 0) 95%
+	);
+	white-space: nowrap;
+	overflow: hidden;
+	z-index: 200;
+}
+.input_eduardoguette[type='range']::-webkit-slider-thumb {
+	background: linear-gradient(90deg, rgb(64, 221, 255) 20%, rgb(124, 127, 255) 85%) 0% 0% / 200%
+		100%;
+	-webkit-appearance: none;
+	border-radius: 100px;
+	height: 1.5rem;
+	width: 1.5rem;
+	animation: 1.5s ease 0s infinite alternate none running bg-move-eduardoguette;
+}
+.input_eduardoguette {
+	accent-color: rgb(124, 127, 255);
+}
+.input_eduardoguette:focus {
+	outline-color: rgb(124, 127, 255);
+}
+
+@keyframes numbers-eduardoguette {
+	25% {
+		content: '01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001 01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001 01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001';
+	}
+	50% {
+		content: '01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100';
+	}
+	75% {
+		content: '01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001 01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001 01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001';
+	}
+	100% {
+		content: '01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100';
+	}
+}
+
+.header-logo-eduardoguette .shadow-eduardoguette {
+	opacity: 0.6;
+	transition: all 0.1s ease 0s;
+}
+.header-logo-eduardoguette:hover .shadow-eduardoguette {
+	text-shadow: rgb(255 215 77 / 60%) -1px -1px 6px, rgb(124 127 255 / 60%) 1px 1px 6px;
+	opacity: 1;
+}
+.drop-shadow-eduardoguette {
+	filter: drop-shadow(rgba(255, 215, 77, 0.6) -1px -1px 2px)
+		drop-shadow(rgba(124, 127, 255, 0.6) 1px 1px 2px);
+}
+.btn-clip-eduardoguette {
+	clip-path: polygon(12px 0px, 100% 0px, 100% 72%, calc(100% - 12px) 100%, 0px 100%, 0px 12px);
+	background: linear-gradient(
+			90deg,
+			rgb(255, 215, 77) 0%,
+			rgb(64, 221, 255) 30%,
+			rgb(124, 127, 255) 85%
+		)
+		0% 0% / 200% 100%;
+	animation: 1.5s ease 0s infinite alternate none running bg-move-eduardoguette;
+}
+.clip-btn-eduardoguette {
+	
+	clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+@keyframes bg-move-eduardoguette {
+	to {
+		background-size: 100% 100%;
+	}
+}

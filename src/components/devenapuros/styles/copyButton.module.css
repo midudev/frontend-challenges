@@ -1,0 +1,25 @@
+/* stylelint-disable selector-class-pattern */
+.copyButton {
+	position: relative;
+	background-color: transparent;
+}
+
+.copyButton > svg {
+	transition: stroke 300ms ease;
+	stroke: #777;
+}
+
+.check > svg {
+	stroke: #0000 !important;
+	fill: #2b9348;
+}
+
+.copyButton:hover > svg {
+	stroke: #222;
+}
+
+
+
+.disabled {
+	opacity: 0.5;
+}

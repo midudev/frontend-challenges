@@ -1,0 +1,32 @@
+---
+import Layout from '@layout'
+import App from '@components/camilonore/App.jsx'
+---
+
+<style>
+	@font-face {
+		font-family: 'Orbitron';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('/Orbitron-ExtraBold.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Jet Brains Mono';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('/JetBrainsMono-Regular.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Jet Brains Mono';
+		font-style: normal;
+		font-weight: 600;
+		font-display: swap;
+		src: url('/JetBrainsMono-Bold.woff2') format('woff2');
+	}
+</style>
+
+<Layout title='Camilo Nore'>
+	<App client:load/>
+</Layout>

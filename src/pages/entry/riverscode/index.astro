@@ -1,0 +1,78 @@
+---
+import Layout from '@layout'
+---
+
+<Layout title='Rivers Code'>
+	<main class='flex justify-center items-center max-w-7xl mx-auto text-center min-h-screen'>
+		<div class='flex flex-col gap-y-8 border-white border-2 px-8 py-10 rounded-lg'>
+			<h1 class='text-white/90 text-2xl font-bold'>Generador de contraseña</h1>
+			<div class='flex flex-col px-4 py-8 bg-teal-500/20 rounded-lg'>
+				<div class='flex'>
+					<input
+						type='text'
+						id='password'
+						placeholder='Contraseña'
+						class='text-white/70 p-2 w-full rounded border-2 border-teal-500/20 focus:outline-none bg-teal-500/10'
+					/>
+					<button
+						id='copyButton'
+						onclick='CopyPass()'
+						class='px-4 bg-teal-300 ml-2 rounded-md text-teal-800 hover:bg-teal-800 hover:text-teal-300 font-bold'
+					>Copiar</button
+					>
+				</div>
+
+				<div class='mt-8'>
+					<input
+						type='range'
+						id='passLength'
+						class='w-full appearance-none h-0.5 bg-teal-300 hover:bg-teal-800'
+						max='25'
+						step='1'
+						value='7'
+					/>
+					<p class='text-white/70 mt-6 text-lg'>Longitud de Contraseña</p>
+				</div>
+
+				<button
+					onclick='GeneratePass()'
+					class='text-white w-full bg-gradient-to-tl from-teal-400 to-teal-900 py-2 mt-8 rounded-md font-bold text-xl'
+				>Generar Contraseña</button
+				>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<script type='text/javascript'>
+	const pass = document.getElementById('password')
+	const passLength = document.getElementById('passLength')
+	const CopyPass = () => {
+		pass.select()
+		document.execCommand('copy')
+	}
+
+	const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+	const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+	const symbols = ['@', '/', '*', '-', '_', '$', '#', '&']
+	const GeneratePass = () => {
+		const passLengthValue = passLength.value
+		const optCharacter = [
+			...symbols,
+			...letters,
+			...numbers,
+			...symbols,
+			...numbers,
+			...symbols,
+			...letters
+		]
+		let password = ''
+		if (passLengthValue === 0) pass.value = ''
+		for (let a = 0; a < passLengthValue; a++) {
+			const idx = Math.floor(Math.random() * optCharacter.length)
+			password += optCharacter[idx]
+		}
+		pass.value = password
+	}
+	GeneratePass()
+</script>

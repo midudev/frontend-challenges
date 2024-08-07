@@ -1,28 +1,32 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Check from '../Check/index'
 
 const List = () => {
 	const checks = [
 		{
 			id: 'checkLowercase',
-			text: 'Lowercase'
+			text: 'Lowercase',
+			checked: false
 		},
 		{
 			id: 'checkUppercase',
-			text: 'UpperCase'
+			text: 'UpperCase',
+			checked: false
 		},
 		{
 			id: 'checkNumber',
-			text: 'Numbers'
+			text: 'Numbers',
+			checked: false
 		},
 		{
 			id: 'checkSymbols',
-			text: 'Special characters'
+			text: 'Special characters',
+			checked: true
 		}
 	]
 
 	return (
-		<div className='grid gap-3 grid-cols-2 py-4'>
+		<div className='grid gap-3 md:grid-cols-2 py-4'>
 			{checks.map((check) => (
 				<Check {...check} key={`check-item-${check.id}`} />
 			))}

@@ -1,0 +1,269 @@
+---
+import Range from '@components/halivert/Range.vue'
+import NotificationCenter from '@components/halivert/NotificationCenter.vue'
+
+const minChars = 8
+const maxChars = 40
+---
+
+<script>
+	const alpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+	const form: HTMLFormElement | null = document.querySelector('#form')
+
+	const copy: HTMLButtonElement | null = document.querySelector('#copy')
+
+	const generatePassword = (count) => {
+		const randomIndexes = new Uint8Array(count)
+		// Using crypto module, generate random values to get indexes of the
+		// alphabet
+		self.crypto.getRandomValues(randomIndexes)
+
+		return Array.from(randomIndexes)
+			.map((index) => {
+				return alpha[index % alpha.length]
+			})
+			.join('')
+	}
+
+	form?.addEventListener('submit', (evt) => {
+		evt.preventDefault()
+		const data = new FormData(evt.target as HTMLFormElement)
+
+		const chars = +data.get('chars')
+		const password = generatePassword(chars)
+
+		const input: HTMLInputElement | null = document.querySelector('#password')
+
+		if (!input) return
+		input.value = password
+	})
+
+	copy?.addEventListener('click', async () => {
+		const input: HTMLInputElement | null = document.querySelector('#password')
+
+		if (!input) return
+
+		await navigator.clipboard.writeText(input.value)
+
+		const notifications: HTMLElement | null = document.querySelector('#notifications')
+
+		if (!notifications) return
+
+		notifications.dispatchEvent(
+			new CustomEvent('notify', {
+				bubbles: true,
+				cancelable: true,
+				detail: {
+					type: 'success',
+					text: 'Copiado a tu portapapeles'
+				}
+			})
+		)
+	})
+</script>
+
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+<title>Generador de contraseñas | Halivert</title>
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+<link href='https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap' rel='stylesheet' />
+
+<body class='halivert'>
+	<header>Generador de contraseñas</header>
+	<main>
+		<form id='form'>
+			<div class='password-input'>
+				<input type='text' readonly id='password' />
+
+				<button id='copy' type='button' class='copy-button'>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke-width='1.5'
+						stroke='currentColor'
+					>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							d='M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z'
+						></path>
+					</svg>
+				</button>
+			</div>
+
+			<div class='inputs'>
+				<div class='range'>
+					<Range client:load name='chars' min={minChars} max={maxChars} />
+				</div>
+				<button class='submit'>Generar</button>
+			</div>
+		</form>
+
+		<NotificationCenter client:idle id='notifications' />
+	</main>
+	<footer>
+		<a href='https://halivert.dev'> Halivert</a>
+	</footer>
+	<style>
+		*,
+		::after,
+		::before {
+			accent-color: var(--primary);
+		}
+
+		.halivert {
+			--primary: #008f8f;
+			--text: #542344;
+			--accent: #d65780;
+			--background: #efe9f4;
+
+			--primary-hover: #00b8b8;
+			--text-hover: #73305d;
+			--accent-hover: #cf3a69;
+			--background-hover: #fff;
+
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			min-height: 100vh;
+			width: 100%;
+			background-color: var(--background);
+			color: var(--text);
+			font-size: 18px;
+			font-family: 'Titillium Web', sans-serif;
+		}
+
+		@media (prefers-color-scheme: dark) {
+			.halivert {
+				--primary: #00a3a3;
+				--text: #cf8cb9;
+				--accent: #d65780;
+				--background: #201529;
+
+				--primary-hover: #008f8f;
+				--text-hover: #bd619e;
+				--accent-hover: #cf3a69;
+				--background-hover: #15001b;
+			}
+		}
+
+		main {
+			display: flex;
+			flex: 1;
+			justify-content: center;
+		}
+
+		header {
+			font-size: 2em;
+			text-align: center;
+			padding: 0.25em 2em;
+		}
+
+		footer {
+			font-size: 0.875em;
+			text-align: center;
+			padding: 0.25em 1em;
+		}
+
+		a {
+			color: var(--primary);
+			text-decoration: underline;
+		}
+
+		a:hover {
+			color: var(--primary-hover);
+		}
+
+		form {
+			padding: 0.5em 1em;
+			display: flex;
+			flex-flow: column nowrap;
+			width: clamp(250px, 80ch, 100%);
+			gap: 0.5em;
+		}
+
+		input {
+			padding: 0.25em 0.5em;
+			border-radius: 0.25em;
+			background-color: var(--background-hover);
+			color: var(--text);
+			box-shadow: none;
+		}
+
+		input:focus-visible {
+			outline: 2px solid var(--primary);
+		}
+
+		.inputs {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 1em;
+		}
+
+		.range {
+			flex: 1;
+		}
+
+		button.submit {
+			--position: 0%;
+			border: 2px var(--primary) solid;
+			background-color: var(--primary);
+			color: var(--background);
+			border-radius: 0.25em;
+			align-self: center;
+			padding: 0.25em 1em;
+		}
+
+		button.submit:hover {
+			background-color: var(--primary-hover);
+		}
+
+		.password-input {
+			position: relative;
+			display: flex;
+		}
+
+		.password-input > input {
+			flex: 1;
+			padding-right: 2.5em;
+		}
+
+		.copy-button {
+			--position: -50%;
+			position: absolute;
+			height: 80%;
+			aspect-ratio: 1;
+			right: 0.25em;
+			top: 50%;
+			transform: translateY(var(--position));
+		}
+
+		.copy-button:hover {
+			color: var(--text-hover);
+		}
+
+		.copy-button:active,
+		.submit:active {
+			animation: button 100ms ease-in;
+		}
+
+		@keyframes button {
+			from {
+				transform: translateY(calc(var(--position) + 5%));
+			}
+
+			to {
+				transform: translateY(var(--position));
+			}
+		}
+
+		.copy-button > svg {
+			height: 100%;
+		}
+	</style>
+</body>

@@ -1,0 +1,440 @@
+@import "./_vars.css";
+
+.david-fb__main {
+	background: var(--david-fb_bg-color);
+	background-image: url('./icons/bg.png');
+}
+
+/* Background cover effect */
+.david-fb__main-bg-effect {
+	width: 100%;
+	min-height: 100vh;
+	background: radial-gradient(circle farthest-side at top, rgba(255, 255, 255, 0.007) 30%, var(--david-fb_bg-color) 100%);
+	width: 100%;
+	min-height: 100vh;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px 0;
+}
+
+/* Link to home */
+.david-fb__main__back{
+	display: flex;
+	gap: 4px;
+	padding-top: 8px;
+	border-bottom: 2px solid transparent;
+}
+
+.david-fb__main__back:hover{
+	border-bottom: 2px solid #fff;
+}
+
+/* Page title */
+.david-fb__title {
+	font-size: 40px;
+	font-weight: bold;
+	background: linear-gradient(to right, var(--david-fb_gradient-color1), var(--david-fb_gradient-color2));
+  background-clip: text;
+	-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Components container */
+.david-fb__container {
+	width: 695px;
+	background-color: var(--david-fb_bg-surface);
+	padding: 55px 89px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 5px;
+}
+
+/* Wrapper content to help transition between generator and password list*/
+.david-fb__content-wrapper{
+	width: 100%;
+	display: flex;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Password Generator */
+.david-fb__password-generator{
+	width: 100%;
+	flex-shrink: 0;
+	transition: all .3s linear;
+}
+
+.david-fb__hide-generator{
+	opacity: 0;
+	translate: -110% 0;
+}
+
+.david-fb__password {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	border-radius: 25px;
+}
+
+.david-fb__mobile-copy {
+	display: none;
+}
+
+.david-fb__password hgroup {
+	display: flex;
+	justify-content: space-between;
+}
+
+.david-fb__password-input{
+	width: 446px;
+	height: 77px;
+	border: 2px solid var(--david-fb_primary-color);
+	border-radius: 25px;
+	display: flex;
+	gap: 5px;
+	padding-left: 10px;
+}
+
+.david-fb__password-input input {
+	color: var(--david-fb_primary-color);
+	font-size: 32px;
+	width: 20ch;
+	background: none;
+	outline: none;
+}
+
+.david-fb__password button:hover {
+	transform: scale(1.1);
+}
+
+.david-fb__password p {
+	color: var(--david-fb_primary-color);
+	min-height: 37px;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.david-fb__range {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 25px;
+}
+
+.david-fb__range div {
+	display: flex;
+	justify-content: space-between;
+	font-size: 24px;
+}
+
+/* Custom checkboxes */
+.david-fb__checkboxes {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	margin-top: 35px;
+}
+
+/* Checkbox */
+
+/* container */
+.david-fb__customCheckbox {
+  display: flex;
+	align-items: center;
+  position: relative;
+  padding-left: 45px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+/* Hide the browser's default checkbox */
+.david-fb__customCheckbox input {
+  display: none;
+}
+
+/* Create a custom checkbox */
+.david-fb__checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border: 2px solid var(--david-fb_primary-color);
+	translate: 0 -50%;
+}
+
+/* On mouse-over, add background color */
+.david-fb__customCheckbox:hover input ~ .david-fb__checkmark {
+  background-color: rgba(0, 128, 0, 0.377);
+}
+
+/* When the checkbox is checked, add background */
+.david-fb__customCheckbox input:checked ~ .david-fb__checkmark {
+  background-color: var(--david-fb_primary-color);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.david-fb__checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* On mouse hover show checkmark placeholder */
+.david-fb__customCheckbox:hover input ~ .david-fb__checkmark:after {
+  display: block;
+  border-color: rgba(255, 255, 255, 0.377);
+}
+
+/* Show the checkmark when checked */
+.david-fb__customCheckbox input:checked ~ .david-fb__checkmark:after {
+  display: block;
+  border-color: #fff;
+}
+
+/* Style the checkmark/indicator */
+.david-fb__customCheckbox .david-fb__checkmark:after {
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 16px;
+  border: solid;
+  border-width: 0 5px 5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+	translate: -50% -60%;
+}
+
+/* Generate button && Password List button */
+.david-fb__control {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 25px;
+}
+
+/* Generate button */
+.david-fb__control .david-fb__generate {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	width: 446px;
+	height: 73px;
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background: linear-gradient(to right, var(--david-fb_gradient-color1), var(--david-fb_gradient-color2));
+	border-radius: 5px;
+}
+
+.david-fb__control .david-fb__generate::after {
+	background: #fff;
+	content: "";
+	height: 155px;
+	left: -100px;
+	opacity: .2;
+	position: absolute;
+	top: -50px;
+	transform: rotate(35deg);
+	transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+	width: 70px;
+}
+
+.david-fb__control .david-fb__generate:hover::after{
+	left: 120%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+/* END Generate button */
+
+/*Button toggle between generator and password list*/
+.david-fb__password-list:hover {
+	transform: scale(1.1);
+}
+
+/* Password list Component*/
+.david-fb__my-passwords{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	transition: all .3s linear;
+}
+
+.david-fb__hide-passwords{
+	opacity: 0;
+	translate: 100% 0;
+	left: 60px;
+}
+
+.david-fb__my-passwords header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.david-fb__my-passwords button:hover {
+	transform: scale(1.1);
+}
+
+.david-fb__my-passwords__title{
+	font-size: 28px;
+	text-align: center;
+	color: var(--david-fb_primary-color);
+	font-weight: bold;
+	line-height: 1;
+}
+
+.david-fb__my-passwords__cards{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	height: 90%;
+	overflow-y: auto;
+	margin-top: 10px;
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+/* Scroll bar */
+/* width */
+.david-fb__my-passwords__cards::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+.david-fb__my-passwords__cards::-webkit-scrollbar-track {
+  background: var(--david-fb_bg-color); 
+}
+/* Handle */
+.david-fb__my-passwords__cards::-webkit-scrollbar-thumb {
+  background: var(--david-fb_primary-color); 
+}
+/* Handle on hover */
+.david-fb__my-passwords__cards::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(to bottom, var(--david-fb_gradient-color1), var(--david-fb_gradient-color2));
+}
+
+.david-fb__my-passwords__card{
+	display: flex;
+	gap: 8px;
+	width: 95%;
+	align-items: center;
+	justify-content: space-between;
+	background: var(--david-fb_primary-color);
+	padding: 8px 16px;
+	box-shadow: -6px 6px 0px var(--david-fb_bg-color);
+	font-size: 24px;
+}
+
+.david-fb__my-passwords__card p{
+	word-break: break-all;
+	white-space: normal;
+}
+
+.david-fb__my-passwords__card div{
+	display: flex;
+	gap: 8px;
+}
+
+.david-fb__my-passwords__card:hover{
+	background: #fff;
+	color: var(--david-fb_bg-color);
+}
+
+.david-fb__my-passwords__card:hover button svg path{
+	fill: var(--david-fb_bg-color);
+}
+
+
+@media screen and (max-width: 800px) {
+	.david-fb__container {
+		width: 90%;
+		padding: 40px 20px;
+	}
+	.david-fb__title {
+		font-size: 32px;
+	}
+	.david-fb__control {
+		justify-content: center;
+		gap: 15px;
+	}
+	.david-fb__checkboxes {
+		gap: 18px;
+		font-size: 30px;
+	}
+
+	.david-fb__password hgroup {
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.david-fb__password-input{
+		width: 90%;
+		height: 65px;
+		border-radius: 20px;
+		padding: 5px 10px;
+	}
+
+	.david-fb__password-input input {
+		font-size: 24px;
+		flex: 1;
+	}
+	.david-fb__password hgroup button > svg{
+		width: 40px;
+		height: 40px;
+	}
+	.david-fb__range {
+		margin-top: 16px;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	.david-fb__password hgroup {
+		position: relative;
+		flex-direction: column;
+		align-items: center;
+	}
+	.david-fb__password-input{
+		width: 100%;
+		height: 65px;
+		border-radius: 20px;
+		padding: 5px 10px;
+	}
+
+	.david-fb__range {
+		margin-top: 8px;
+	}
+
+	.david-fb__mobile-copy {
+		display: flex;
+		gap: 20px;
+	}
+
+	.david-fb__hide-mobile {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.david-fb__title {
+		font-size: 32px;
+		text-align: center;
+		line-height: 1;
+		margin-bottom: 10px;
+	}
+	.david-fb__password-input{
+		width: 100%;
+		height: 55px;
+		border-radius: 20px;
+		padding: 5px 10px;
+	} 
+	.david-fb__password-input input {
+		font-size: 20px;
+	}
+}
+

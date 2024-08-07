@@ -1,19 +1,19 @@
-#box {
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+#zerok1986-box {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+		Verdana, sans-serif;
 	color: white;
 	position: fixed;
 	height: 60vh;
 	width: 60vw;
 	min-width: 400px;
-	border: solid rgb(100, 26, 165) 2px;
+	border: solid rgb(100 26 165) 2px;
 	border-radius: 5px;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
-
-#password-generator {
+#zerok1986-password-generator {
 	height: 55vh;
 	display: flex;
 	flex-direction: column;
@@ -22,65 +22,62 @@
 	align-content: center;
 }
 
-h1 {
+#zerok1986-title {
 	font-size: 24px;
-	background: #7004CF;
-	background: linear-gradient(to right, #7004CF 0%, #CF00CF 100%);
+	background: #7004cf;
+	background: linear-gradient(to right, #7004cf 0%, #cf00cf 100%);
 	background-clip: text;
-	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
-#password-box {
+#zerok1986-password-box {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-flow: row nowrap;
 	justify-content: space-evenly;
 	align-items: center;
 	align-content: center;
 	margin: 25px;
 	padding: 5px;
-	border: solid rgb(100, 26, 165) 1px;
+	border: solid rgb(100 26 165) 1px;
 	border-radius: 10px;
 	width: 300px;
 }
 
-#password-text {
+#zerok1986-password-text {
 	color: text;
 	width: 80%;
 	text-align: center;
 }
 
-#length-slider {
-	accent-color: rgb(100, 26, 165)
+#zerok1986-settings {
+	height: 150px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
 }
 
-#generate-button {
+#zerok1986-length-slider {
+	accent-color: rgb(100 26 165);
+}
+
+#zerok1986-generate-button {
 	background-color: rgb(126 34 206);
 	border-radius: 28px;
 	display: inline-block;
 	cursor: pointer;
-	color: #ffffff;
+	color: #fff;
 	padding: 12px 24px;
 	text-decoration: none;
-	text-shadow: 0px 1px 0px #9b14b3;
+	text-shadow: 0 1px 0 #9b14b3;
 }
 
-#generate-button:hover {
-	background-color: rgb(100, 26, 165);
+#zerok1986-generate-button:hover {
+	background-color: rgb(100 26 165);
 }
 
-#generate-button:active {
+#zerok1986-generate-button:active {
 	position: relative;
 	top: 1px;
-}
-
-#settings {
-	height: 150px;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: center;
-	align-content: center;
 }

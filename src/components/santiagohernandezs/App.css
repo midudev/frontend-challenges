@@ -1,5 +1,5 @@
 #santiagohernandezs * {
-	font-family:'Ubuntu Mono', monospace;
+	font-family: 'Ubuntu Mono', monospace;
 }
 
 #santiagohernandezs .app {
@@ -8,7 +8,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #2B2B2B;
+	background-color: #2b2b2b;
 }
 
 #santiagohernandezs h1 {
@@ -20,42 +20,45 @@
 	font-weight: bold;
 }
 
-#santiagohernandezs .password-container{
+#santiagohernandezs .password-container {
 	height: auto;
 	display: flex;
 	flex-direction: column;
 	gap: 46px;
 }
 
-#santiagohernandezs .password{
+#santiagohernandezs .password {
 	width: 622px;
 	height: 90px;
-	background-color: #2B2B2B;
+	background-color: #2b2b2b;
 	border-radius: 13px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem;
-	box-shadow: 57.4879px 22.8261px 16.9082px rgb(0 0 0 / 1%), 36.3527px 14.372px 16.0628px rgb(0 0 0 / 6%), 20.2899px 8.4541px 13.5266px rgb(0 0 0 / 20%), 9.2995px 3.3816px 10.1449px rgb(0 0 0 / 34%), 2.5362px 0.8454px 5.0724px rgb(0 0 0 / 39%), 0 0 0 rgb(0 0 0 / 40%);
+	box-shadow: 57.4879px 22.8261px 16.9082px rgb(0 0 0 / 1%),
+		36.3527px 14.372px 16.0628px rgb(0 0 0 / 6%), 20.2899px 8.4541px 13.5266px rgb(0 0 0 / 20%),
+		9.2995px 3.3816px 10.1449px rgb(0 0 0 / 34%), 2.5362px 0.8454px 5.0724px rgb(0 0 0 / 39%),
+		0 0 0 rgb(0 0 0 / 40%);
 }
 
-#santiagohernandezs input[type="text"] {
+#santiagohernandezs input[type='text'] {
 	height: 3rem;
 	width: 87%;
 	appearance: none;
-	background-color: #2B2B2B;
+	background-color: #2b2b2b;
 	border: none;
 	font-size: xx-large;
 	padding: 1rem;
 	color: white;
 }
 
-#santiagohernandezs input[type="text"]:focus{
+#santiagohernandezs input[type='text']:focus {
 	outline: none;
-	background-color:#3E3E3E
+	background-color: #3e3e3e;
 }
 
-#santiagohernandezs.copy{
+#santiagohernandezs.copy {
 	appearance: none;
 	border: none;
 	background-color: transparent;
@@ -65,20 +68,20 @@
 	cursor: pointer;
 }
 
-#santiagohernandezs .copy::before{
-	font-family: fontAwesome;
-	color: #3CA1FE;
+#santiagohernandezs .copy::before {
+	font-family: fontAwesome, serif;
+	color: #3ca1fe;
 	font-size: 2em;
 	content: '\f0c5';
 	height: 2.5rem;
 	width: 2rem;
-	margin-left: .8rem;
+	margin-left: 0.8rem;
 }
 
-#santiagohernandezs .settings{
+#santiagohernandezs .settings {
 	width: 622px;
 	height: auto;
-	background-color: #2B2B2B;
+	background-color: #2b2b2b;
 	border-radius: 13px;
 	padding: 2rem;
 	color: white;
@@ -86,10 +89,13 @@
 	flex-direction: column;
 	justify-content: space-between;
 	gap: 1rem;
-	box-shadow: 57.4879px 22.8261px 16.9082px rgb(0 0 0 / 1%), 36.3527px 14.372px 16.0628px rgb(0 0 0 / 6%), 20.2899px 8.4541px 13.5266px rgb(0 0 0 / 20%), 9.2992px 3.3164px 10.149px rgb(0 0 0 / 34%), 2.5323px 0.8451px 5.0726px rgb(0 0 0 / 39%), 0 0 0 rgb(0 0 0 / 40%);
+	box-shadow: 57.4879px 22.8261px 16.9082px rgb(0 0 0 / 1%),
+		36.3527px 14.372px 16.0628px rgb(0 0 0 / 6%), 20.2899px 8.4541px 13.5266px rgb(0 0 0 / 20%),
+		9.2992px 3.3164px 10.149px rgb(0 0 0 / 34%), 2.5323px 0.8451px 5.0726px rgb(0 0 0 / 39%),
+		0 0 0 rgb(0 0 0 / 40%);
 }
 
-#santiagohernandezs .radio-counter{
+#santiagohernandezs .radio-counter {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -97,12 +103,12 @@
 }
 
 #santiagohernandezs .radio-counter > span {
-	color: #3CA1FE;
+	color: #3ca1fe;
 	font-size: xx-large;
 }
 
-#santiagohernandezs .range{
-	padding:15px 0;
+#santiagohernandezs .range {
+	padding: 15px 0;
 }
 
 #santiagohernandezs .rs-slider-handle {
@@ -111,7 +117,7 @@
 	outline: none;
 }
 
-#santiagohernandezs input[type=range] {
+#santiagohernandezs input[type='range'] {
 	appearance: none;
 	height: 100%;
 	width: 100%;
@@ -119,38 +125,35 @@
 	border-radius: 15px;
 	position: relative;
 }
-  
-#santiagohernandezs input[type=range]::-webkit-slider-thumb {
+
+#santiagohernandezs input[type='range']::-webkit-slider-thumb {
 	appearance: none;
 	height: 23px;
 	width: 23px;
 	border-radius: 15px;
-	background: #3CA1FE;
+	background: #3ca1fe;
 	cursor: pointer;
 	margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-	box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d; 
-	transition: 
-		height ease-out 150ms,
-		width ease-out 150ms;
+	box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+	transition: height ease-out 150ms, width ease-out 150ms;
 }
 
-
-#santiagohernandezs input[type=range]::-webkit-slider-runnable-track {
+#santiagohernandezs input[type='range']::-webkit-slider-runnable-track {
 	width: 100%;
 	height: 8px;
 	cursor: pointer;
-	background: #FFF;
+	background: #fff;
 	border-radius: 15px;
 }
 
-#santiagohernandezs .option{
+#santiagohernandezs .option {
 	padding: 1rem;
 	display: flex;
 	gap: 2rem;
 	align-items: center;
 }
 
-#santiagohernandezs input[type='checkbox']{
+#santiagohernandezs input[type='checkbox'] {
 	appearance: none;
 	height: 2rem;
 	width: 2rem;
@@ -161,8 +164,8 @@
 	position: relative;
 }
 
-#santiagohernandezs input[type='checkbox']:checked::before{
-	font-family: fontAwesome;
+#santiagohernandezs input[type='checkbox']:checked::before {
+	font-family: fontAwesome, serif;
 	font-size: 1.5rem;
 	content: '\f00c';
 	color: white;
@@ -170,22 +173,22 @@
 	display: block;
 	height: 2rem;
 	width: 2rem;
-	background: #3CA1FE;
+	background: #3ca1fe;
 	border-radius: 6px;
 }
 
-#santiagohernandezs input[type='checkbox']:hover{
+#santiagohernandezs input[type='checkbox']:hover {
 	appearance: none;
 	border-radius: 6px;
 	border: none;
-	background: #3CA1FE;
+	background: #3ca1fe;
 }
 
-#santiagohernandezs .default-label{
+#santiagohernandezs .default-label {
 	font-size: x-large;
 }
 
-#santiagohernandezs .indicator{
+#santiagohernandezs .indicator {
 	display: flex;
 	justify-content: space-between;
 	padding: 1.5rem;
@@ -193,26 +196,26 @@
 	font-weight: bold;
 }
 
-#santiagohernandezs .indicator-red{
+#santiagohernandezs .indicator-red {
 	color: rgb(241 70 70);
 }
 
-#santiagohernandezs .indicator-green{
+#santiagohernandezs .indicator-green {
 	color: rgb(29 255 29);
 }
 
-#santiagohernandezs .button{
-	background-color: #3CA1FE;
+#santiagohernandezs .button {
+	background-color: #3ca1fe;
 	display: flex;
 	font-size: 1.5rem;
 	justify-content: center;
 	padding: 1em;
-	color: #2B2B2B;
+	color: #2b2b2b;
 	cursor: pointer;
 	border: none;
 	border-radius: 10px;
 }
 
-#santiagohernandezs .panel{
+#santiagohernandezs .panel {
 	height: auto;
 }

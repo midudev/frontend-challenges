@@ -7,7 +7,7 @@ export default function App() {
 
 	const generatePassword = (length) => {
 		const charList =
-			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!”#$%&'()*+,-./:;<=>?@[]^_`{|}~"
+			'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!”#$%&\'()*+,-./:;<=>?@[]^_`{|}~'
 		let password = ''
 		for (let i = 0; i < length; i++) {
 			password += charList.charAt(Math.floor(Math.random() * charList.length))
@@ -25,11 +25,11 @@ export default function App() {
 	}
 
 	return (
-		<div id='box'>
-			<div id='password-generator'>
-				<h1>zerok1986's Password Generator</h1>
-				<div id='password-box'>
-					<p id='password-text'>{password}</p>
+		<div id='zerok1986-box'>
+			<div id='zerok1986-password-generator'>
+				<h1 id='zerok1986-title'>zerok1986's Password Generator</h1>
+				<div id='zerok1986-password-box'>
+					<p id='zerok1986-password-text'>{password}</p>
 					<button onClick={copyToClipboard}>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -43,11 +43,11 @@ export default function App() {
 						</svg>
 					</button>
 				</div>
-				<div id='settings'>
+				<div id='zerok1986-settings'>
 					<label htmlFor='length'>Length</label>
 					<input
 						type='range'
-						id='length-slider'
+						id='zerok1986-length-slider'
 						value={passLength}
 						onChange={(e) => {
 							setPassLength(e.target.value)
@@ -56,8 +56,8 @@ export default function App() {
 						max='24'
 						step='1'
 					/>
-					<span id='value'>{passLength}</span>
-					<button id='generate-button' onClick={() => generatePassword(passLength)}>
+					<span>{passLength}</span>
+					<button id='zerok1986-generate-button' onClick={() => generatePassword(passLength)}>
 						Generate Password
 					</button>
 				</div>

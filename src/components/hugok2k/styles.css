@@ -1,0 +1,158 @@
+@import 'https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap';
+
+.containerpassgen-hugok2k {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 20px auto;
+	max-width: 500px;
+	height: 600px;
+	border-radius: 8px;
+	padding: 20px;
+	color: #dadada;
+}
+
+.containerinput-hugok2k {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 350px;
+}
+
+.title-hugok2k {
+	color: #fff;
+	font-family: 'Cairo Play', cursive;
+	font-size: 38px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.button-hugok2k {
+	color: #fff;
+	border: 2px solid #fff;
+	font-size: 16px;
+	padding: 6px 16px;
+	margin: 20px;
+	border-radius: 6px;
+	transition: 0.3s;
+}
+
+.button-hugok2k:hover {
+	background-color: #dadada;
+	color: #000;
+}
+
+.inputcont-hugok2k {
+	position: relative;
+	padding: 6px 60px 6px 16px;
+	width: 350px;
+	font-size: 20px;
+	background-color: #dadada;
+	color: #000;
+	border-radius: 4px;
+}
+
+.inputrange-hugok2k {
+	width: 310px;
+	margin: 20px 0;
+}
+
+.labelrange-hugok2k {
+	font-size: 24px;
+	width: 30px;
+	margin: 0 0 0 12px;
+	text-align: right;
+}
+
+.containerrange-hugok2k {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.svggenerate-hugok2k,
+.svgcopy-hugok2k {
+	width: 20px;
+	transition: transform 0.2s;
+	position: absolute;
+}
+
+.svggenerate-hugok2k {
+	stroke: #000;
+	stroke-width: 8px;
+	right: 40px;
+}
+
+.svgcopy-hugok2k {
+	fill: #000;
+	right: 10px;
+}
+
+.svggenerate-hugok2k:hover,
+.svgcopy-hugok2k:hover {
+	transform: scale(1.2);
+}
+
+.svggenerate-hugok2k:hover {
+	transform: rotate(120deg);
+}
+
+.headercontainer-hugok2k {
+	width: 350px;
+	margin-bottom: 60px;
+	margin-top: 80px;
+}
+
+.headercontainer-hugok2k:hover {
+	transform: scale(1.05);
+}
+
+.inputcheck-hugok2k {
+	width: 15px;
+	height: 15px;
+	margin: 10px 0;
+}
+
+.containercheck-hugok2k {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 350px;
+}
+
+.labelcopy-hugok2k {
+	position: absolute;
+	color: red;
+	margin: 23px 0 0 301px;
+	display: none;
+}
+
+.labelcopy-hugok2k-show {
+	position: absolute;
+	color: #fff;
+	margin: 23px 0 0 301px;
+	height: 25px;
+	width: 60px;
+	background: #0075ff;
+	font-size: 12px;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.labelcopy-hugok2k-show::before {
+	border: 7px solid #0075ff;
+	content: '';
+	border-left-color: transparent;
+	border-bottom-color: transparent;
+	border-right-color: transparent;
+	position: absolute;
+	bottom: -13px;
+	left: calc(50% - 7px);
+}

@@ -1,0 +1,75 @@
+---
+import Layout from '@layout'
+import PasswordGenerator from '@components/fandresh7/PasswordGenerator.vue'
+---
+
+<Layout title='fandresh7'>
+	<main
+		class='fandresh7 flex flex-row items-center justify-center w-full min-h-screen font-sans uppercase'
+	>
+		<section class='relative text-manga rounded-xl py-8 px-12 text-lg max-w-lg w-full mx-2'>
+			<div class='rainbow overflow-hidden absolute w-full h-full top-0 left-0'></div>
+			<PasswordGenerator client:visible />
+		</section>
+	</main>
+</Layout>
+
+<style scoped>
+	.fandresh7 {
+		background-image: url('/grain-dark.png');
+		animation: fadeInAnimation ease 1s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+
+	.fandresh7 .rainbow::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: -50%;
+		top: -50%;
+		width: 200%;
+		height: 200%;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+		background-image: linear-gradient(rgb(255, 215, 77), rgb(255, 215, 77)),
+			linear-gradient(rgb(64, 221, 255), rgb(64, 221, 255)),
+			linear-gradient(rgb(124, 127, 255), rgb(124, 127, 255)),
+			linear-gradient(rgb(194, 217, 134), rgb(194, 217, 134));
+		animation: rotate 25s linear infinite;
+	}
+
+	.fandresh7 .rainbow::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 4px;
+		top: 4px;
+		width: calc(100% - 8px);
+		height: calc(100% - 8px);
+		background-color: #170f1e;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotate(0);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes fadeInAnimation {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+</style>

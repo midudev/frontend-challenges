@@ -1,0 +1,14 @@
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	gap: 10px;
+	margin-top: 2rem;
+}
+
+.footer a {
+	display: block;
+	font-size: 13px;
+	text-decoration: underline;
+}

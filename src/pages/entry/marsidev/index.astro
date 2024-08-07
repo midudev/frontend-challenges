@@ -1,0 +1,41 @@
+---
+import Layout from '@layout'
+import { PasswordGenerator } from '@components/marsidev/components/PasswordGenerator'
+import Header from '@components/marsidev/components/Header.astro'
+import Footer from '@components/marsidev/components/Footer.astro'
+import { generatePassword } from '@components/marsidev/utils/generate-password'
+import {
+	DEFAULT_KEYS as pwdDict,
+	DEFAULT_PASSWORD_LENGTH as pwdLength
+} from '@components/marsidev/utils/constants'
+
+const initialPassword = generatePassword(pwdLength, pwdDict)
+
+// TODO:
+// dark mode
+// option to return to homepage
+// toast pogress bar
+---
+
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+<link
+	href='https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Nunito:wght@500;600;700;800&display=swap'
+	rel='stylesheet'
+/>
+
+<style>
+	.marsidev-entry {
+		font-family: Nunito, 'Segoe UI', Tahoma, Geneva, Verdana, system-ui, sans-serif;
+	}
+</style>
+
+<Layout title='marsidev'>
+	<div
+		class='marsidev-entry flex flex-col items-center justify-center min-h-[100vh] text-white w-full bg-white gap-4 py-8 px-4'
+	>
+		<Header />
+		<PasswordGenerator initialPassword={initialPassword} client:load />
+		<Footer />
+	</div>
+</Layout>

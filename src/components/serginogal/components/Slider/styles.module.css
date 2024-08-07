@@ -1,0 +1,57 @@
+.sliderWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1ch;
+	border: 1px solid #e5e1e6;
+	border-radius: 8px;
+	padding: 1rem;
+	margin-bottom: 2rem;
+	width: 100%;
+	transition: border-color 0.2s ease 0s;
+}
+
+.sliderWrapper:hover {
+	border-color: #40ddff;
+}
+
+.sliderWrapper:hover > label:first-child {
+	color: #40ddff;
+}
+
+.sliderWrapper label {
+	font-size: 1.1rem;
+	color: #e5e1e6;
+	text-shadow: rgb(255 215 77 / 60%) -1px -1px 6px, rgb(124 127 255 / 60%) 1px 1px 6px;
+	overflow-wrap: break-word;
+}
+
+.sliderWrapper label > div {
+	display: flex;
+	gap: 1ch;
+	align-items: center;
+	margin-top: 1rem;
+}
+
+.sliderWrapper label:first-child::before {
+	content: '[';
+	margin-right: 1ch;
+}
+
+.sliderWrapper label:first-child::after {
+	content: ']';
+	margin-left: 1ch;
+}
+
+.rangeContainer {
+	display: flex;
+	width: 100%;
+}
+
+.rangeContainer input[type='range'] {
+	width: 100%;
+	margin-right: 1.5rem;
+}
+
+.rangeContainer label {
+	width: 2ch;
+}

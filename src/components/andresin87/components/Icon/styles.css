@@ -1,0 +1,8 @@
+#andresin87 .icon {
+	display: flex;
+	fill: var(--a87-c-text);
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	width: 1em;
+}

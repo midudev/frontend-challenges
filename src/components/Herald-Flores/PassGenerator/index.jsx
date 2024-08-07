@@ -4,6 +4,7 @@ import Title from '../Title/index'
 import BtnCopy from '../BtnCopy/index'
 import LenghtRange from '../LenghtRange/index'
 import FilterOption from '../CheckList/index'
+import Alert from '../Alert/index'
 
 const PassGenerator = () => {
 	const { generatePass } = useGeneratorPass()
@@ -25,15 +26,14 @@ const PassGenerator = () => {
 				className='w-full mx-auto md:max-w-2xl relative p-2 overflow-hidden text-sm font-medium text-gray-900 rounded-xl group bg-gradient-to-br from-pink-500 dark:from-yellow-300 to-cyan-500 dark:to-indigo-600'
 			>
 				<div className='relative w-ful py-5 px-8 transition-all ease-in duration-75 bg-gray-50 dark:bg-gray-900 rounded-lg'>
-					<div
-						id='alert'
-						className='p-4 mb-4 hidden delay-75 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800'
-						role='alert'
-					>
-						<span className='font-medium'>Success alert!</span> password copied!
-					</div>
+					<Alert type='success' text='Success, your password has been copied.' id='alert-info' />
 
-					<Title title='Password Generator' type='1' />
+					<Alert
+						type='warning'
+						text='No password generated, please check your options!'
+						id='alert-warning'
+					/>
+					<Title title='Password Generator' />
 
 					<div className='mb-4 flex gap-3 items-center w-ful'>
 						<div className='relative w-full'>

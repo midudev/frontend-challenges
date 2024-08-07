@@ -1,0 +1,10 @@
+---
+import Layout from '@layout'
+import PasswordGenerator from '@components/cechus/PasswordGenerator'
+---
+
+<Layout title='cechus'>
+	<main class='grid mx-auto place-items-center h-[100vh] p-3 max-w-sm md:max-w-md'>
+		<PasswordGenerator client:only='react' />
+	</main>
+</Layout>

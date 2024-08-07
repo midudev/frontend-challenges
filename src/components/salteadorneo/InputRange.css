@@ -1,0 +1,30 @@
+input[type='range'] {
+	appearance: none;
+	margin-right: 15px;
+	height: 7px;
+	background: rgb(255 255 255 / 60%);
+	background-image: linear-gradient(var(--primary-color), var(--primary-color));
+	background-size: 25% 100%;
+	background-repeat: no-repeat;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	appearance: none;
+	height: 20px;
+	width: 8px;
+	background: var(--primary-color);
+	cursor: ew-resize;
+	box-shadow: 0 0 2px 0 #555;
+	transition: background 0.3s ease-in-out;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+	background: var(--hover);
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+	appearance: none;
+	box-shadow: none;
+	border: none;
+	background: transparent;
+}

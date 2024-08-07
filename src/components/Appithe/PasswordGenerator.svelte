@@ -1,30 +1,58 @@
 <script>
+	import Checkbox from './Checkbox.svelte'
 	import ContentCopy from './Assets/ContentCopy.svelte'
 	import Check from './Assets/Check.svelte'
 
 	let password = ''
 	let passwordLength = 6
+
 	let isSpecial = true
+	let containNumbers = true
+	let containCapitals = true
+
 	let isCopied = false
 
-	const normalCharacters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	const smalls = 'abcdefghijklmnopqrstuvwxyz'
+	const capitals = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	const numbers = '0123456789'
+	const specialCharacters = '@:;#&-?/%+*{}[]()|<>$!'
 
-	const specialCharacters = '@:;#&-?/%+*{}[]()|\<>$!'
+	function checkPassword() {
+		let hasSmall = false
+		let hasCapital = false
+		let hasNumber = false
+		let hasSpecial = false
+
+		for (let i = 0; i < password.length; i++) {
+			if (smalls.includes(password[i])) {
+				hasSmall = true
+			} else if (capitals.includes(password[i])) {
+				hasCapital = true
+			} else if (numbers.includes(password[i])) {
+				hasNumber = true
+			} else if (specialCharacters.includes(password[i])) {
+				hasSpecial = true
+			}
+		}
+
+		return hasSmall && hasCapital && hasNumber && hasSpecial
+	}
 
 	const getRandomString = () => {
-		var characterList = normalCharacters
+		var characterList = smalls
 
-		if (password.length > 0) {
-			password = ''
-		}
+		if (password.length > 0) password = ''
+		if (isSpecial) characterList += specialCharacters
+		if (containCapitals) characterList += capitals
+		if (containNumbers) characterList += numbers
 
-		if (isSpecial) {
-			characterList += specialCharacters
-		}
-
-		for ( let iter = 0 ; iter < passwordLength; iter++) {
+		for (let i = 0; i < passwordLength; i++) {
 			var index = Math.floor(Math.random() * characterList.length)
-			password += characterList[index]	
+			password += characterList[index]
+		}
+
+		if (!checkPassword()) {
+			getRandomString()
 		}
 	}
 
@@ -34,7 +62,7 @@
 	}
 
 	const copyToClipboard = () => {
-		if(password.length > 0) {
+		if (password.length > 0) {
 			navigator.clipboard.writeText(password)
 			isCopied = true
 			setTimeout(() => {
@@ -44,21 +72,12 @@
 	}
 </script>
 
-<div class="flex flex-col gap-12 items-center">
+<div class="flex flex-col gap-8 items-center">
 	<div
-		class="bg-[#427AA150] h-12 w-[478px] p-5 border-2 border-[#427AA1] rounded-lg flex flex-row space-x-40 items-center shadow-md shadow-black/25"
+		class="bg-[#427AA150] h-12 w-96 max-w-md p-5 border-2 border-[#427AA1] rounded-lg flex space-x-1 flex-row items-center shadow-md shadow-black/25"
 	>
-		<input
-			readonly
-			type="text"
-			name="password"
-			id="password"
-			placeholder="Your Password"
-			maxlength="20"
-			minlength="6"
-			bind:value={password}
-			class="h-12 bg-transparent focus:outline-none"
-		/>
+		{password}
+		<div class="grow" />
 		<button on:click={copyToClipboard}>
 			{#if isCopied}
 				<Check />
@@ -77,15 +96,44 @@
 			max="20"
 			bind:value={passwordLength}
 			on:change={onSliderChange}
-			class="input-range p-1.5"
+			class="input-range w-96 p-1.5"
 		/>
 		<span>{passwordLength}</span>
+		<section class="w-96 flex gap-4 justify-center ">
+			<Checkbox
+				checkedValue={containNumbers}
+				onChange={() => {
+					containNumbers = !containNumbers
+					getRandomString()
+				}}
+				label="Add numbers"
+			/>
+
+			<Checkbox
+				checkedValue={containCapitals}
+				onChange={() => {
+					containCapitals = !containCapitals
+					getRandomString()
+				}}
+				label="Add capitals"
+			/>
+
+			<Checkbox
+				checkedValue={isSpecial}
+				onChange={() => {
+					isSpecial = !isSpecial
+					getRandomString()
+				}}
+				label="Add special characters"
+			/>
+
+		</section>
 	</div>
 
 	<button
-		class="h-12 w-44 text-white bg-[#427AA1] rounded-lg active:bg-[#3B6D91] focus:ring-4 focus:ring-[#6097BE]"
+		class="h-12 w-44 text-white bg-[#427AA1] rounded-lg hover:bg-[#3B6D91] active:bg-[#3B6D91] focus:ring-4 focus:ring-[#6097BE]"
 		on:click={getRandomString}
-		>
+	>
 		Generate password
 	</button>
 </div>
@@ -95,7 +143,6 @@
 		-webkit-appearance: none;
 		outline: 0;
 		background: transparent;
-		width: 478px;
 	}
 
 	.input-range::-webkit-slider-runnable-track {

@@ -1,0 +1,80 @@
+.skycodev-container {
+	margin: 100px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 500px;
+	height: 50vh;
+	background-color: #fff;
+	border-radius: 15px;
+}
+
+.skycodev-title {
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 100%;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #3f3746;
+	font-weight: 600;
+}
+
+.skycodev-range {
+	margin-top: 50px;
+	width: 80%;
+}
+
+.skycodev-pass-box {
+	display: flex;
+	width: 80%;
+	margin-top: 50px;
+}
+
+.skycodev-pass-input {
+	text-align: center;
+	width: 80%;
+	background-color: #cbe0ed;
+	border-radius: 5px;
+	font-weight: 600;
+	color: rgb(36 36 36);
+	padding: 0.5em;
+	margin-right: 1em;
+}
+
+.skycodev-pass-generate {
+	border-radius: 5px;
+	margin-top: 50px;
+	width: 40%;
+	padding: 0.5em;
+	background-color: rgb(26 140 102);
+	font-weight: 500;
+	transition: 0.1s ease-out;
+	color: #fff;
+}
+
+.skycodev-pass-generate:hover {
+	background-color: rgb(7 33 25);
+}
+
+.skycodev-copy-btn {
+	border: 0.5px solid rgb(211 211 211);
+	border-radius: 5px;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s ease-out;
+}
+
+.skycodev-copy-btn:hover {
+	border-color: #3f3746;
+}
+
+.skycodev-notification {
+	margin-top: 50px;
+	color: rgb(26 140 102);
+	font-weight: 700;
+}

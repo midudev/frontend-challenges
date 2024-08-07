@@ -1,0 +1,204 @@
+#zairovarsen-app {
+	height: 100vh;
+	margin: 0;
+}
+
+#zairovarsen-app * {
+	box-sizing: border-box;
+}
+
+#zairovarsen-app main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+#zairovarsen-app .container {
+	width: 400px;
+
+	/* height: 500px; */
+	border-radius: 10px;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding: 2rem;
+	background-color: rgb(57 63 84 / 80%);
+}
+
+#zairovarsen-app .img-style {
+	max-height: 20px;
+	cursor: pointer;
+}
+
+#zairovarsen-app .input-container {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+
+	/* justify-content: center; */
+
+	/* align-items: center; */
+	margin-bottom: 10px;
+}
+
+#zairovarsen-app .password-title {
+	color: white;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+#zairovarsen-app .password-title-text {
+	color: rgb(255 255 255 / 50%);
+}
+
+#zairovarsen-app #slider {
+	border-radius: 5px;
+	background: rgb(255 255 255 / 31.4%);
+	height: 2px;
+	width: 80%;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#zairovarsen-app .checkbox-container span {
+	color: white;
+}
+
+#zairovarsen-app .checkbox-container {
+	margin-top: 15px;
+	justify-content: space-between;
+	position: relative;
+	background: rgb(255 255 255 / 8%);
+	padding: 0 15px;
+	border-radius: 8px;
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+}
+
+#zairovarsen-app .toggler-wrapper {
+	display: block;
+	width: 45px;
+	height: 25px;
+	cursor: pointer;
+	position: relative;
+}
+
+#zairovarsen-app .toggler-wrapper input[type='checkbox'] {
+	display: none;
+}
+
+#zairovarsen-app .toggler-wrapper .toggler-slider {
+	background-color: rgb(214 214 214 / 43.4%);
+	position: absolute;
+	border-radius: 100px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all 300ms ease;
+}
+
+#zairovarsen-app .toggler-wrapper input[type='checkbox']:checked + .toggler-slider {
+	background-color: #5d68e2;
+}
+
+#zairovarsen-app .toggler-wrapper .toggler-knob {
+	position: absolute;
+	transition: all 300ms ease;
+}
+
+#zairovarsen-app .toggler-wrapper.style-1 .toggler-knob {
+	width: calc(25px - 6px);
+	height: calc(25px - 6px);
+	border-radius: 50%;
+	left: 3px;
+	top: 3px;
+	background-color: #fff;
+}
+
+#zairovarsen-app
+	.toggler-wrapper.style-1
+	input[type='checkbox']:checked
+	+ .toggler-slider
+	.toggler-knob {
+	left: calc(100% - 19px - 3px);
+}
+
+#zairovarsen-app .slider-container span {
+	color: white;
+}
+
+#zairovarsen-app .slider-container {
+	background: rgb(255 255 255 / 8%);
+	padding: 0 15px;
+	border-radius: 8px;
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+}
+
+#zairovarsen-app .output-container {
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+	border-radius: 15px;
+	border: 1px solid #eee;
+	box-shadow: 0 3px 9px #0000000f;
+	overflow: hidden;
+	padding: 10px;
+	background-color: #fff;
+}
+
+#zairovarsen-app .output-container input {
+	text-align: center;
+	border-style: none;
+	background: transparent;
+	outline: none;
+	flex-grow: 1;
+	width: 100%;
+	color: black;
+	font-size: 0.65rem;
+	vertical-align: middle;
+	font-weight: 800;
+}
+
+#zairovarsen-app .output-container .copy-message {
+	font-size: 0.5rem;
+	position: absolute;
+	bottom: 2px;
+	transition: all 150ms ease-in-out;
+	left: 10px;
+}
+
+#zairovarsen-app .generate {
+	user-select: none;
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin: 10px 0;
+	border-radius: 8px;
+	color: #fff;
+	border: none;
+	background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 150ms ease;
+}
+
+#zairovarsen-app .generate:active {
+	transform: translateY(-3%);
+	box-shadow: 0 4px 8px rgb(255 255 255 / 8%);
+}

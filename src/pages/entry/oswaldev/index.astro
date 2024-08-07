@@ -1,0 +1,23 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Card from '@components/oswaldev/Card.jsx'
+---
+
+<Layout title="oswaldev">
+	
+	<style>
+		@font-face {
+			font-family: 'Jet Brains Mono';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url('/JetBrainsMono-Regular.woff2') format('woff2');
+		}
+	</style>
+
+	<main>
+		<!-- Loading Card component -->
+		<Card client:load />
+	</main>
+
+</Layout>

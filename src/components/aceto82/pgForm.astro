@@ -1,0 +1,91 @@
+---
+import Slider from './slider.astro'
+---
+
+<br />
+<div class='max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl'>
+	<div class='flex space-x-4 text-sm font-medium'>
+		<div class='flex-auto flex space-x-12 p-8'>
+			<div class='uppercase tracking-wide text-sm text-indigo-500 font-semibold'>
+				Password Generator
+			</div>
+			<Slider class='w-50' min='8' max='40' id='mySlide' />
+			<button
+				id='btnGen'
+				class='px-5 py-2 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2'
+				type='submit'
+			>
+				Generate
+			</button>
+		</div>
+	</div>
+	<div class='flex space-x-4 text-sm font-medium'>
+		<div class='flex-auto flex flex-center space-x-12 p-8 w-full'>
+			<div class='text-slate-900 text-lg shadow bg-white rounded-lg p-3' id='result'></div>
+			<button
+				id='btnCopy'
+				class='flex-none flex px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2'
+				type='button'
+				title='Copy'
+			>
+				<svg
+					class='h-12 w-12'
+					width='24'
+					height='24'
+					viewBox='0 0 24 24'
+					stroke-width='2'
+					stroke='currentColor'
+					fill='none'
+					stroke-linecap='round'
+					stroke-linejoin='round'
+				>
+					<path stroke='none' d='M0 0h24v24H0z'></path>
+					<rect x='8' y='8' width='12' height='12' rx='2'></rect>
+					<path d='M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2'></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+</div>
+
+<script is:inline>
+	window.onload = () => {
+		btnGen.click()
+	}
+
+	const btnGen = document.getElementById('btnGen')
+	const mySlide = document.getElementById('mySlide')
+	const result = document.getElementById('result')
+	const btnCopy = document.getElementById('btnCopy')
+
+	btnGen.addEventListener('click', () => {
+		const pass = generatePassword(mySlide.value)
+		result.innerText = pass
+	})
+
+	const generatePassword = (num) => {
+		const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'
+		let result = ''
+		for (let index = 0; index < num; index++) {
+			result += characters.charAt(Math.floor(Math.random() * characters.length))
+		}
+		return result
+	}
+
+	btnCopy.addEventListener('click', () => {
+		navigator.clipboard.writeText(result.innerText)
+		const colorOri = result.style.color
+		setTimeout(() => {
+			result.style.color = '#ffffff'
+		}, 10)
+		setTimeout(() => {
+			result.style.color = 'red'
+		}, 50)
+		setTimeout(() => {
+			result.style.color = '#ffffff'
+		}, 10)
+		setTimeout(() => {
+			result.style.color = colorOri
+		}, 200)
+	})
+</script>

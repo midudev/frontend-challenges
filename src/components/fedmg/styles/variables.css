@@ -1,0 +1,53 @@
+:root {
+	/* fonts */
+	--fedmg-primary-ff: 'Noto sans', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
+		ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--fedmg-secundary-ff: 'Courier new', courier, sans-serif;
+	--fedmg-primary-fz: clamp(1.15em, 3.5vw, 1.8em);
+	--fedmg-secundary-fz: clamp(0.96em, 3vw, 1.16em);
+
+	/* dimensions */
+	--fedmg-board-width: 35em;
+	--fedmg-board-height: 20em;
+
+	/* borders */
+	--fedmg-board-bd-rad: 0.15em;
+	--fedmg-elements-bd-rad: 0.22em;
+	--fedmg-board-primary-bd: 3px solid #cad6d8;
+	--fedmg-board-secundary-bd: 3px solid #141214;
+	--fedmg-board-third-bd: 3px solid rgba(20 18 20 / 70%);
+
+	/* backgrounds */
+	--fedmg-main-bg-url: url('/grain-dark.png');
+	--fedmg-main-bg-color: #000;
+	--fedmg-board-primary-bg-color: #cad6d8;
+	--fedmg-board-secundary-bg-color: rgb(20 18 20);
+	--fedmg-board-third-bg-color: rgba(20 18 20 / 90%);
+
+	/* colors */
+	--fedmg-primary-color: #cad6d8;
+	--fedmg-secundary-color: #141214;
+	--fedmg-third-color: rgba(255 255 255 / 75%);
+
+	/* range-input */
+	--fedmg-range-bar-bg-color: #fff;
+	--fedmg-range-bar-shadow-input: 0.05px 0.05px 0.1px 0.3px #bbb;
+
+	/* --fedmg-range-bar-border-input: 1px solid #141214; */
+	--fedmg-range-bar-border-rad: 0.083em;
+
+	/* range-thumb  */
+	--fedmg-thumb-border: 2px solid #141214;
+	--fedmg-thumb-color: #cad6d8;
+
+	/* range-progress-bar */
+	--fedmg-progress-bar-color: -16em 0 0 16em rgb(20 18 20);
+
+	/* range-hover */
+	--fedmg-thumb-hov-color: rgba(202 214 216 / 85%);
+	--fedmg-progress-bar-hov-color: -16em 0 0 16em rgba(20 18 20 / 90%);
+
+	/* range-active */
+	--fedmg-thumb-act-color: rgba(202 214 216 / 70%);
+	--fedmg-progress-bar-act-color: -16em 0 0 16em rgba(20 18 20 / 75%);
+}

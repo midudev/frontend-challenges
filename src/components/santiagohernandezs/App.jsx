@@ -1,10 +1,10 @@
 import './App.css'
 import { useState } from 'react'
 
-function App () {
+function App() {
 	const [values, setValues] = useState(5)
 
-	function validate () {
+	function validate() {
 		const options = {
 			IUC: false,
 			ILC: false,
@@ -25,10 +25,12 @@ function App () {
 
 		for (let i = 0; i < optionsValues.length; i++) {
 			if (optionsValues[i] === true) {
-				char += ['ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+				char += [
+					'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 					'abcdefghijklmnopqrstuvwxyz',
 					'123456789',
-					'!@#$%^&*()<>/?[]"{}:;.,~`-=+_'].at(i)
+					'!@#$%^&*()<>/?[]"{}:;.,~`-=+_'
+				].at(i)
 			}
 		}
 
@@ -41,11 +43,9 @@ function App () {
 		const name = `${password}`
 
 		document.getElementById('password').value = name
-
-		console.log(password)
 	}
 
-	function copyText () {
+	function copyText() {
 		const copyText = document.getElementById('password')
 
 		copyText.select()
@@ -60,8 +60,8 @@ function App () {
 		<div id='santiagohernandezs' className='app'>
 			<div className='password-container'>
 				<div className='password'>
-					<input type='text' id='password' readOnly placeholder='P4$$w0Rd'/>
-					<button className='copy' id='copy' onClick={copyText}/>
+					<input type='text' id='password' readOnly placeholder='P4$$w0Rd' />
+					<button className='copy' id='copy' onClick={copyText} />
 				</div>
 				<div className='settings'>
 					<div className='radio-counter'>
@@ -69,29 +69,37 @@ function App () {
 						<span id='rangeValue'>{values}</span>
 					</div>
 					<div className='range'>
-						<input type='range' max={15} min={4} value={values} onChange={event => setValues(event.target.value)}/>
+						<input
+							type='range'
+							max={15}
+							min={4}
+							value={values}
+							onChange={(event) => setValues(event.target.value)}
+						/>
 					</div>
 					<div className='options'>
 						<div className='option'>
-							<input type='checkbox' id='IUC'/>
+							<input type='checkbox' id='IUC' />
 							<label className='default-label'>Include Capital Letters</label>
 						</div>
 						<div className='option'>
-							<input type='checkbox' id='ILC'/>
+							<input type='checkbox' id='ILC' />
 							<label className='default-label'>Include Tiny Letters</label>
 						</div>
 						<div className='option'>
-							<input type='checkbox' id='IN'/>
+							<input type='checkbox' id='IN' />
 							<label className='default-label'>Include Numbers</label>
 						</div>
 						<div className='option'>
-							<input type='checkbox' id='IS'/>
+							<input type='checkbox' id='IS' />
 							<label className='default-label'>Include Symbols</label>
 						</div>
 					</div>
 					<div className='indicator'>
 						<h2>STRENGTH</h2>
-						<h2 className={values < 9 ? 'indicator-red' : 'indicator-green'}>{ values < 9 ? 'LOW' : 'HIGH' }</h2>
+						<h2 className={values < 9 ? 'indicator-red' : 'indicator-green'}>
+							{values < 9 ? 'LOW' : 'HIGH'}
+						</h2>
 					</div>
 					<button className='button' onClick={validate}>
 						<h2>GENERATE</h2>
@@ -103,4 +111,3 @@ function App () {
 }
 
 export default App
-

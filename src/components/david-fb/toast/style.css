@@ -1,0 +1,61 @@
+.david-fb__toast {
+	background: var(--david-fb_bg-surface);
+	animation: entry ease-in-out 1s;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+.david-fb__toast section {
+	display: flex;
+	gap: 10px;
+	padding: 8px 20px;
+}
+
+.david-fb__toast div {
+	width: 0%;
+	height: 5px;
+	background: var(--david-fb_primary-color);
+	animation: progress ease-in;
+}
+
+.david-fb_on-close {
+	animation: out ease-in .3s;
+}
+
+@keyframes entry {
+	0% {
+		translate: 0 -30%;
+		transform: scale(.6);
+		opacity: 0;
+	}
+	70% {
+		opacity: 1;
+		transform: scale(1);
+	}
+  100% {
+		translate: 0 0;
+	}
+}
+
+@keyframes out {
+	0% {
+		translate: 0 0;
+	}
+	30% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		translate: 0 -30%;
+		transform: scale(.6);
+		opacity: 0;
+	}
+}
+
+@keyframes progress {
+	0% {
+		width: 0%;
+	}
+  100% {
+		width: 100%;
+	}
+}

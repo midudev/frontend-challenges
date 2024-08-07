@@ -1,0 +1,23 @@
+#eyubkh-input {
+	display: flex;
+	gap: 20px;
+}
+
+#eyubkh-input input[type='range']::-moz-range-thumb {
+	background-color: #333;
+	border: none;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+}
+
+#eyubkh-input input[type='range']::-moz-range-track {
+	height: 10px;
+	width: 200px;
+	background-color: #b3b3b3;
+}
+
+#eyubkh-input input[type='range'] {
+	width: 200px;
+	background-color: transparent;
+}

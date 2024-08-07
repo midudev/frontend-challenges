@@ -1,0 +1,15 @@
+.david-fb__footer {
+	display: flex;
+	align-items: center;
+	margin-top: 20px;
+	gap: 15px;
+}
+
+.david-fb__footer a:hover {
+	text-decoration: underline;
+}
+
+.david-fb__footer ul{
+	display: flex;
+	gap: 8px;
+}

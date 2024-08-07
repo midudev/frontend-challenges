@@ -1,0 +1,23 @@
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}
+
+.slidedown-enter-active {
+	transition: all 0.3s ease-out;
+}
+
+.slidedown-leave-active {
+	transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slidedown-enter-from,
+.slidedown-leave-to {
+	top: -120px;
+	opacity: 0;
+}

@@ -1,0 +1,136 @@
+---
+import Layout from '@layout'
+---
+
+<link rel='preload' href='/eriandev/global.css' as='style' />
+<link rel='stylesheet' href='/eriandev/global.css' />
+
+<script type='module' src='/eriandev/main.js'></script>
+
+<Layout title='eriandev <> Hacktoberfest 2022 - Participa en el código abierto'>
+	<main>
+		<header>
+			<img class='midu-logo' src='/eriandev/midulogo.png' alt='Midu logo' />
+			<h1 class='midu-tober-fest'>Midu Passgen Fest</h1>
+		</header>
+
+		<article class='password-container'>
+			<span id='password'></span>
+			<svg
+				id='copy'
+				xmlns='http://www.w3.org/2000/svg'
+				width='24'
+				height='24'
+				viewBox='0 0 24 24'
+				fill='none'
+				stroke='currentColor'
+				stroke-width='2'
+				stroke-linecap='round'
+				stroke-linejoin='round'
+			>
+				<rect x='9' y='9' width='13' height='13' rx='2' ry='2'></rect>
+				<path d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'></path>
+			</svg>
+		</article>
+
+		<article class='controls'>
+			<button id='decrease' class='btn control' disabled>
+				<svg
+					width='100%'
+					height='100%'
+					viewBox='0 0 24 24'
+					fill='none'
+					xmlns='http://www.w3.org/2000/svg'
+				>
+					<g>
+						<path
+							stroke='white'
+							d='M22 0.5C22.8284 0.5 23.5 1.17157 23.5 2V22C23.5 22.8284 22.8284 23.5 22 23.5H2C1.1716 23.5 0.5 22.8284 0.5 22V8.82843C0.5 8.4306 0.658001 8.04907 0.939301 7.76777L7.7678 0.939339C8.0491 0.658035 8.4306 0.5 8.8284 0.5L22 0.5Z'
+						></path>
+						<path fill='white' d='M17.4545 10.7727V13.2727H7.27273V10.7727H17.4545Z'></path>
+					</g>
+				</svg>
+			</button>
+
+			<span id='characters'></span>
+
+			<button id='increase' class='btn control'>
+				<svg
+					width='100%'
+					height='100%'
+					viewBox='0 0 24 24'
+					fill='none'
+					xmlns='http://www.w3.org/2000/svg'
+				>
+					<g>
+						<path
+							stroke='white'
+							d='M2 23.5C1.17157 23.5 0.5 22.8284 0.5 22L0.5 2C0.5 1.1716 1.17157 0.5 2 0.5H22C22.8284 0.5 23.5 1.1716 23.5 2V15.1716C23.5 15.5694 23.342 15.9509 23.0607 16.2322L16.2322 23.0607C15.9509 23.342 15.5694 23.5 15.1716 23.5H2Z'
+						></path>
+						<path
+							fill='white'
+							d='M10.9545 17.8068V6.55682H12.8636V17.8068H10.9545ZM6.28409 13.1364V11.2273H17.5341V13.1364H6.28409Z'
+						></path>
+					</g>
+				</svg>
+			</button>
+		</article>
+
+		<div class='special-container'>
+			<button id='trigger' class='btn special'>
+				Generate password
+				<svg
+					width='79'
+					height='46'
+					viewBox='0 0 79 46'
+					fill='none'
+					xmlns='http://www.w3.org/2000/svg'
+				>
+					<g filter='url(#filter0_f_618_1123)'>
+						<path d='M42.9 2H76.5L34.5 44H2L42.9 2Z' fill='url(#paint0_linear_618_1123)'></path>
+					</g>
+					<defs>
+						<filter
+							id='filter0_f_618_1123'
+							x='0'
+							y='0'
+							width='78.5'
+							height='46'
+							filterUnits='userSpaceOnUse'
+							color-interpolation-filters='sRGB'
+						>
+							<feFlood flood-opacity='0' result='BackgroundImageFix'></feFlood>
+							<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'
+							></feBlend>
+							<feGaussianBlur stdDeviation='1' result='effect1_foregroundBlur_618_1123'
+							></feGaussianBlur>
+						</filter>
+						<linearGradient
+							id='paint0_linear_618_1123'
+							x1='76.5'
+							y1='2.00002'
+							x2='34.5'
+							y2='44'
+							gradientUnits='userSpaceOnUse'
+						>
+							<stop stop-color='white' stop-opacity='0.6'></stop>
+							<stop offset='1' stop-color='white' stop-opacity='0.05'></stop>
+						</linearGradient>
+					</defs>
+				</svg>
+			</button>
+		</div>
+	</main>
+
+	<footer>
+		Presented by
+		<a
+			target='_blank'
+			rel='noopener noreferrer'
+			title='No rights reserved, I copied various styles'
+			href='https://erian.dev'
+		>
+			Erick Vargas
+		</a>
+	</footer>
+</Layout>

@@ -1,0 +1,119 @@
+@import 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap';
+
+.caraje_screen {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(23 15 30);
+}
+
+.caraje_cardpass {
+	background-color: #fff;
+	max-width: 50rem;
+	padding: 2rem 5rem;
+	border-radius: 10px;
+	box-shadow: 0 0 100px 5px rgb(0 104 250 / 70%);
+}
+
+.caraje_header {
+	width: 100%;
+}
+
+.caraje_h1 {
+	color: #0068fa;
+	font-size: 4rem;
+	font-family: Nunito, sans-serif;
+	font-weight: 700;
+	text-align: center;
+}
+
+.caraje_generator {
+	margin: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+}
+
+.caraje_groupkey {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.caraje_key {
+	width: 85%;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 1rem;
+	font-size: 1.5rem;
+	font-family: Nunito, sans-serif;
+	font-weight: 400;
+}
+
+.caraje_copy:hover {
+	filter: drop-shadow(0 0 15px rgb(0 104 250 / 50%));
+}
+
+.caraje_slide {
+	width: 85%;
+}
+
+.caraje_btn {
+	background-color: #0068fa;
+	border-radius: 10px;
+	color: #eee;
+	width: 100%;
+	font-size: 2rem;
+	font-family: Nunito, sans-serif;
+	font-weight: 400;
+	text-align: center;
+	padding: 1rem 2rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.caraje_btn:hover {
+	background-color: #257af1;
+	box-shadow: 0 0 20px 5px rgb(0 104 250 / 50%);
+}
+
+.caraje_h2 {
+	color: #333;
+	font-size: 1.5rem;
+	font-family: Nunito, sans-serif;
+	font-weight: 700;
+	text-align: center;
+}
+
+.caraje_notification {
+	position: absolute;
+	left: 50%;
+	top: 2%;
+	border-radius: 10px;
+	background-color: green;
+	padding: 0.1rem 0.5rem;
+}
+
+.caraje_h3 {
+	color: white;
+	font-size: 0.8rem;
+}
+
+.caraje_selections {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.caraje_option {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	color: #333;
+	font-size: 2rem;
+	font-weight: 700;
+	font-family: Nunito, sans-serif;
+}

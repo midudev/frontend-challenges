@@ -1,0 +1,8 @@
+.josenromero-animation-duration2s {
+	animation-duration: 2s;
+}
+
+.josenromero-stroke-text-blue {
+	text-shadow: -1px -1px 0 rgb(30 64 175), 1px -1px 0 rgb(30 64 175), -1px 1px 0 rgb(30 64 175),
+		1px 1px 0 rgb(30 64 175);
+}

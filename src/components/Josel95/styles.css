@@ -1,0 +1,109 @@
+.josel95-blurred {
+	filter: blur(4px);
+}
+
+.josel95-app-container {
+	height: 100vh;
+	color: rgb(64 64 64);
+	background: linear-gradient(45deg, #1fa2ff, #12d8fa, #a6ffcb);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.josel95-password-generator-container {
+	width: 100%;
+	max-width: 650px;
+	background-color: #FFF;
+	border-radius: 5px; 
+	padding: 1rem; 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+}
+
+.josel95-password-generator-title {
+	font-size: calc(100% + 5vw);
+	text-align: center;
+}
+
+.josel95-input-icon {
+	position: relative;
+	display: flex;
+	width: 100%;
+	max-width: 460px;
+}
+
+.josel95-input-button {
+	position: absolute;
+	top: 50%;
+	right: 1rem;
+	transform: translate(-50%, -50%);
+}
+
+.josel95-input {
+	width: 100%;
+	padding: 1rem;
+	font-size: calc(50% + 0.5vw);
+	border-radius: 5px;
+	background-color: rgb(0 0 0 / 5%);
+}
+
+.josel95-icon {
+	width: 1.3rem;
+	aspect-ratio: 1;
+}
+
+
+.josel95-range-container {
+	display: flex;
+	gap: 1rem;
+}
+
+.josel95-range {
+	appearance: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.josel95-range-text {
+	width: fit-content;
+	width: 2em;
+}
+
+.josel95-range::-webkit-slider-runnable-track {
+	appearance: none;
+	height: 1px;
+	background-color: rgb(64 64 64);
+}
+
+.josel95-range::-webkit-slider-thumb {
+	appearance: none;
+	transform: translateY(-0.7rem);
+	height: 1.4rem;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: rgb(64 64 64);
+}
+
+.josel95-password-generator-button {
+	background: linear-gradient(-45deg, #1fa2ff, #12d8fa, #a6ffcb);
+	border-radius: 5px;
+	font-size: 1.4rem;
+	font-weight: bold;;
+	padding: 1rem 3rem;
+	background-size: 200% 100%;
+	transition: background-position 0.3s;
+}
+
+.josel95-password-generator-button:hover {
+	background-position: 100% 0;
+}
+
+@media (min-width: 650px) {
+	.josel95-password-generator-title {
+		font-size: 3rem;
+	}
+}

@@ -1,0 +1,128 @@
+/** credits on https://github.com/fkhadra/react-toastify */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable selector-class-pattern */
+@keyframes toastify__slideInRight {
+	from {
+		transform: translate3d(110%, 0, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes toastify__slideInLeft {
+	from {
+		transform: translate3d(-110%, 0, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes toastify__slideInUp {
+	from {
+		transform: translate3d(0, 110%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes toastify__slideInDown {
+	from {
+		transform: translate3d(0, -110%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes toastify__slideOutRight {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+
+	to {
+		visibility: hidden;
+		transform: translate3d(110%, 0, 0);
+	}
+}
+
+@keyframes toastify__slideOutLeft {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+
+	to {
+		visibility: hidden;
+		transform: translate3d(-110%, 0, 0);
+	}
+}
+
+@keyframes toastify__slideOutDown {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+
+	to {
+		visibility: hidden;
+		transform: translate3d(0, 350px, 0);
+	}
+}
+
+@keyframes toastify__slideOutUp {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+
+	to {
+		visibility: hidden;
+		transform: translate3d(0, -350px, 0);
+	}
+}
+
+/* enter */
+.toastify__slide-enter--top-left,
+.toastify__slide-enter--bottom-left {
+	animation-name: toastify__slideInLeft;
+}
+
+.toastify__slide-enter--top-right,
+.toastify__slide-enter--bottom-right {
+	animation-name: toastify__slideInRight;
+}
+
+.toastify__slide-enter--top-center {
+	animation-name: toastify__slideInDown;
+}
+
+.toastify__slide-enter--bottom-center {
+	animation-name: toastify__slideInUp;
+}
+
+/* exit */
+.toastify__slide-exit--top-left,
+.toastify__slide-exit--bottom-left {
+	animation-name: toastify__slideOutLeft;
+}
+
+.toastify__slide-exit--top-right,
+.toastify__slide-exit--bottom-right {
+	animation-name: toastify__slideOutRight;
+}
+
+.toastify__slide-exit--top-center {
+	animation-name: toastify__slideOutUp;
+}
+
+.toastify__slide-exit--bottom-center {
+	animation-name: toastify__slideOutDown;
+}

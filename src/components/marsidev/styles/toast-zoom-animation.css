@@ -1,0 +1,37 @@
+/** credits on https://github.com/fkhadra/react-toastify */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable selector-class-pattern */
+
+@keyframes toastify__zoomIn {
+	0% {
+		opacity: 0;
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes toastify__zoomOut {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+.toastify__zoom-enter {
+	animation-name: toastify__zoomIn;
+}
+
+.toastify__zoom-exit {
+	animation-name: toastify__zoomOut;
+}

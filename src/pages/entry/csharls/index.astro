@@ -1,0 +1,15 @@
+---
+import Layout from '@layout'
+
+import Generator from '@components/csharls/Generator'
+
+// import Card from '@components/midudev/Card.jsx'
+// import Title from '@components/midudev/Title.svelte'
+---
+
+<Layout title='Rapasor | Random Password Generator'>
+	<main class='container mx-auto w-full p-10'>
+		<h1 class='text-xl text-slate-100 text-center mb-12'>Create your random password</h1>
+		<Generator client:visible />
+	</main>
+</Layout>

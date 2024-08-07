@@ -1,0 +1,29 @@
+.fedmg-output-section,
+.fedmg-output-section-success {
+	display: grid;
+	grid-template-columns: 1fr 1fr 3em;
+	margin: clamp(1em, 3vw, 1.3em) 0;
+	padding: clamp(0.1em, 2vw, 0.3em) 0;
+	border-radius: var(--fedmg-elements-bd-rad);
+	border: var(--fedmg-board-secundary-bd);
+	background-color: var(--fedmg-board-secundary-bg-color);
+	color: var(--fedmg-primary-color);
+}
+
+.fedmg-password-response {
+	grid-column: 1/3;
+	font-size: var(--fedmg-secundary-fz);
+	font-family: var(--fedmg-secundary-ff);
+	text-overflow: hidden;
+}
+
+.fedmg-clipboard-button {
+	grid-column: 3;
+	display: inherit;
+	justify-items: center;
+	width: 100%;
+}
+
+.fedmg-output-section-success {
+	background-color: var(--fedmg-board-third-bg-color);
+}

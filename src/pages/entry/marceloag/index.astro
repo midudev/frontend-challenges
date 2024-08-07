@@ -1,0 +1,23 @@
+---
+import Layout from '@layout'
+import Generator from '../../../components/marceloag/Generator'
+---
+
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+<link
+	href='https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap'
+	rel='stylesheet'
+/>
+
+<Layout title='@marceloag Hacktoberfest'>
+	<main class='flex flex-row justify-center items-center bg-gray-50 min-h-screen'>
+		<Generator client:load />
+	</main>
+</Layout>
+
+<style>
+	#generatedPass {
+		font-family: 'Anonymous Pro', monospace !important;
+	}
+</style>

@@ -1,0 +1,23 @@
+#andresin87 .settings {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+}
+
+#andresin87 .settings .settings-row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	width: 12em;
+}
+
+#andresin87 .settings .settings-item {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -6,11 +6,9 @@ import ShowCheckbox from '@components/renatomendozac/containers/ShowCheckbox.sve
 import ShowSlider from '@components/renatomendozac/containers/ShowSlider.vue'
 ---
 
-<main class='bg-slate-900 w-full h-full space-y-4 flex justify-center items-center'>
+<main class='bg-slate-900 h-full flex justify-center items-center'>
 	<div class='flex flex-col gap-3 w-full max-w-xs'>
-		<h1 class='text-slate-300 font-bold p-1 text-center'>
-			Password Generator
-		</h1>
+		<h1 class='text-slate-300 font-bold p-1 text-center'>Password Generator</h1>
 		<ShowPassword client:load />
 		<Card>
 			<ShowSlider client:load />

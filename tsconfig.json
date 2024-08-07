@@ -1,11 +1,11 @@
 {
-	"extends": "astro/tsconfigs/base",
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "types": ["astro/client", "react"],
+    "types": ["astro/client", "react", "jest", "node"],
     "outDir": "./dist",
     "moduleResolution": "node",
     "jsx": "react-jsx",
@@ -14,6 +14,12 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layout": ["src/layouts/Layout.astro"],
+      "@hooks/*": ["src/hooks/*"]
     }
-  }
+  },
+	"include": [
+		"src/**/*",
+		"**/*.spec.ts",
+		"**/*.test.ts"
+	],
 }

@@ -6,11 +6,11 @@ export const GeneratorContainer = ({ title }) => {
 	const [message, setMessage] = useState('')
 	const [disabled, setDisabled] = useState(true)
 
-	function handleRangeOnChange (event) {
+	function handleRangeOnChange(event) {
 		setRange(event.target.value)
 	}
 
-	function handleButtonOnClick () {
+	function handleButtonOnClick() {
 		let password = ''
 		const values = '0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 		const array = new Uint32Array(range)
@@ -23,12 +23,13 @@ export const GeneratorContainer = ({ title }) => {
 		setDisabled(false)
 	}
 
-	function handleCopyEvent () {
-		navigator.clipboard.writeText(passwordRef.current.value)
-			.then(_ => setAlert('Copied successfully!'))
+	function handleCopyEvent() {
+		navigator.clipboard
+			.writeText(passwordRef.current.value)
+			.then((_) => setAlert('Copied successfully!'))
 	}
 
-	function setAlert (message) {
+	function setAlert(message) {
 		setMessage(message)
 		setTimeout(() => {
 			setMessage('')
@@ -36,20 +37,45 @@ export const GeneratorContainer = ({ title }) => {
 	}
 
 	return (
-		<div className='generator-container'>
-			<h1 className='title'>{title}</h1>
-			<div className='password-container'>
-				<input type='text' placeholder='Your password will appear here' disabled='disabled' ref={passwordRef}></input>
-				<button type='button' className={disabled ? 'disabled-copy-button' : 'copy-button'} onClick={() => handleCopyEvent()} disabled={disabled}>
+		<div className='nujovich-generator-container'>
+			<h1 className='nujovich-title'>{title}</h1>
+			<div className='nujovich-password-container'>
+				<input
+					type='text'
+					className='nujovich-input-text'
+					placeholder='Your password will appear here'
+					disabled='disabled'
+					ref={passwordRef}
+				></input>
+				<button
+					type='button'
+					className={disabled ? 'nujovich-disabled-copy-button' : 'nujovich-copy-button'}
+					onClick={() => handleCopyEvent()}
+					disabled={disabled}
+				>
 					<img src='/nujovich/copy-icon.svg'></img>
 				</button>
 			</div>
-			{message && <span className='message'>{message}</span>}
-			<div className='slider'>
+			{message && <span className='nujovich-message'>{message}</span>}
+			<div className='nujovich-slider'>
 				<span className='range'>{range}</span>
-				<input type='range' min='5' max='20' defaultValue='8' step='1' onChange={(e) => handleRangeOnChange(e)}></input>
+				<input
+					type='range'
+					className='nujovich-input-range'
+					min='5'
+					max='20'
+					defaultValue='8'
+					step='1'
+					onChange={(e) => handleRangeOnChange(e)}
+				></input>
 			</div>
-			<button type='button' className='generate-button' onClick={() => handleButtonOnClick()}>Generate</button>
+			<button
+				type='button'
+				className='nujovich-generate-button'
+				onClick={() => handleButtonOnClick()}
+			>
+				Generate
+			</button>
 		</div>
 	)
 }

@@ -1,0 +1,164 @@
+<main id='JABvzla'>
+	<form class='form'>
+		<label>
+			<input id='password' type='text' readonly />
+			<span id='copypassword' class='clickable'></span>
+		</label>
+		<label>
+			Length
+			<span id='longselected'>8</span>
+			<input id='long' type='range' value='8' min='1' max='20' />
+		</label>
+		<label>
+			Symbols <input id='symbols' type='checkbox' checked />
+		</label>
+		<label>
+			Numbers
+			<input id='numbers' type='checkbox' checked />
+		</label>
+		<label>
+			Letters uppercase
+			<input id='uppercase' type='checkbox' checked />
+		</label>
+		<label>
+			Letters lowercase
+			<input id='lowercase' type='checkbox' checked />
+		</label>
+		<input id='submit' type='button' value='Generate' class='clickable' />
+	</form>
+</main>
+
+<script type='text/javascript'>
+	const SYMBOLS_AVAILABLES = '!$%&/()=?¿+"'
+	const NUMBERS_AVAILABLES = '1234567890'
+	const UPPERCASE_AVAILABLES = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	const LOWERCASE_AVAILABLES = UPPERCASE_AVAILABLES.toLowerCase()
+
+	const {
+		symbols,
+		numbers,
+		uppercase,
+		lowercase,
+		long,
+		password,
+		submit,
+		longselected,
+		copypassword
+	} = window
+
+	// Helpers
+	const getRandom = (chrs) => chrs.split('')[Math.floor(Math.random() * chrs.length)]
+	const suffle = (array) => array.sort(() => 0.5 - Math.random())
+	const repeat = (n) => (cb) => {
+		if (n === 0) return
+		cb()
+		return repeat(n - 1)(cb)
+	}
+
+	// Core methods
+	const copyToClipboard = () => navigator.clipboard.writeText(password.value)
+	const getAvailablesCharacters = () =>
+		[
+			symbols.checked && SYMBOLS_AVAILABLES,
+			numbers.checked && NUMBERS_AVAILABLES,
+			uppercase.checked && UPPERCASE_AVAILABLES,
+			lowercase.checked && LOWERCASE_AVAILABLES
+		].filter(Boolean)
+	const generatePassword = () => {
+		password.value = ''
+		const availablesCharacter = getAvailablesCharacters()
+		const repeatCount =
+			long.value > availablesCharacter.length
+				? Math.ceil(long.value / availablesCharacter.length)
+				: 1
+		const randomCharacters = []
+		repeat(repeatCount)(() => {
+			randomCharacters.push(suffle(availablesCharacter.map(getRandom)))
+		})
+		const newPassword = randomCharacters.flat().join('').substring(0, long.value)
+		password.value = newPassword
+	}
+	generatePassword()
+
+	// Add event listener
+	submit.onclick = generatePassword
+	long.onchange = generatePassword
+	long.oninput = () => {
+		longselected.innerHTML = long.value
+	}
+	copypassword.onclick = copyToClipboard
+	symbols.onchange = generatePassword
+	numbers.onchange = generatePassword
+	uppercase.onchange = generatePassword
+	lowercase.onchange = generatePassword
+</script>
+
+<style>
+	#JABvzla * {
+		outline: none;
+	}
+	#JABvzla {
+		--primary-color: #161122;
+		--secondary-color: #ccc;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 100vh;
+		background: linear-gradient(90deg, var(--secondary-color) 21px, transparent 1%) center,
+			linear-gradient(var(--secondary-color) 21px, transparent 1%) center, var(--primary-color);
+		background-size: 22px 22px;
+		overflow: hidden;
+	}
+	#JABvzla > .form {
+		display: flex;
+		flex-direction: column;
+		background: #fff;
+		padding: 12px;
+	}
+	#JABvzla > .form #copypassword {
+		--copy-color: #000;
+		position: relative;
+		width: 20px;
+		height: 20px;
+		border: 2px solid var(--copy-color);
+	}
+	#JABvzla > .form #copypassword::after {
+		content: ' ';
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		width: 20px;
+		height: 20px;
+		background: #fff;
+		border: 2px solid var(--copy-color);
+	}
+	#JABvzla .clickable {
+		opacity: 0.8;
+		cursor: pointer;
+		transition: all 0.2s;
+	}
+	#JABvzla .clickable:hover {
+		opacity: 1;
+	}
+	#JABvzla .clickable:active {
+		scale: 1.1;
+	}
+	#JABvzla > .form > label {
+		display: flex;
+		justify-content: space-between;
+		padding: 2px;
+	}
+	#JABvzla > .form input {
+		border-bottom: 1px solid var(--primary-color);
+	}
+	#JABvzla > .form input#submit {
+		border: 2px solid var(--primary-color);
+	}
+	#JABvzla > .form #longselected {
+		position: relative;
+		top: 18px;
+		left: 75px;
+		user-select: none;
+	}
+</style>

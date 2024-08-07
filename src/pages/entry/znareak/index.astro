@@ -1,0 +1,50 @@
+---
+import Layout from '@layout'
+import App from '@components/znareak/App'
+---
+
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+<link href='https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap' rel='stylesheet' />
+<link href='https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap' rel='stylesheet' />
+
+<style>
+	#znareak {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		background-color: #0b0e13;
+		background-image: url('https://hacktoberfest.com/_next/static/media/grain-dark.9d5983e6.png');
+		font-family: 'Roboto Mono', monospace;
+		text-rendering: optimizeLegibility;
+		font-smoothing: antialiased;
+		-webkit-font-smoothing: antialiased;
+		-webkit-tap-highlight-color: transparent;
+		color: #9fadc6;
+		animation-name: fadeIn;
+		animation-duration: 1s;
+		animation-fill-mode: both;
+	}
+	@-webkit-keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+</style>
+
+<Layout title='znareak'>
+	<div id='znareak'>
+		<App client:load />
+	</div>
+</Layout>

@@ -6,6 +6,7 @@ import CheckboxLabeled from './CheckboxLabeled'
 import Button from './Button'
 import { PatternSymbols, PatternNumbers, PatternUppercase, PatternLowerCase } from './Patterns'
 import Title from './Title'
+import PasswordStrength from './PasswordStrength'
 
 export default function PasswordGenerator() {
 	const [password, setPassword] = useState('')
@@ -14,29 +15,57 @@ export default function PasswordGenerator() {
 	const [includeNumbers, setIncludeNumbers] = useState(false)
 	const [includeSymbols, setIncludeSymbols] = useState(false)
 
-	const getCurrentPattern = () => {
-		let pattern = ''
-		if (includeSymbols) pattern += PatternSymbols
-		if (includeUppercase) pattern += PatternUppercase
-		if (includeNumbers) pattern += PatternNumbers
-		pattern += PatternLowerCase
-		return new RegExp(`[${pattern}]`)
+	const generatePassword = () => {
+		const charactersByPattern = Math.floor(length / getPatternsNumberActive())
+		const activePatterns = getActivePatterns()
+		let lastUsedPattern = null
+		let password = ''
+
+		activePatterns.forEach((pattern) => {
+			;[...Array(charactersByPattern)].forEach(() => {
+				password += getCharacterForPattern(pattern)
+				lastUsedPattern = pattern
+			})
+		})
+
+		while (password.length < length) {
+			password += getCharacterForPattern(lastUsedPattern)
+		}
+
+		password = shuffle([...password]).join('')
+
+		setPassword(password)
 	}
 
-	const generatePassword = () => {
-		const password = Array.apply(null, { length })
-			.map(function () {
-				let result
-				const currentPattern = getCurrentPattern()
-				while (true) {
-					result = String.fromCharCode(getRandom())
-					if (currentPattern.test(result)) {
-						return result
-					}
-				}
-			})
-			.join('')
-		setPassword(password)
+	const getPatternsNumberActive = () => {
+		let patternsNumberActive = 1
+		if (includeSymbols) patternsNumberActive++
+		if (includeUppercase) patternsNumberActive++
+		if (includeNumbers) patternsNumberActive++
+		return patternsNumberActive
+	}
+
+	const getActivePatterns = () => {
+		const activePatterns = []
+		activePatterns.push(new RegExp(`[${PatternLowerCase}]`))
+		if (includeUppercase) activePatterns.push(new RegExp(`[${PatternUppercase}]`))
+		if (includeNumbers) activePatterns.push(new RegExp(`[${PatternNumbers}]`))
+		if (includeSymbols) activePatterns.push(new RegExp(`[${PatternSymbols}]`))
+		return activePatterns
+	}
+
+	const getCharacterForPattern = (pattern) => {
+		let result
+		while (true) {
+			result = String.fromCharCode(getRandom())
+			if (pattern.test(result)) {
+				return result
+			}
+		}
+	}
+
+	const shuffle = (array) => {
+		return array.sort(() => getRandom() - 128)
 	}
 
 	const getRandom = () => {
@@ -84,7 +113,8 @@ export default function PasswordGenerator() {
 					checked={includeSymbols}
 					onChange={(e) => setIncludeSymbols(e.target.checked)}
 				/>
-				<Button onClick={generatePassword} text={'GENERATE 🠺'} />
+				<PasswordStrength password={password} />
+				<Button onClick={generatePassword} text={'GENERATE 🡆'} />
 			</article>
 		</section>
 	)

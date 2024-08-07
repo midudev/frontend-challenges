@@ -1,0 +1,42 @@
+#daviddlh1 .slider__main-container {
+	gap: 1rem;
+	width: 100%;
+}
+#daviddlh1 .slider__first-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#daviddlh1 .slider__slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 4px;
+	border-radius: 5px;
+	background: grey;
+	background-image: linear-gradient(#a4ffaf, #a4ffaf);
+	background-repeat: no-repeat;
+	outline: none;
+}
+
+#daviddlh1 .slider__slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 16px;
+	height: 16px;
+	background-color: #fafafa;
+	border-radius: 50%;
+	cursor: pointer;
+	border: none;
+}
+
+#daviddlh1 .slider__slider::-webkit-slider-thumb:hover {
+	border: 1px solid #a4ffaf;
+	background-color: #23232a;
+}
+
+#daviddlh1 .slider__value-output {
+	background-color: transparent;
+	max-width: 2rem;
+	text-align: center;
+	color: #a4ffaf;
+}

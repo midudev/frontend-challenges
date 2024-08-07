@@ -37,8 +37,8 @@ const GeneratePassword = () => {
 	}
 
 	return (
-		<section className='section'>
-			<h1>Create password</h1>
+		<section id='waxer59'>
+			<h1 className='header'>Create password</h1>
 
 			<div className='alert' style={{ opacity: `${alert ? '1' : '0'}` }}>
 				<p className='alert-text'>Text Copied!</p>

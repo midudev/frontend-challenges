@@ -3,7 +3,7 @@ import InputTerminal from './InputTerminal'
 
 const Terminal = ({ addCommand, commands }) => {
 	return (
-		<div className='text-slate-100 text-sm lg:text-base  p-4 h-[calc(100%-43px)] lg:h-[calc(100%-56px)] overflow-y-auto relative'>
+		<div className='text-slate-100 text-base  p-4 h-[calc(100%-56px)] overflow-y-auto relative'>
 			<div>
 				<p>Terminal Password [Version 9.22.2006]</p>
 				<p>

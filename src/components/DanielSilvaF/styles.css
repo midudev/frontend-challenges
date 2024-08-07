@@ -1,0 +1,101 @@
+.DanielSilvaF_Div {
+	color: black;
+}
+
+.DanielSilvaF_H1 {
+	color: black;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 25px;
+}
+
+.DanielSilvaF_body {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -1px 0 0px;
+
+}
+
+.DanielSilvaF_container {
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+		0 10px 10px rgba(0, 0, 0, 0.22);
+	position: relative;
+	overflow: hidden;
+	width: 460px;
+	max-width: 100%;
+	min-height: 210px;
+}
+
+.DanielSilvaF_DivOptions {
+	display: inline-flex;
+	padding: 10px;
+}
+
+.DanielSilvaF_range {
+	position: relative;
+	display: block;
+	text-align: center;
+	font-size: 40px;
+	color: black;
+	font-weight: 100;
+}
+
+.DanielSilvaF_result {
+	border-radius: 20px;
+	border: solid;
+	min-height: 40px;
+	min-width: 100px;
+	padding: 5px;
+	text-align: center;
+}
+
+.DanielSilvaF_input {
+	width: 400px;
+	height: 15px;
+	-webkit-appearance: none;
+	background: #111;
+	outline: none;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+}
+
+.DanielSilvaF_buttonCopy {
+	border: 5px solid rgb(190, 2, 190);
+	text-align: center;
+	margin-left: 6px;
+	padding: 4px;
+	background-color: rgb(190, 2, 190);
+	border-radius: 20px;
+	min-width: 80px;
+}
+
+.DanielSilvaF_buttonCopy:hover {
+	border: 5px solid purple;
+	background-color: purple;
+}
+
+.DanielSilvaF_button {
+	border: 5px solid rgb(4, 233, 245);
+	text-align: center;
+	margin: 10px;
+	padding: 4px;
+	background-color: rgb(4, 233, 245);
+	border-radius: 20px;
+	min-width: 80px;
+}
+
+.DanielSilvaF_button:hover {
+	border: 5px solid  rgb(0, 161, 170);
+	background-color: rgb(0, 161, 170);
+}

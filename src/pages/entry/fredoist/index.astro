@@ -1,0 +1,57 @@
+---
+import AudioPlayer from '@components/fredoist/AudioPlayer.svelte'
+import Checkboxes from '@components/fredoist/Checkboxes.svelte'
+import CopyButton from '@components/fredoist/CopyButton.svelte'
+import KeyboardShortcuts from '@components/fredoist/KeyboardShortcuts.svelte'
+import Layout from '@components/fredoist/Layout.astro'
+import PasswordHistory from '@components/fredoist/PasswordHistory.svelte'
+import PasswordInput from '@components/fredoist/PasswordInput.svelte'
+import Slider from '@components/fredoist/Slider.svelte'
+---
+
+<Layout title='Cyberpunk Password Generator'>
+	<div class='container mx-auto md:max-w-xl lg:max-w-screen-xl'>
+		<KeyboardShortcuts client:media='(min-width:1024px)' />
+		<main role='main' class='px-5 py-12'>
+			<h1
+				class='text-4xl font-bold leading-none tracking-widest max-w-sm uppercase text-[#f8ef00] mb-8 cursor-default'
+			>
+				Password Generator
+			</h1>
+			<div class='lg:flex gap-36'>
+				<section class='lg:w-1/2'>
+					<PasswordInput client:idle />
+					<CopyButton client:idle />
+					<Slider client:idle />
+					<Checkboxes client:idle />
+				</section>
+				<aside class='lg:w-1/2'>
+					<PasswordHistory client:load />
+				</aside>
+			</div>
+		</main>
+		<footer
+			class='px-5 py-5 uppercase flex items-center justify-center lg:justify-start gap-5 text-xs'
+		>
+			<AudioPlayer client:media='(min-width:1024px)' />
+			<span
+				aria-hidden='true'
+				class='w-px h-8 bg-gradient-to-b from-transparent via-white/50 to-transparent hidden lg:block'
+			></span>
+			<button
+				class='uppercase text-xs hidden lg:block'
+				onclick='window.dispatchEvent(new KeyboardEvent("keydown", { key: "k" }))'
+			>
+				Keyboard Shortcuts
+			</button>
+			<a
+				href='https://github.com/fredoist/password-generator'
+				target='_blank'
+				rel='noopener noreferrer'
+			>
+				Source Code
+			</a>
+			<a href='https://bio.link/freddy' target='_blank' rel='noopener noreferrer'>Author</a>
+		</footer>
+	</div>
+</Layout>

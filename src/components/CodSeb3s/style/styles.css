@@ -1,0 +1,358 @@
+/* Identifier of my GitHub name */
+/*********** codseb3s ***********/
+
+ :root {
+	--codseb3s-bg-components: #1F232B;
+	--codseb3s-prim-color: #FFFFFF;
+	--codseb3s-sub-color: #A9AEB7;
+	--codseb3s-uncheck-color: #545A64;
+	--codseb3s-init-slide-bg-color: linear-gradient(
+		to right, 
+		#A4FFAF 0%, 
+		#A4FFAF 0%, 
+		#18171F 0%, 
+		#18171F 100%
+	);
+	--codseb3s-black-color: #000000;
+	--codseb3s-grey-color: #817D92;
+	--codseb3s-red-color: #F64A4A;
+	--codseb3s-orange-color: #FB7C58;
+	--codseb3s-yellow-color: #F8CD65;
+	--codseb3s-green-color: #A4FFAF;
+}
+
+/* Set globals word spacing for every text */
+#codseb3s-header-title, #codseb3s-header-sub-title, #codseb3s-pw, #codseb3s-copy-txt, #codseb3s-container-title, #codseb3s-container-sub-title, #codseb3s-quantity-length, #codseb3s-strength-title,#codseb3s-strength-lvl-title, #codseb3s-primary-btn, .codseb3s-checkbox {
+	word-spacing: -0.19rem;
+}
+
+/* Set globals font size with identifiers */
+#codseb3s-header-title {
+	font-size: 1.35rem;
+}
+
+#codseb3s-pw, #codseb3s-container-title, #codseb3s-quantity-length {
+	font-size: 1.25rem;
+}
+
+#codseb3s-header-sub-title, #codseb3s-copy-txt, #codseb3s-container-sub-title, 
+#codseb3s-strength-title, #codseb3s-strength-lvl-title, #codseb3s-primary-btn, .codseb3s-checkbox {
+	font-size: .875rem;
+}
+
+/* Set globals color with identifiers */
+#codseb3s-header-sub-title, #codseb3s-strength-title {
+	color: var(--codseb3s-grey-color);
+}
+
+#codseb3s-pw, #codseb3s-container-sub-title, #codseb3s-strength-lvl-title, .codseb3s-checkbox {
+	color: var(--codseb3s-sub-color);
+}
+
+#codseb3s-copy-txt, #codseb3s-quantity-length {
+	color: var(--codseb3s-green-color);
+}
+
+#codseb3s-header-title, #codseb3s-container-title {
+	color: var(--codseb3s-prim-color);
+}
+
+#codseb3s-primary-btn {
+	color: var(--codseb3s-black-color);
+}
+
+/* Setting properly the position of the SQUARE just in Safari 7.1.+ */
+_::-webkit-full-page-media, _:future, :root #codseb3s-square-container {
+	top: 14.5rem !important;
+	left: 2.0625rem !important;
+}
+
+/* Setting properly the position of the SQUARE just in Firefox 69+ */
+@supports selector(:-moz-is-html) { 
+	#codseb3s-square-container { 
+		top: 14.75rem !important;
+		left: 2.1rem !important;
+	} 
+}
+
+/* Re-Position the header in devices Smallers than 374px */
+@media only screen and (max-width: 374px) {
+	#codseb3s-header-container {
+		width: 18.75rem !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+
+	#codseb3s-header-container-wrapper {
+		transform: translateX(-2.1875rem) !important;
+	}
+}
+
+/* Re-position of the header in devices between 414px and 639px */
+@media only screen and (min-width: 414px) {
+	#codseb3s-header-container {
+		margin-bottom: 1.875rem !important;
+	}
+}
+
+/* Re-position of the header and square design between 640px and greathers */
+@media only screen and (min-width: 640px) {
+	#codseb3s-header-title {
+		font-size: 1.45rem !important; 
+	}
+
+	#codseb3s-pw, #codseb3s-container-title, #codseb3s-quantity-length {
+		font-size: 1.35rem !important;
+	}
+
+	#codseb3s-square-container {
+		width: 10.125rem !important;
+		top: 16.375rem !important;
+		left: 2.9875rem !important;
+	}
+
+	/* Setting properly the position of the SQUARE just in Safari 7.1.+ */
+	_::-webkit-full-page-media, _:future, :root #codseb3s-square-container {
+		top: 16.625rem !important;
+		left: 3.1875rem !important;
+	}
+
+	/* Setting properly the position of the SQUARE just in Firefox 69+ */
+	@supports selector(:-moz-is-html) { 
+		#codseb3s-square-container { 
+			top: 16.375rem !important;
+			left: 2.9rem !important;
+		} 
+	}
+}
+
+
+/* Set the arrow movement of the header */
+/* Line > */
+#codseb3s-arrow:hover #codseb3s-arrow__line-path {
+	transform: translateX(.21875rem);
+	transition: 150ms cubic-bezier(0.215,0.61,0.355,1);
+	outline: none;
+}
+
+/* Tip - */
+#codseb3s-arrow:hover #codseb3s-arrow__tip-path {
+	transform: translateX(.21875rem);
+	transition: 150ms cubic-bezier(0.215,0.61,0.355,1);
+	outline: none;
+}
+
+#codseb3s-arrow-wrapper:active {
+	outline: none;
+}
+
+#codseb3s-arrow-wrapper::-moz-focus-inner {
+	outline: none;
+}
+
+/* Password width container animated */
+.codseb3s-current-size, .codseb3s-resize {
+	font-size: 1.25rem;
+	letter-spacing: .156rem;
+	margin: auto auto auto 0;
+	background-color: var(--codseb3s-bg-components);
+	overflow-wrap: break-word;
+}
+
+.codseb3s-current-size {
+	width: 90%;
+	animation-delay: 3s;
+	animation: codseb3s-fade-in-keyframes .2s;
+}
+@keyframes codseb3s-fade-in-keyframes {
+	from {width: 68%;}
+	to {width: 90%;}
+}
+
+.codseb3s-resize {
+	width: 68%;
+	animation: codseb3s-fade-out-keyframes .2s;
+}
+@keyframes codseb3s-fade-out-keyframes {
+	from { width: 90%; }
+	to { width: 68%; }
+}
+
+/* Copy clipboard animated */
+#codseb3s-copy-txt {
+	opacity: 1;
+	animation: codseb3s-fade-in-out-keyframes-txt 4s linear;
+}
+@keyframes codseb3s-fade-in-out-keyframes-txt {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Square animated */
+#codseb3s-square-container {
+	animation: codseb3s-fade-in-keyframes-square 2.5s;
+}
+@keyframes codseb3s-fade-in-keyframes-square {
+  from { opacity: 0 } 
+  to{ opacity: 1 }
+}
+
+/* Set the color of the COPY button */
+#codseb3s-copy-button:active path {
+	fill: var(--codseb3s-sub-color) !important;
+	outline: none;
+}
+
+/* Prevents color stucked in MOBILE DEVICES */
+@media (hover:hover) {
+	#codseb3s-copy-button:hover path {
+		fill: var(--codseb3s-sub-color) !important;
+		outline: none;
+	}
+}
+
+/* Range Input Styles */
+/* Styling and resetting the slider for all browsers */
+#codseb3s-slider {
+	width: 100%;
+	height: .375rem;
+	-webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	background: var(--codseb3s-init-slide-bg-color);
+}
+
+/** Chrome, Safari, Edge and Opera **/
+/* Focus Style */
+#codseb3s-slider:focus {
+	outline: none;
+}
+
+/* Track Styles */
+#codseb3s-slider::-webkit-slider-runnable-track {
+	height: .375rem; /* track heigth */
+}
+
+/* Thumb Styles */
+#codseb3s-slider::-webkit-slider-thumb {
+	width: 1.25rem;
+	height: 1.25rem; /* thumb heigth */
+	margin-top: -0.4375rem; /* (track height / 2) - (thumb height / 2) */
+	-webkit-appearance: none;
+	border-radius: 100%;
+	background-color: var(--codseb3s-sub-color);
+}
+
+/** Firefox **/
+/* Thumb Styles */
+#codseb3s-slider::-moz-range-thumb {
+	width: 1.25rem;
+	height: 1.25rem; 
+	border: none;
+	border-radius: 100%;
+	background: var(--codseb3s-sub-color);
+}
+
+/* Accesibility purposes */
+.codseb3s-checkbox {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#codseb3s-check-true {
+	color: var(--codseb3s-sub-color) !important;
+}
+
+#codseb3s-check-false {
+	color: var(--codseb3s-uncheck-color) !important;
+}
+
+/* Override the width of the container */
+#codseb3s-container-checkboxs div:nth-child(3) > label, 
+#codseb3s-container-checkboxs div:nth-child(4) > label {
+	width: 5.25rem !important;
+}
+
+/* Set the color of the CHECKBOX button */
+.codseb3s-checkbox:active input ~ .codseb3s-checkmark {
+	border-color: var(--codseb3s-green-color);
+}
+
+/* Prevents color stucked in MOBILE DEVICES */
+@media (hover:hover) {
+	.codseb3s-checkbox:hover input ~ .codseb3s-checkmark {
+		border-color: var(--codseb3s-green-color);
+	}
+}
+
+/* Custom checkbox on SELECTION */
+.codseb3s-checkbox input:checked ~ .codseb3s-checkmark {
+	background-color: var(--codseb3s-green-color) !important;
+	border-color: var(--codseb3s-green-color);
+}
+
+/* Hidde the CHECKMARK (✓) when not checked */
+.codseb3s-checkmark::after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+
+/* Show the CHECKMARK (✓) when checked */
+.codseb3s-checkbox input:checked ~ .codseb3s-checkmark::after {
+	display: block;
+}
+
+/* Style the CHECKMARK (✓) */
+.codseb3s-checkbox .codseb3s-checkmark::after {
+	left: .25rem;
+	top: .03125rem;
+	width: .25rem;
+	height: .5rem;
+	border: solid var(--codseb3s-black-color);
+	border-width: 0 .09375rem .09375rem 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+/* Set the style of the PRINCIPAL button */
+#codseb3s-primary-btn:active {
+	border: solid .09375rem var(--codseb3s-green-color);
+	background-color: var(--codseb3s-bg-components);
+	color: var(--codseb3s-sub-color);
+	outline: none;
+}
+
+/* Prevents color stucked in MOBILE DEVICES */
+@media (hover:hover) {
+	#codseb3s-primary-btn:hover {
+		border: solid .09375rem var(--codseb3s-green-color);
+		background-color: var(--codseb3s-bg-components);
+		color: var(--codseb3s-sub-color);
+		outline: none;
+	}
+}
+
+/* Set color to indicate the strengh of the password */
+#codseb3s-too-weak {
+	background-color: var(--codseb3s-red-color);
+	border: none;
+}
+
+#codseb3s-weak {
+	background-color: var(--codseb3s-orange-color);
+	border: none;
+}
+
+#codseb3s-medium {
+	background-color: var(--codseb3s-yellow-color);
+	border: none;
+}
+
+#codseb3s-strong {
+	background-color: var(--codseb3s-green-color);
+	border: none;
+}

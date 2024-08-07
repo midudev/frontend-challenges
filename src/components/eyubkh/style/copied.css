@@ -1,0 +1,10 @@
+#eyubkh-copied {
+	position: absolute;
+	left: 50px;
+	top: -50px;
+	color: white;
+	padding: 10px 30px;
+	border-radius: 4px;
+	background-color: #7fbd91;
+	transition: top ease-in-out 0.3s;
+}

@@ -1,0 +1,37 @@
+.clipboard {
+	display: none;
+	position: relative;
+}
+
+.password:hover .clipboard {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.popover {
+	position: absolute;
+	top: -35px;
+	left: -14px;
+	font-size: 16px;
+	background-color: #115e59;
+	border-radius: 4px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+.popover::before {
+	content: ' ';
+	border-style: solid;
+	border-width: 5px 8px 5px 0;
+	border-color: transparent #115e59 transparent transparent;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	left: 18px;
+	bottom: -8px;
+	transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}

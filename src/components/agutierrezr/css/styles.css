@@ -1,0 +1,256 @@
+.agutierrezr__number {
+	color: #8db0bb;
+}
+
+.agutierrezr__symbol {
+	color: #fde3a7;
+}
+
+.agutierrezr__copy-message {
+	position: absolute;
+	color: #c9f227;
+}
+
+.agutierrezr__site {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	color: #fff;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background-color: #7bacdd;
+}
+@media (max-height: 720px) {
+	.agutierrezr__site {
+		height: unset;
+	}
+}
+
+.agutierrezr__app-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 460px;
+	background-color: #020728;
+	min-height: 720px;
+	border-radius: 0.75rem;
+	overflow: hidden;
+}
+
+.agutierrezr__app-container .agutierrezr__app-main {
+	flex-grow: 1;
+	padding: 30px;
+	overflow-y: auto;
+	max-height: 650px;
+}
+
+.agutierrezr__app-container .agutierrezr__app-main::-webkit-scrollbar {
+	width: 4px;
+}
+
+.agutierrezr__app-container .agutierrezr__app-main::-webkit-scrollbar-track {
+	background-color: rgb(0 0 0 / 0%);
+}
+
+.agutierrezr__app-container .agutierrezr__app-main::-webkit-scrollbar-thumb {
+	background-color: hsl(0deg 0% 100% / 25.1%);
+	border: 1px solid hsl(0deg 0% 100% / 25.1%);
+	border-radius: 24px;
+}
+
+.agutierrezr__app-container .agutierrezr__app-main::-webkit-scrollbar-thumb:hover {
+	background-color: hsl(0deg 0% 80% / 35%);
+}
+@media (max-height: 720px) {
+	.agutierrezr__app-container .agutierrezr__app-main {
+		overflow-y: visible;
+		max-height: unset;
+	}
+}
+@media (max-height: 720px) {
+	.agutierrezr__app-container {
+		border-radius: unset;
+	}
+}
+
+.agutierrezr__section {
+	position: relative;
+	margin-bottom: 16px;
+}
+
+.agutierrezr__section:last-of-type {
+	margin-bottom: 0;
+}
+
+.agutierrezr__section--password {
+	margin-bottom: 36px;
+}
+
+.agutierrezr__label {
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 600;
+	color: hsl(0deg 0% 100% / 50%);
+	margin-bottom: 8px;
+}
+
+.agutierrezr__box {
+	background-color: hsl(227deg 88% 15%);
+	padding: 20px;
+	border-radius: 0.5rem;
+	word-wrap: break-word;
+}
+
+.agutierrezr__box + .agutierrezr__box {
+	margin-top: 8px;
+}
+
+.agutierrezr__box--password {
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	padding: 28px 30px;
+	letter-spacing: 0.0625rem;
+	line-height: 1.1;
+}
+
+.agutierrezr__box--password .agutierrezr__password {
+	margin-right: 20px;
+	flex-grow: 1;
+	word-wrap: break-word;
+	overflow-y: hidden;
+}
+
+.agutierrezr__box--history {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.agutierrezr__box--history .agutierrezr__password {
+	margin-right: 20px;
+	flex-grow: 1;
+	word-wrap: break-word;
+	overflow-y: hidden;
+}
+
+.agutierrezr__slider {
+	display: flex;
+	align-items: center;
+}
+
+.agutierrezr__slider__value--left {
+	margin-right: 18px;
+}
+
+.agutierrezr__slider__value--right {
+	margin-left: 18px;
+}
+
+.agutierrezr__slider-field[type='range'],
+.agutierrezr__slider-field[type='range']::-webkit-slider-thumb {
+	appearance: none;
+	border: none;
+	cursor: pointer;
+}
+
+.agutierrezr__slider-field[type='range'] {
+	height: 8px;
+	width: 100%;
+	background-color: hsl(224deg 64% 20%);
+	background-image: linear-gradient(hsl(249deg 100% 65%), hsl(249deg 100% 65%));
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	margin: 0;
+}
+
+.agutierrezr__slider-field[type='range']:focus {
+	box-shadow: none;
+}
+
+.agutierrezr__slider-field[type='range']:focus-visible {
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.agutierrezr__slider-field[type='range']::-webkit-slider-thumb {
+	height: 20px;
+	width: 20px;
+	background: hsl(0deg 0% 100%);
+	border-radius: 50%;
+	position: relative;
+	top: -4px;
+}
+
+.agutierrezr__slider-field[type='range']:hover::-webkit-slider-thumb,
+.agutierrezr__slider-field[type='range']::-webkit-slider-thumb:hover {
+	background: hsl(0deg 0% 80%);
+	border-color: hsl(0deg 0% 80%);
+}
+
+.agutierrezr__slider-field[type='range']::-webkit-slider-runnable-track {
+	height: 0;
+}
+
+.agutierrezr__slider-field[type='range']::-moz-range-progress {
+	background: hsl(249deg 100% 65%);
+}
+
+.agutierrezr__toggle[type='checkbox'] {
+	position: relative;
+	height: 32px;
+	width: 50px;
+	background: hsl(224deg 64% 20%);
+	appearance: none;
+	border-radius: 50px;
+	box-shadow: inset 0 0 5px rgb(0 0 0 / 20%);
+	transition: 0.4s;
+	cursor: pointer;
+	visibility: visible;
+}
+
+.agutierrezr__toggle[type='checkbox']:checked {
+	background: hsl(249deg 100% 65%);
+}
+
+.agutierrezr__toggle[type='checkbox']::before {
+	height: 100%;
+	width: 32px;
+	position: absolute;
+	left: 0;
+	content: '';
+	background: hsl(224deg 12% 80%);
+	border-radius: 50px;
+	box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+	transform: scale(0.85);
+	transition: 0.4s;
+}
+
+.agutierrezr__toggle[type='checkbox']:checked::before {
+	left: 18px;
+	background-color: hsl(0deg 0% 100%);
+}
+
+.agutierrezr__controls {
+	display: flex;
+	gap: 8px;
+}
+
+.agutierrezr__controls button {
+	width: unset;
+}
+
+.agutierrezr__app-navigation {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.agutierrezr__app-navigation button {
+	width: 100%;
+	background-color: hsl(227deg 88% 15%);
+	padding: 24px;
+}
+
+.agutierrezr__app-navigation button.active {
+	background-color: hsl(227deg 88% 25%);
+}

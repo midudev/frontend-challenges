@@ -4,75 +4,82 @@
 
 /* CSS */
 @font-face {
-	font-family: Retro;
-	src: url('../../../public/DPG-Code/Retro-Gaming.ttf') format('truetype');
-	font-style: normal;
-	font-weight: normal;
+  font-family: 'Retro';
+  src: url('../../../public/DPG-Code/Retro-Gaming.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
 }
 
-#dpg-code * {
-	margin: 0;
-	box-sizing: border-box;
-	font-family: Retro, sans-serif;
+#dpg-code{
+  font-family: 'Retro';
 }
 
-#dpg-code .buttons {
-	transition: all 0.2s;
+#dpg-code .buttons{
+  transition: all 0.2s;
 }
-
 #dpg-code .buttons:hover{
-	transform: scale(0.93);
+  transform: scale(0.93);
 }
 
 #dpg-code .start{
-	animation: start 0.5s infinite ease-in-out alternate;
+  animation: start 0.5s infinite ease-in-out alternate;
 }
 @keyframes start {
-	0%{ transform: translateX(0); }
-	100%{ transform: translateX(3px); }
+  0%{ transform: translateX(0px); }
+  100%{ transform: translateX(3px); }
 }
 
 #dpg-code .mario-bros{
-	height: 16px;
-	width: 21px;
-	background: url('../../../public/DPG-Code/img/mario-sprite.png');
-	animation: mario 0.8s steps(3) infinite;
-	transform: scale(1.8);
+  height: 16px;
+  width: 21px;
+  background: url('../../../public/DPG-Code/img/mario-sprite.png');
+  animation: mario 0.8s steps(3) infinite;
+  transform: scale(1.8);
 }
 @keyframes mario {
-	from { background-position: 0; }
-	to { background-position: -63px; }
+  from { background-position: 0px; }
+  to { background-position: -63px; }
 }
 
 #dpg-code .barril{
-	height: 10px;
-	width: 15.75px;
-	background: url('../../../public/DPG-Code/img/barril-sprite.png');
-	animation: barril-sprite 0.8s steps(4) infinite;
-	transform: scale(1.8);
+  height: 10px;
+  width: 15.75px;
+  background: url('../../../public/DPG-Code/img/barril-sprite.png');
+  animation: barril-sprite 0.8s steps(4) infinite;
+  transform: scale(1.8);
 }
 @keyframes barril-sprite {
-	from { background-position: 0; }
-	to { background-position: -63px; }
+  from { background-position: 0px; }
+  to { background-position: -63px; }
 }
 
 /* imgs */
 #dpg-code .gameboy{
-	background: url('../../../public/DPG-Code/img/gameboy.png') center/100% no-repeat;
+  background: url('../../../public/DPG-Code/img/gameboy.png') center/100% no-repeat;
 }
-
 #dpg-code .button-red{
-	background: url('../../../public/DPG-Code/img/button.png') center/100% no-repeat;
+  background: url('../../../public/DPG-Code/img/button.png') center/100% no-repeat;
 }
-
 #dpg-code .button-play{
-	background: url('../../../public/DPG-Code/img/button-start.png') center/100% no-repeat;
+  background: url('../../../public/DPG-Code/img/button-start.png') center/100% no-repeat;
 }
-
 #dpg-code .button-home{
-	background: url('../../../public/DPG-Code/img/home.png') center/100% no-repeat;
+  background: url('../../../public/DPG-Code/img/home.png') center/100% no-repeat;
+}
+#dpg-code .button-start{
+  background: url('../../../public/DPG-Code/img/start.png') center/100% no-repeat;
 }
 
-#dpg-code .button-start{
-	background: url('../../../public/DPG-Code/img/start.png') center/100% no-repeat;
+/* gifs */
+#dpg-code .clouds{
+  background: url('../../../public/DPG-Code/gif/nubes.gif') center/100% no-repeat;
+}
+#dpg-code .gameboyMini{
+  background: url('../../../public/DPG-Code/gif/gameboy.gif') center/100% no-repeat;
+}
+#dpg-code .copied{
+  background: url('../../../public/DPG-Code/gif/mario.gif') center/100% no-repeat;
+}
+#dpg-code .effect{
+  background: url('../../../public/DPG-Code/gif/effect.gif') center/100% no-repeat;
 }

@@ -1,0 +1,85 @@
+:root {
+	--mrvega01-heart: 0;
+}
+/*Shop interface*/
+#mrvega01 .shopInterface{
+	font-size: 2em;
+	background: #000;
+	color: #fff;
+}
+#mrvega01 .shopInterface .shopMenu{
+	display: flex;
+}
+/*Shop text*/
+#mrvega01 .shopText{
+	width: 60%;
+	border: 5px solid #fff;
+}
+#mrvega01 .shopText h1{
+	margin-left: 1em;
+}
+#mrvega01 .charactersType{
+	padding: 0.5em;
+}
+#mrvega01 .charactersType li{
+	cursor: pointer;
+}
+#mrvega01 .typeEnable{
+	color: #ff8a1d;
+}
+/*Shop options*/
+#mrvega01 .shopOptions{
+	width: 40%;
+	border: 5px solid #fff;
+	border-left: none;
+}
+#mrvega01 .shopOptions li{
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+#mrvega01 .shopOptions li:hover{
+	--mrvega01-heart: 1;
+}
+#mrvega01 .shopOptions li img{
+	opacity: var(--mrvega01-heart);
+	height: 0.9em;
+	width: 0.9em;
+	padding: 0.1em;
+	object-fit: contain;
+}
+/*Shop parameters*/
+#mrvega01 .passwordParameters{
+	border: 5px solid #fff;
+	border-top: none;
+	padding: 0 1em;
+	text-align: center;
+}
+/*Range Input*/
+#mrvega01 .rangeInput{
+	width: 80%;
+	margin-left: 10%;
+	-webkit-appearance: none;
+	background: #cccccc;
+	height: 10px;
+}
+#mrvega01 .rangeInput::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	height: 20px;
+  	width: 20px;
+	background: #ffffff;
+	transition: 0.3s background;
+}
+#mrvega01 .rangeInput::-webkit-slider-thumb:hover{
+	background: #ff8a1d;
+}
+@media (max-width: 750px){
+	#mrvega01 .shopInterface{
+		font-size: 1.5em;
+	}
+}
+@media (max-width: 628px){
+	#mrvega01 .shopInterface{
+		font-size: 1em;
+	}
+}

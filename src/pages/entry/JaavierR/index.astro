@@ -4,7 +4,156 @@ import PasswordGenerator from '@components/JaavierR/PasswordGenerator'
 ---
 
 <Layout title='JaavierR hacktoberfest 2022 entry'>
-	<div class='h-screen flex items-center justify-center min-h-[25rem] px-4 sm:px-0'>
-		<PasswordGenerator client:only='react' />
-	</div>
+	<main class='h-screen flex flex-col items-center justify-center min-h-[50rem] px-4'>
+		<section>
+			<div class='h-full flex flex-col items-center justify-center w-full'>
+				<div
+					class='w-full max-w-5xl mx-auto inline-flex items-center justify-center mb-8 after:content-[" "] after:block after:flex-1'
+				>
+					<div class='flex-1'>
+						<a
+							href='/'
+							class='text-white group bg-neutral-500/10 hover:bg-neutral-500/20 rounded-lg inline-flex p-2 items-center justify-center ring-1 ring-neutral-500/30'
+						>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								fill='none'
+								viewBox='0 0 24 24'
+								stroke-width='1.5'
+								stroke='currentColor'
+								class='w-6 h-6 group-hover:-translate-x-0.5 transition duration-200'
+							>
+								<path
+									stroke-linecap='round'
+									stroke-linejoin='round'
+									d='M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18'></path>
+							</svg>
+						</a>
+					</div>
+
+					<img
+						class='w-40 sm:w-56 max-w-[14rem] h-auto flex-1'
+						src='/logo.svg'
+						alt='Hacktoberfest logo'
+					/>
+				</div>
+
+				<div class='min-w-[19rem] w-full max-w-sm sm:max-w-lg'>
+					<PasswordGenerator client:only='react' />
+					<div class='text-white mt-6 font-semibold text-sm text-center font-mono'>
+						Made with <span class='text-red-500'>❤</span> by <a
+							href='https://github.com/JaavierR'
+							target='_blank'
+							class='text-pink-400'>JaavierR</a
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
 </Layout>
+
+<style>
+	@keyframes binary {
+		25% {
+			content: '01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001 01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001 01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001';
+		}
+		50% {
+			content: '01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100';
+		}
+		75% {
+			content: '01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001 01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001 01100110 01101111 01110010 00100000 01100001 00100000 01110011 01110101 01110010 01110000 01110010 01101001 01110011 01100101 00100001 00100001';
+		}
+		100% {
+			content: '01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100';
+		}
+	}
+	@font-face {
+		font-family: 'JetBrains Mono';
+		font-style: normal;
+		font-weight: 500;
+		font-display: swap;
+		src: url('/JetBrainsMono-Regular.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Orbitron';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('/Orbitron-ExtraBold.woff2') format('woff2');
+	}
+	* {
+		user-select: none;
+	}
+	body {
+		background: #170f1e !important;
+	}
+	body::after {
+		content: none !important;
+	}
+	main::before {
+		animation: 1s linear 1s infinite normal none running binary;
+		content: '01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100 01100101 01001111 01110000 01100101 01101110 00100000 01110100 01101000 01100101 00100000 01100011 01101111 01101110 01110011 01101111 01101100';
+		top: 0px;
+		left: 0px;
+		color: #e5e1e6;
+		font-size: 12px;
+		pointer-events: none;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		opacity: 0.3;
+		-webkit-mask-image: linear-gradient(
+			90deg,
+			rgba(0, 0, 0, 0) 5%,
+			rgb(0, 0, 0) 20%,
+			rgb(0, 0, 0) 80%,
+			rgba(0, 0, 0, 0) 95%
+		);
+		white-space: nowrap;
+		overflow: hidden;
+		z-index: 200;
+	}
+	main {
+		min-height: 100vh;
+		background: url('/grain-dark.png');
+	}
+	section {
+		height: 100vh;
+		min-height: 50rem;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-family: 'JetBrains Mono', sans-serif;
+	}
+
+	section::before {
+		content: '';
+		background-image: url('./assets/grid-square.svg');
+		position: absolute;
+		margin: 0px auto;
+		left: 0px;
+		top: 5vh;
+		filter: brightness(0.4) sepia(1) hue-rotate(205deg) saturate(8);
+		opacity: 0.2;
+		-webkit-mask-image: radial-gradient(60% 70% at 50% 50%, black 40%, transparent 70%);
+		width: 100%;
+		min-height: 90vh;
+		z-index: -1;
+	}
+
+	section::after {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		content: '';
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(45deg, rgb(34, 211, 255) 0%, rgb(255, 62, 165) 100%);
+		opacity: 0.1;
+		z-index: -2;
+		-webkit-mask-image: radial-gradient(70% 80% at 50% 50%, black -40%, transparent 60%);
+	}
+</style>

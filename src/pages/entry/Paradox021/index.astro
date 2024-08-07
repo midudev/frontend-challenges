@@ -1,0 +1,109 @@
+---
+import Layout from '@layout'
+---
+
+<style>
+	.container {
+		margin: auto;
+		margin-top: 10rem;
+		height: 500px;
+		color: white;
+		border: 2px solid rgb(160, 151, 167);
+		display: flex;
+		flex-direction: column;
+		width: 400px;
+		align-items: center;
+		justify-content: center;
+	}
+	#pass {
+		display: flex;
+		flex-direction: row;
+	}
+	#result {
+		margin: 0 1em 0 1em;
+		width: 300px;
+		min-height: 28px;
+		text-align: center;
+		border: 2px solid white;
+	}
+	#generate {
+		padding: 0.1em 0.5em 0.1em 0.5em;
+		background-color: rgb(38, 36, 36);
+		margin-bottom: 2em;
+		border: 2px solid white;
+		border-radius: 10px;
+	}
+	#value {
+		padding-bottom: 1em;
+	}
+	#tittle {
+		padding-bottom: 3rem;
+		font-size: 2em;
+	}
+	#textCopy {
+		min-height: 24px;
+		margin-top: 0.5em;
+	}
+	#copy {
+		color: white;
+	}
+	#copy:hover {
+		color: rgb(191, 175, 207);
+	}
+	#copy:active {
+		transform: scale(1.15);
+	}
+</style>
+
+<Layout title='Paradox021'>
+	<div class='container'>
+		<h1 id='tittle'>Password Generator</h1>
+		<button id='generate'>Generar</button>
+		<input id='passLength' type='range' min='8' max='30' value='19' />
+		<div id='value'>19</div>
+		<div id='pass'>
+			<div id='result'></div>
+			<svg
+				id='copy'
+				class='svg-icon'
+				style='width: 1.5em; height: 1.5em;vertical-align: middle;fill: currentColor;overflow: hidden;'
+				viewBox='0 0 1024 1024'
+				version='1.1'
+				xmlns='http://www.w3.org/2000/svg'
+			><path d='M96.1 575.7a32.2 32.1 0 1 0 64.4 0 32.2 32.1 0 1 0-64.4 0Z'></path><path
+					d='M742.1 450.7l-269.5-2.1c-14.3-0.1-26 13.8-26 31s11.7 31.3 26 31.4l269.5 2.1c14.3 0.1 26-13.8 26-31s-11.7-31.3-26-31.4zM742.1 577.7l-269.5-2.1c-14.3-0.1-26 13.8-26 31s11.7 31.3 26 31.4l269.5 2.1c14.3 0.2 26-13.8 26-31s-11.7-31.3-26-31.4z'
+				></path><path
+					d='M736.1 63.9H417c-70.4 0-128 57.6-128 128h-64.9c-70.4 0-128 57.6-128 128v128c-0.1 17.7 14.4 32 32.2 32 17.8 0 32.2-14.4 32.2-32.1V320c0-35.2 28.8-64 64-64H289v447.8c0 70.4 57.6 128 128 128h255.1c-0.1 35.2-28.8 63.8-64 63.8H224.5c-35.2 0-64-28.8-64-64V703.5c0-17.7-14.4-32.1-32.2-32.1-17.8 0-32.3 14.4-32.3 32.1v128.3c0 70.4 57.6 128 128 128h384.1c70.4 0 128-57.6 128-128h65c70.4 0 128-57.6 128-128V255.9l-193-192z m0.1 63.4l127.7 128.3H800c-35.2 0-64-28.8-64-64v-64.3h0.2z m64 641H416.1c-35.2 0-64-28.8-64-64v-513c0-35.2 28.8-64 64-64H671V191c0 70.4 57.6 128 128 128h65.2v385.3c0 35.2-28.8 64-64 64z'
+				></path>
+			</svg>
+		</div>
+		<div id='textCopy'></div>
+	</div>
+</Layout>
+
+<script>
+	function copyToClipboard() {
+		navigator.clipboard.writeText(document.getElementById('result').innerHTML)
+		document.getElementById('textCopy').innerHTML = 'Texto copiado!'
+	}
+	function generatePass() {
+		const passLength = parseInt((document.getElementById('passLength') as HTMLInputElement).value)
+		const chars =
+			'abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!"\'·$%&/()=?¿-.,;:_'
+		let pass = ''
+		for (let i = 0; i < passLength; i++) {
+			const c = chars[Math.floor(Math.random() * chars.length)]
+			pass += c
+		}
+		document.getElementById('result').innerHTML = pass
+		document.getElementById('textCopy').innerHTML = ''
+	}
+	function updateValue() {
+		const newValue = parseInt((document.getElementById('passLength') as HTMLInputElement).value)
+		document.getElementById('value').innerHTML = newValue.toString()
+	}
+	document.getElementById('generate').addEventListener('click', generatePass)
+	document.getElementById('copy').addEventListener('click', copyToClipboard)
+
+	document.getElementById('passLength').addEventListener('input', updateValue)
+</script>

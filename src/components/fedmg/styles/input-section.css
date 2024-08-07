@@ -1,0 +1,24 @@
+.fedmg-input-section {
+	display: grid;
+	gap: clamp(1em, 3vw, 1.3em) 0;
+}
+
+.fedmg-label-section {
+	display: inherit;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+}
+
+.fedmg-label {
+	text-align: start;
+	font-size: var(--fedmg-secundary-fz);
+}
+
+.fedmg-range-span {
+	font-size: var(--fedmg-secundary-fz);
+	border-radius: var(--fedmg-elements-bd-rad);
+	border: var(--fedmg-board-secundary-bd);
+	background: var(--fedmg-board-secundary-bg-color);
+	color: var(--fedmg-primary-color);
+	font-family: var(--fedmg-secundary-ff);
+}

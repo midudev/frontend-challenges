@@ -1,0 +1,52 @@
+.lcsgrz-r-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	font-size: 16px;
+	color: white;
+	padding: 0 12px;
+}
+
+.lcsgrz-range {
+	flex-grow: 1;
+	appearance: none;
+	height: 5px;
+	border-radius: 6px;
+	transition: 0.25s ease;
+	outline: none;
+	background-color: #7a32d976;
+}
+
+.lcsgrz-range::-ms-thumb {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: #7b32d9;
+	border-width: 0;
+	cursor: ew-resize;
+	box-shadow: 0 0 2px 0 #555;
+	transition: background 0.3s ease-in-out;
+}
+
+.lcsgrz-range::-webkit-slider-thumb {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: #7b32d9;
+	border-width: 0;
+	cursor: ew-resize;
+	box-shadow: 0 0 2px 0 #555;
+	transition: background 0.3s ease-in-out;
+}
+
+.lcsgrz-range::-moz-range-thumb {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: #7b32d9;
+	border-width: 0;
+	cursor: ew-resize;
+	box-shadow: 0 0 2px 0 #555;
+	transition: background 0.3s ease-in-out;
+}

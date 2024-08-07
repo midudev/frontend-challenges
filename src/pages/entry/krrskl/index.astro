@@ -1,0 +1,29 @@
+---
+import Layout from '@layout'
+import Title from '@components/krrskl/Title.svelte'
+import PasswordGenerator from '@components/krrskl/PasswordGenerator.svelte'
+import Footer from '@components/krrskl/Footer.svelte'
+---
+
+<Layout title='krrskl'>
+	<div class='flex flex-col items-center justify-center main'>
+		<Title />
+
+		<br />
+
+		<PasswordGenerator client:only='svelte' />
+
+		<br />
+		<Footer />
+	</div>
+</Layout>
+
+<style>
+	@import 'variables.css';
+
+	.main {
+		height: 100vh;
+		width: 100vw;
+		background: linear-gradient(180deg, var(--krrskl-primary-color) 0%, var(--krrskl-secondary-color) 100%);
+	}
+</style>

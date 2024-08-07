@@ -61,50 +61,52 @@ import Layout from '@layout'
 			</div>
 		</div>
 	</main>
-	<script>
-		const selectRange = document.getElementById('selectRange')
-		const rangeValue = document.getElementById('rangeValue')
-
-		const passGenerated = document.getElementById('passGenerated')
-		const btnCopy = document.getElementById('iconCopy')
-
-		const btnGenerar = document.getElementById('btnGenerar')
-		const msgSuccessful = document.getElementById('msgSuccessful')
-		const msgError = document.getElementById('msgError')
-
-		const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-		const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz'
-		const charactersSpecials = '!@#$%^&*(){}[]'
-		const numbers = '1234567890'
-
-		selectRange.addEventListener('change', () => {
-			rangeValue.innerHTML = selectRange.value
-		})
-
-		btnGenerar.addEventListener('click', () => {
-			passGenerated.disabled = false
-			btnCopy.classList.add('visible')
-			btnCopy.classList.remove('invisible')
-			const Password = uppercaseLetters + lowercaseLetters + charactersSpecials + numbers
-
-			let pass = ''
-			for (let i = 0; i < selectRange.value; i++) {
-				const passGen = Math.floor(Math.random() * Password.length)
-				pass += Password[passGen]
-			}
-			passGenerated.value = pass
-		})
-
-		btnCopy.addEventListener('click', function (event) {
-			event.preventDefault()
-			passGenerated.select()
-			try {
-				document.execCommand('copy')
-				msgSuccessful.classList.add('block')
-				msgSuccessful.classList.remove('hidden')
-			} catch (err) {
-				msgError.classList.add('block')
-				msgError.classList.remove('hidden')
-			}
-		})</script>
 </Layout>
+
+<script>
+	const selectRange = document.getElementById('selectRange')
+	const rangeValue = document.getElementById('rangeValue')
+
+	const passGenerated = document.getElementById('passGenerated')
+	const btnCopy = document.getElementById('iconCopy')
+
+	const btnGenerar = document.getElementById('btnGenerar')
+	const msgSuccessful = document.getElementById('msgSuccessful')
+	const msgError = document.getElementById('msgError')
+
+	const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz'
+	const charactersSpecials = '!@#$%^&*(){}[]'
+	const numbers = '1234567890'
+
+	selectRange.addEventListener('change', () => {
+		rangeValue.innerHTML = selectRange.value
+	})
+
+	btnGenerar.addEventListener('click', () => {
+		passGenerated.disabled = false
+		btnCopy.classList.add('visible')
+		btnCopy.classList.remove('invisible')
+		const Password = uppercaseLetters + lowercaseLetters + charactersSpecials + numbers
+
+		let pass = ''
+		for (let i = 0; i < selectRange.value; i++) {
+			const passGen = Math.floor(Math.random() * Password.length)
+			pass += Password[passGen]
+		}
+		passGenerated.value = pass
+	})
+
+	btnCopy.addEventListener('click', function (event) {
+		event.preventDefault()
+		passGenerated.select()
+		try {
+			document.execCommand('copy')
+			msgSuccessful.classList.add('block')
+			msgSuccessful.classList.remove('hidden')
+		} catch (err) {
+			msgError.classList.add('block')
+			msgError.classList.remove('hidden')
+		}
+	})
+</script>

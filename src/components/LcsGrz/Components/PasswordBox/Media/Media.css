@@ -1,0 +1,19 @@
+.lcsgrz-pb-media {
+	cursor: pointer;
+}
+
+.lcsgrz-pb-button-svg {
+	cursor: pointer;
+	pointer-events: none;
+}
+
+.lcsgrz-pb-button {
+	background-color: #7b32d9;
+	cursor: pointer;
+	height: 64px;
+	width: 64px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

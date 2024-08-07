@@ -1,0 +1,41 @@
+.toastContainer {
+	display: flex;
+	position: fixed;
+	top: 2rem;
+	right: -100rem;
+	align-items: center;
+	padding: 1rem;
+	max-width: 20rem;
+	color: #e5e1e6;
+	background: linear-gradient(
+		90deg,
+		rgba(255, 226, 125, 0.1) 0%,
+		rgba(100, 227, 255, 0.1) 50.52%,
+		rgba(145, 146, 255, 0.1) 100%
+	);
+	border-radius: 0.5rem;
+	border: 1px solid #e5e1e6;
+	transition: all 500ms ease-in-out;
+}
+
+.toastContainer.displayed {
+	right: 2rem;
+}
+
+.toastContainer label {
+	text-shadow: rgb(255 215 77 / 30%) -1px -1px 6px, rgb(124 127 255 / 30%) 1px 1px 6px;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}
+
+.successIconWrapper svg {
+	height: 2ch;
+	width: 2ch;
+	margin-right: 1ch;
+}
+
+.successIconWrapper svg {
+	filter: drop-shadow(rgba(255, 215, 77, 0.6) -1px -1px 2px)
+		drop-shadow(rgba(124, 127, 255, 0.6) 1px 1px 2px);
+	color: #87bd91;
+}

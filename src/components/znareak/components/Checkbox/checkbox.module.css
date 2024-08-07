@@ -1,0 +1,51 @@
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.container {
+	display: block;
+	position: relative;
+	align-self: center;
+	cursor: pointer;
+	font-size: 20px;
+	user-select: none;
+}
+
+.checkmark {
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 1em;
+	width: 1em;
+	background: #606062;
+	border-radius: 7px;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3), 0px 1px 1px rgba(0, 5);
+}
+
+.container input:checked ~ .checkmark {
+	background-image: linear-gradient(#255cd2, #1d52c1);
+}
+
+.checkmark:after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+	display: block;
+}
+
+.container .checkmark:after {
+	left: 0.35em;
+	top: 0.1em;
+	width: 0.344em;
+	height: 0.6em;
+	border: solid white;
+	border-width: 0 0.13em 0.13em 0;
+	transform: rotate(45deg);
+}

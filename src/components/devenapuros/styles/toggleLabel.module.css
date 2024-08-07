@@ -1,0 +1,8 @@
+.label {
+	color: #4a4a4a;
+	transition: color 300ms ease;
+}
+
+.active {
+	color: #000;
+}

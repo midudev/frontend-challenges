@@ -1,0 +1,24 @@
+---
+import Layout from '@layout'
+import Card from '@components/gitsanmartin/Card.svelte'
+---
+
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+<link
+	href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap'
+	rel='stylesheet'
+/>
+
+<Layout title='gitsanmartin'>
+	<main class='container m-auto'>
+		<Card client:load />
+	</main>
+</Layout>
+
+<style>
+	main {
+		font-family: 'JetBrains Mono', monospace;
+		color: white;
+	}
+</style>

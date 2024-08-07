@@ -1,0 +1,17 @@
+.card {
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	padding: 2.2rem;
+	border-radius: 18px;
+	width: 460px;
+	gap: 2rem;
+	background-color: white;
+	box-shadow: rgb(0 0 0 / 10%) 0 8px 24px;
+}
+
+@media screen and (max-width: 460px) {
+	.card {
+		width: 95vw;
+	}
+}

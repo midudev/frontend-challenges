@@ -1,0 +1,180 @@
+#swc-main {
+	background-color: rgb(58 58 58);
+	color: #252525;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#swc-container{
+	font-family: monospace;
+	width: min-content;
+	height: auto;
+	min-width: 500px;
+	border-radius: 0.5rem;
+	background-color: hsl(108deg 59% 83%);
+	border: solid 1px rgb(30 30 30);
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem;
+	display: flex;
+}
+
+#swc-header {
+	width: 100%
+}
+
+#swc-header h1 {
+	font-size: 1.3rem;
+	text-align: start;
+	margin-block-end: 1.2rem;
+	width: 100%
+}
+
+#swc-header p {
+	margin-block-end: 1.1rem;
+	text-align: start;
+	width: 100%
+}
+
+.swc-label{
+	font-size: 1.1rem;
+	cursor: pointer;
+
+	/* margin-block-end: 1rem; */
+}
+
+
+
+.swc-row{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+	margin-block-end: 1rem;
+}
+
+#swc-genpass {
+	font-size: 1rem;
+	width: 100%;
+	text-align: center;
+	line-height: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px white solid;
+	padding: 0.5rem;
+	background-color: lightblue;
+	height: 50px;
+
+}
+
+#swc-slider{
+	width: 95%;
+}
+
+
+#swc-genpass-container {
+	width: 100%;
+	margin-block-start: 1rem;
+}
+
+#swc-genpass-button{
+	width: 60px;
+	height: 50px;
+	background-position: top right;
+	background-size: contain;
+	background-repeat: no-repeat;
+	transition: all 0.3s ease-in-out;
+
+	/* padding: 1rem; */
+}
+
+.default{
+	background-image: url('./clipboard.svg');
+}
+
+.copied{
+	background-image: url('./clipboard-ok.svg');
+
+	/* background-color: rgb(21 74 21); */
+	transform: scale(1.03);
+	
+}
+
+#swc-button {
+	flex-direction: row;
+	padding: 0.8rem 1.6rem;
+	border-radius: 0.5rem;
+	color: white;
+	background-color: rgb(17 77 17);
+	width: 100%;
+	margin-block-end: 1rem;
+}
+
+#swc-copy-text{
+	text-align: center;
+	width: 100%
+}
+
+#swc-small{
+	text-decoration: underline;
+	text-decoration-color: purple;
+}
+
+#swc-select-type {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#swc-checkbox-group{
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	margin-block-end: 1rem;
+
+}
+@media screen and (max-width: 430px){
+	#swc-container {
+		min-width: unset;
+		width: 95%;
+		padding-top: 2rem;
+		padding-bottom: 2rem; 
+		max-height: unset;
+		height: auto
+	}
+
+	#swc-header h1 {
+		font-size: 1.3rem;
+		text-align: center;
+		margin-block-end: 1.8rem;
+	}
+	
+	#swc-header p {
+		margin-block-end: 1.8rem;
+		text-align: center;
+	}
+
+	#swc-genpass{
+		font-size: 0.9rem;
+		max-width: 95%;
+
+		/* overflow-wrap: break-word; */
+		word-break: break-all;
+	}
+
+	#swc-slider {
+		/* margin-block-start: 1rem; */
+		width: 90%;
+	}
+
+	.swc-row {
+		margin-block-end: 1.5rem;
+	}
+}

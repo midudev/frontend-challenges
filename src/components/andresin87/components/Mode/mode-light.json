@@ -1,0 +1,13 @@
+{
+  "c-text": "var(--a87-c-manga--inverted)",
+  "c-background": "var(--a87-c-void--inverted)",
+  "c-primary": "var(--a87-c-psybeam--inverted)",
+  "c-secondary:": "var(--a87-c-spark--inverted)",
+  "c-tertiary:": "var(--a87-c-surf--inverted)",
+  "ff-default": "orbitron, -apple-system, sans-serif",
+  "ff-mono": "'JetBrains Mono', monospace",
+  "i-background": "url('/andresin87/grain-light.png')",
+  "c-hover": "var(--a87-c-spark--inverted)",
+  "c-focus": "var(--a87-c-surf--inverted)",
+  "mbm": "lighten"
+}

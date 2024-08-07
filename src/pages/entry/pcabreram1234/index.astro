@@ -1,0 +1,126 @@
+---
+import Layout from '@layout'
+---
+
+<Layout title='pcabreram1234'>
+	<div id='pcabreram1234_container'>
+		<h1>Generador de claves aleatorias</h1>
+		<div class='row'>
+			<div class='slidecontainer'>
+				<span id='toolTip_pcabreram'>Logintud de la clave: 1</span>
+				<input type='range' min='1' max='100' value='0' class='slider' alt='10' id='myRange' />
+			</div>
+		</div>
+
+		<div class='row'>
+			<button type='button' id='button_pcabreram1234'>Generar Password</button>
+		</div>
+
+		<div class='row'>
+			<div class='password_result_container'>
+				<input type='text' id='password_result' title='Generar Contraseña' />
+			</div>
+			<div class='copyIcon'>
+				<button type='button' id='copyButton' title='Copiar Clave'>
+					<img
+						src='https://www.pngfind.com/pngs/m/375-3758925_clone-copy-duplicate-gray-monochrome-paper-copy-icon.png'
+						alt='Boton de copiar'
+						width='20'
+					/>
+				</button>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<script>
+	import { usePassWordGenerate } from '../../../hooks/pcabreram1234/usePassWordGenerate'
+	const rangeSlider = document.getElementById('myRange')
+	const toolTipPcabreram = document.getElementById('toolTip_pcabreram')
+	const button = document.getElementById('button_pcabreram1234')
+	const resultInput = document.getElementById('password_result')
+	const copyButton = document.getElementById('copyButton')
+	let sliderValue = 1
+
+	rangeSlider.addEventListener('input', (e) => {
+		sliderValue = e.target.value
+		const sliderInneText = `Logintud de la clave: ${e.target.value}`
+		toolTipPcabreram.innerText = sliderInneText
+	})
+
+	button.addEventListener('click', () => {
+		resultInput.style.width = '100%'
+		resultInput.value = usePassWordGenerate(sliderValue)
+	})
+
+	copyButton.addEventListener('click', () => {
+		const copyInstante = navigator.clipboard
+		copyInstante.writeText(resultInput.value).then(() => {
+			console.log('Texto copiado')
+		})
+	})
+</script>
+
+<style>
+	#pcabreram1234_container {
+		color: white;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	#pcabreram1234_container h1 {
+		text-align: center;
+		font-size: 30px;
+	}
+
+	#pcabreram1234_container .row:first-child {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#pcabreram1234_container .row:last-child {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+	}
+
+	#pcabreram1234_container .row:last-child .copyIcon button {
+		outline: auto;
+	}
+
+	#pcabreram1234_container button:active {
+		background-color: #009db7;
+	}
+
+	#pcabreram1234_container .row .slidecontainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+
+	#pcabreram1234_container #myRange {
+		cursor: pointer;
+	}
+
+	#pcabreram1234_container input {
+		background-color: #808080ad;
+		color: #252424;
+		padding: 5px;
+		border-radius: 5px;
+		box-shadow: 0px 0px 8px 0px #ffffff66;
+		outline: none;
+	}
+
+	#pcabreram1234_container button {
+		padding: 10px;
+		background-color: #6c9122;
+		border-radius: 5px;
+		box-shadow: 0px 0px 8px 0px #ffffff66;
+	}
+</style>

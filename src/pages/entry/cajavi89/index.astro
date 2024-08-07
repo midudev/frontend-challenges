@@ -1,0 +1,150 @@
+---
+import Layout from '@layout'
+---
+
+<Layout title='Cajavi89 <||> Hacktoberfest 2022'>
+	<main
+		class='grid min-h-screen place-content-center text-white bg-gradient-to-t from-black to-gray-700'
+	>
+		<div class='w-64 h-64 border-white bg-slate-800 border rounded-md flex flex-col justify-around'>
+			<h1 class='mx-auto'>Password Generator</h1>
+			<section class='w-full flex flex-col gap-1'>
+				<h3
+					id='show-password'
+					class='p-2 bg-slate-300 text-gray-800 flex items-center justify-center'
+				>
+					Password
+				</h3>
+				<button id='copy-password' class='w-max text-white mx-auto'>
+					<svg fill='white' height='24px' width='30px'>
+						<path
+							d='M7.024 3.75c0-.966.784-1.75 1.75-1.75H20.25c.966 0 1.75.784 1.75 1.75v11.498a1.75 1.75 0 0 1-1.75 1.75H8.774a1.75 1.75 0 0 1-1.75-1.75V3.75zm1.75-.25a.25.25 0 0 0-.25.25v11.498c0 .139.112.25.25.25H20.25a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25H8.774z'
+						></path>
+						<path
+							d='M1.995 10.749a1.75 1.75 0 0 1 1.75-1.751H5.25a.75.75 0 1 1 0 1.5H3.745a.25.25 0 0 0-.25.25L3.5 20.25c0 .138.111.25.25.25h9.5a.25.25 0 0 0 .25-.25v-1.51a.75.75 0 1 1 1.5 0v1.51A1.75 1.75 0 0 1 13.25 22h-9.5A1.75 1.75 0 0 1 2 20.25l-.005-9.501z'
+						></path>
+					</svg>
+				</button>
+			</section>
+
+			<form id='generate-password' class='w-4/5 flex flex-col gap-2 items-center my-0 mx-auto'>
+				<input
+					type='range'
+					id='size-password'
+					value='8'
+					min='5'
+					max='20'
+					class='w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg'
+				/>
+				<div class='flex gap-2'>
+					<p>Size of password</p>
+					<section id='range-number' class='font-bold'>8</section>
+				</div>
+				<button type='submit' class='w-max p-1 bg-slate-300 rounded-sm text-slate-800 mt-3'
+				>Generate</button
+				>
+			</form>
+		</div>
+	</main>
+</Layout>
+
+<script type='text/javascript'>
+	// get DOM Elements
+	const d = document
+	const $showPassword = d.getElementById('show-password')
+	const $copyPassword = d.getElementById('copy-password')
+	const $rangeSize = d.getElementById('size-password')
+	const $rangeNumber = d.getElementById('range-number')
+	const $generatePassword = d.getElementById('generate-password')
+
+	// All characters
+	const UpperLetters =
+		'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}|:"<>?[];'.split(
+			''
+		)
+
+	$rangeSize.addEventListener('input', getSize)
+	$copyPassword.addEventListener('click', copyPassword)
+	$generatePassword.addEventListener('submit', onSubmitHandler)
+
+	// get size of password
+	function getSize(event) {
+		const myValue = event.target.value
+		$rangeSize.value = myValue
+		$rangeNumber.innerHTML = $rangeSize.value
+	}
+
+	// copy password
+	function copyPassword() {
+		const $text = d.createElement('textarea')
+		if ($showPassword.textContent.trim() === 'Password') {
+			return errorMessage()
+		}
+		$text.value = $showPassword.textContent
+		d.body.appendChild($text)
+		$text.select()
+		d.execCommand('copy')
+		d.body.removeChild($text)
+		copiedMessage()
+	}
+
+	// error not generated password
+	function errorMessage() {
+		const $error = d.createElement('p')
+		$error.textContent = 'Nothing to copy!'
+		$error.classList.add('text-red-600', 'italic', 'text-sm', 'absolute', '-mt-6')
+		$error.style.right = '50px'
+		$copyPassword.style.position = 'relative'
+		$copyPassword.appendChild($error)
+		setTimeout(() => {
+			$copyPassword.removeChild($error)
+			$copyPassword.style.removeProperty('position')
+		}, 1000)
+	}
+
+	// copied message
+	function copiedMessage() {
+		const $copied = d.createElement('p')
+		$copied.textContent = 'Copied!'
+		$copied.classList.add('text-slate-300', 'italic', 'text-sm', 'absolute', '-mt-6')
+		$copied.style.right = '-45px'
+		$copyPassword.style.position = 'relative'
+		$copyPassword.appendChild($copied)
+		setTimeout(() => {
+			$copyPassword.removeChild($copied)
+			$copyPassword.style.removeProperty('position')
+		}, 1000)
+	}
+
+	// get random number for get one character
+	function getRandomCharacter(array) {
+		const randomIndex = Math.floor(Math.random() * array.length)
+		return array[randomIndex]
+	}
+
+	// generate password function
+	function generatePassword(size) {
+		const password = []
+		for (let i = 0; i < size; i++) {
+			const randomCharacter = getRandomCharacter(UpperLetters)
+			password.push(randomCharacter)
+		}
+		return password.join('')
+	}
+
+	// function triggered for generate password
+	function onSubmitHandler(event) {
+		event.preventDefault()
+		const size = $rangeSize.value
+		const password = generatePassword(size)
+		$showPassword.innerHTML = password
+		$showPassword.style.filter = 'blur(2px)'
+
+		$showPassword.addEventListener('mouseover', () => {
+			$showPassword.style.removeProperty('filter')
+		})
+		$showPassword.addEventListener('mouseleave', () => {
+			$showPassword.style.filter = 'blur(2px)'
+		})
+	}
+</script>

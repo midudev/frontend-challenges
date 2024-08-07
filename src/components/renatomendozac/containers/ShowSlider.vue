@@ -1,12 +1,12 @@
-<script setup>
+<script setup lang="ts">
 	import { ref } from 'vue'
 	import { formStore } from '@components/renatomendozac/store'
 	import Slider from '@components/renatomendozac/components/Slider.vue'
 
 	const CharacterLength = ref("4")
 
-	function onChange(event) {
-		const rangeValue = event.target.value
+	function onChange(event: Event) {
+		const rangeValue = (event.target as HTMLInputElement).value
 		CharacterLength.value = rangeValue
 
 		formStore.update({ length: parseInt(rangeValue) })

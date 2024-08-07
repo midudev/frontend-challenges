@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Permanent+Marker&display=swap');
+
+.icarusthefly {
+	background-color: #e2e8f0;
+	margin: 0;
+	height: 100%;
+	padding: 0;
+	text-align: center;
+	font-family: 'Permanent Marker';
+}
+
+.icarusthefly .title {
+	padding: 25px;
+	font-size: 70px;
+}
+
+.icarusthefly .container {
+	border: 1px solid black;
+	border-radius: 25px;
+	background-color: #312e81;
+	color: white;
+	width: 800px;
+	height: 400px;
+	margin: 50px auto;
+	box-shadow: 6px 6px 4px black;
+	position: relative;
+}
+
+.icarusthefly .filters {
+	font-family: 'Kalam';
+	font-size: 24px;
+	margin: 35px auto;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 20px;
+	width: 75%;
+}
+
+.icarusthefly .filters > label {
+	text-align: right;
+}
+.icarusthefly .filters > span {
+	margin: auto 0;
+	text-align: left;
+}
+
+.icarusthefly .filters input[type='checkbox'] {
+	float: right;
+	height: 30px;
+	width: 30px;
+}
+.icarusthefly .filters input[type='checkbox']:before {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 30px;
+	content: '';
+}
+.icarusthefly .filters input[type='checkbox']:after {
+	position: relative;
+	display: block;
+	top: -30px;
+	width: 30px;
+	height: 30px;
+	content: '';
+	background-image: linear-gradient(135deg, #faeeb1 0%, #fde047 100%);
+}
+.icarusthefly .filters input[type='checkbox']:checked:after {
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMzEyZTgxIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+'), linear-gradient(135deg, #faeeb1 0%, #fde047 100%);
+}
+.icarusthefly .filters input[type='checkbox']:checked:hover:after {
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMzEyZTgxIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+'), linear-gradient(135deg, #fff 20%, #fde047 100%);
+}
+.icarusthefly .filters input[type='checkbox']:hover:after {
+	background-image: linear-gradient(135deg, #fff 20%, #fde047 100%);
+}
+
+.icarusthefly .filters input[type='range'] {
+	-webkit-appearance: none;
+	overflow: hidden;
+	width: 100%;
+	border-radius: 5px;
+	height: 20px;
+	background-color: #faeeb1;
+}
+
+.icarusthefly .filters input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	background: #222134;
+	box-shadow: -85vw 0 0 85vw #fde047;
+}
+
+.icarusthefly .filters .sliderSpan {
+	display: grid;
+	grid-template-columns: 80% 20%;
+	grid-gap: 20px;
+	align-items: center;
+}
+
+.icarusthefly .generator {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.icarusthefly button {
+	background-color: #fde047;
+	color: black;
+	height: 50px;
+}
+
+.icarusthefly button:disabled {
+	background-color: lightgray;
+	cursor: default;
+}
+
+.icarusthefly button:not(:disabled):hover {
+	background-color: #faeeb1;
+}
+
+.icarusthefly .generateButton {
+	width: 200px;
+	border-radius: 25px;
+	margin-right: 20px;
+}
+
+.icarusthefly .showPassword {
+	width: 315px;
+	text-align: center;
+	border-radius: 25px 0 0 25px;
+	height: 50px;
+}
+
+.icarusthefly .copyButton {
+	width: 50px;
+	border-radius: 0 25px 25px 0;
+}
+
+.icarusthefly .passwordCopiedNotification {
+	right: 120px;
+	position: absolute;
+	color: #fde047;
+}

@@ -1,0 +1,75 @@
+.lcsgrz-h-container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	height: 100%;
+	background-color: #24124b;
+	padding: 1.2% 20%;
+}
+
+.lcsgrz-h-content-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	width: 100%;
+	justify-content: center;
+}
+
+.lcsgrz-h-settings {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	font-size: 12px;
+}
+
+.lcsgrz-h-title-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-color: #f4649f;
+	border-width: 6px;
+	border-style: dashed;
+	padding: 30px 40px;
+	border-radius: 18px;
+	width: 666px;
+}
+
+.lcsgrz-h-title {
+	font-size: 42px;
+	color: #f4649f;
+	font-weight: bold;
+	letter-spacing: 4px;
+}
+
+.lcsgrz-h-subtitle {
+	font-size: 18px;
+	color: #b593cc;
+	font-weight: bold;
+}
+
+.lcsgrz-h-settings-label {
+	font-size: 14px;
+	color: #b593cc;
+}
+
+.lcsgrz-h-checkbox-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.lcsgrz-h-checkbox-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+}

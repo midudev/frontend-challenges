@@ -17,7 +17,9 @@ export default function PasswordResult({ password, placeholder }) {
 
 	return (
 		<div className='bg-slate-800 w-full p-4 items-center text-gray-500'>
-			<span className={`text-lg ${passwordColor}`}>{password || placeholder}</span>
+			<span className={`text-lg ${passwordColor} ${isCopied ? 'underline' : ''}  font-bold`}>
+				{password || placeholder}
+			</span>
 			<button onClick={handleCopy} className='w-5 float-right hover:text-gray-300'>
 				{isCopied ? <CheckIcon /> : <CopyIcon />}
 			</button>

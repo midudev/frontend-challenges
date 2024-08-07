@@ -1,0 +1,19 @@
+{
+  "generating": "Generando...",
+  "btnGenerate": "Generar",
+  "preferences": "Preferencias",
+  "symbols": "Símbolos",
+  "numbers": "Números",
+  "uppercase": "Mayúsculas",
+  "lowercase": "Minúsculas",
+  "passwordCopied": "Clave copiada",
+  "insecurePassword": "Te recomendamos que utilices símbolos, números, letras mayúsculas y minúsculas",
+  "wrongPassword": "Debe elegir mínimo 1 preferencia para crear la contraseña",
+  "toggleLang": "Cambiar idioma a inglés",
+
+  "symbolsDesc": "Quieres símbolos en tu clave?",
+  "numbersDesc": "Quieres números en tu clave?",
+  "uppercaseDesc": "Quieres letras mayúsculas en tu clave?",
+  "lowercaseDesc": "Quieres letras minúsculas en tu clave?",
+  "length": "Define la longitud de tu clave"
+}

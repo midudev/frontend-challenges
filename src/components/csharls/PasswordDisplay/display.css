@@ -1,0 +1,6 @@
+.csharls-glass {
+	background: rgb(255 255 255 / 55%);
+	backdrop-filter: blur(5px);
+	font-weight: 600;
+	font-size: large;
+}

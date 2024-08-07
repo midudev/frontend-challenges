@@ -1,0 +1,66 @@
+@import 'https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap';
+
+:root {
+	--main-bg-color: #24232b;
+	--green: #a4ffaf;
+}
+
+.rafaels85-container {
+	font-family: 'Space Mono', monospace;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	font-synthesis: none;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-size-adjust: 100%;
+}
+
+.rafaels85-generate-btn {
+	padding: 8px;
+	background-color: var(--green);
+	width: 100%;
+}
+
+.rafaels85-box {
+	margin: 10px auto;
+	width: 350px;
+	padding: 20px;
+	background-color: var(--main-bg-color);
+}
+
+.rafaels85-num-length {
+	color: var(--green);
+}
+
+.rafaels85-password {
+	font-weight: 600;
+	font-size: 20px;
+	color: #fff;
+}
+
+.rafaels85-slider {
+	appearance: none;
+	height: 5px;
+	width: 100%;
+	background: linear-gradient(90deg, rgb(214 214 214) 0%, rgb(214 214 214) 100%);
+	border-radius: 12px;
+}
+
+.rafaels85-slider::-webkit-slider-thumb {
+	appearance: none;
+	width: 15px;
+	height: 15px;
+	background: white;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.rafaels85-slider::-moz-range-thumb {
+	width: 15px;
+	height: 15px;
+	background: white;
+	border-radius: 50%;
+	cursor: pointer;
+}

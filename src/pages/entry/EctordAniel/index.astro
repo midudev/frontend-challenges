@@ -1,0 +1,120 @@
+<main class='bg-slate-900 min-h-screen flex flex-col items-center justify-center gap-12 p-8'>
+	<h2 class='text-white text-5xl font-extrabold text-center'>Password Generator</h2>
+	<form class='flex flex-col gap-8 max-w-3xl w-full' id='generateForm'>
+		<div
+			class='relative bg-slate-600 py-4 px-6 rounded-md text-white text-3xl flex items-center justify-between'
+		>
+			<output id='outputPass'></output>
+			<button
+				id='copyButton'
+				type='button'
+				class='before:content-["Cpied!"] before:absolute before:-top-7 before:right-0 before:bg-slate-500 before:p-1 before:rounded-md before:text-xl before:hidden after:content-[""] after:absolute after:-top-1 after:right-8 after:w-4 after:h-4 after:bg-slate-500 after:rotate-45 after:hidden'
+			>
+				<svg
+					class='transition-transform hover:scale-110'
+					width='32'
+					height='32'
+					viewBox='0 0 21 21'
+					width='21'
+					xmlns='http://www.w3.org/2000/svg'
+				>
+					<g
+						fill='none'
+						fill-rule='evenodd'
+						stroke='currentColor'
+						stroke-linecap='round'
+						stroke-linejoin='round'
+						transform='translate(3 3)'
+					>
+						<path
+							d='m11.5 9.5v-7c0-1.1045695-.8954305-2-2-2h-7c-1.1045695 0-2 .8954305-2 2v7c0 1.1045695.8954305 2 2 2h7c1.1045695 0 2-.8954305 2-2z'
+						>
+						</path>
+						<path
+							d='m3.5 11.5v1c0 1.1045695.8954305 2 2 2h7c1.1045695 0 2-.8954305 2-2v-7c0-1.1045695-.8954305-2-2-2h-1'
+						>
+						</path>
+					</g>
+				</svg>
+			</button>
+		</div>
+		<div class='bg-slate-600 flex flex-col p-6 gap-12'>
+			<div class='flex flex-col gap-8'>
+				<div class='flex justify-between text-2xl text-gray-300 font-medium'>
+					<label for='characterLength'> Character Length:</label>
+					<output id='rangeOutput' for='characterLength'></output>
+				</div>
+				<input
+					id='characterLength'
+					name='characterLength'
+					min='6'
+					max='32'
+					type='range'
+					class='accent-blue-500 cursor-pointer'
+				/>
+			</div>
+			<button
+				id='submitButton'
+				type='submit'
+				class='bg-green-500 hover:bg-green-600 transition-colors h-16 rounded-md text-3xl text-white tracking-widest font-medium'
+			>
+				GENERATE
+			</button>
+		</div>
+	</form>
+</main>
+<style>
+	.copiedActive::before,
+	.copiedActive::after {
+		display: block;
+	}
+</style>
+<script type='module'>
+	const copyButton = document.getElementById('copyButton')
+	const outputText = document.getElementById('outputPass')
+	const inputRange = document.getElementById('characterLength')
+	const outputRange = document.getElementById('rangeOutput')
+	const form = document.getElementById('generateForm')
+	const defaultRangeValue = 14
+
+	function generateRandomString(n) {
+		let randomString = ''
+		const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+		for (let i = 0; i < n; i++) {
+			randomString += characters.charAt(Math.floor(Math.random() * characters.length))
+		}
+		return randomString
+	}
+
+	function generateAndfillOutput(n) {
+		const randomString = generateRandomString(n)
+		const newRandoStrings = randomString.split('').map((letter) => {
+			const mySpan = document.createElement('SPAN')
+			if (!isNaN(parseInt(letter))) mySpan.style.color = '#f472b6'
+			mySpan.innerText = letter
+			return mySpan
+		})
+		outputText.replaceChildren(...newRandoStrings)
+	}
+
+	inputRange.value = defaultRangeValue
+	outputRange.value = defaultRangeValue
+	generateAndfillOutput(defaultRangeValue)
+
+	copyButton.addEventListener('click', () => {
+		navigator.clipboard.writeText(outputText.value)
+		copyButton.classList.add('copiedActive')
+		setTimeout(() => copyButton.classList.remove('copiedActive'), 2000)
+	})
+
+	inputRange.addEventListener('input', (evt) => {
+		outputRange.value = evt.target.value
+	})
+
+	form.addEventListener('submit', (evt) => {
+		evt.preventDefault()
+		const formData = new FormData(evt.currentTarget)
+		const characterLength = formData.get('characterLength')
+		generateAndfillOutput(characterLength)
+	})
+</script>

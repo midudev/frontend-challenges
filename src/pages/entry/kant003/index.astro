@@ -1,0 +1,101 @@
+---
+import Layout from '@layout'
+---
+
+<style>
+	.btn {
+		background: linear-gradient(rgb(200, 200, 255) 0%, rgb(64, 221, 255) 100%);
+		border: 2px solid rgb(64, 221, 255);
+		border-radius: 10px;
+		box-shadow: rgb(64, 221, 255) 0px 0px 12px;
+		padding: 10px;
+		color: black;
+	}
+	.btn:hover {
+		border: 2px solid black;
+	}
+	.btn:active {
+		background: linear-gradient(rgb(100, 200, 255) 0%, rgb(123, 145, 242) 100%);
+	}
+	.container {
+		min-height: 100vh;
+		min-width: 100vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center; /* center items vertically, in this case */
+		align-items: center; /* center items horizontally, in this case */
+	}
+	.section {
+		display: flex;
+		margin: 5px;
+		gap: 10px;
+		color: white;
+	}
+	#copy {
+		fill: lightblue;
+	}
+</style>
+
+<Layout title='kant003'>
+	<div class='container'>
+		<div class='section'>
+			<button id='generate' class='btn'>Generar MiduPass</button>
+		</div>
+		<div class='section'>
+			Longitud:<input id='slider' type='range' value='8' min='1' max='20' />
+			<div id='sliderValue'></div>
+		</div>
+		<div class='section'>
+			<div id='pass'>...</div>
+			<svg id='copy' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+				<path
+					d='M15.143 13.244l.837-2.244 2.698 5.641-5.678 2.502.805-2.23s-8.055-3.538-7.708-10.913c2.715 5.938 9.046 7.244 9.046 7.244zm8.857-7.244v18h-18v-6h-6v-18h18v6h6zm-2 2h-12.112c-.562-.578-1.08-1.243-1.521-2h7.633v-4h-14v14h4v-3.124c.6.961 1.287 1.823 2 2.576v6.548h14v-14z'
+				>
+				</path>
+			</svg>
+			<span id='copied' class='hidden'>Copiado!!</span>
+		</div>
+	</div>
+</Layout>
+
+<script>
+	document.getElementById('sliderValue').innerHTML = (
+		document.getElementById('slider') as HTMLInputElement
+	).value
+	document.getElementById('generate').addEventListener('click', generatePassword)
+	document.getElementById('copy').addEventListener('click', copyCipboard)
+	document.getElementById('slider').addEventListener('change', (e) => {
+		const sliderValue = (e.target as HTMLInputElement).value
+		document.getElementById('sliderValue').innerHTML = sliderValue
+	})
+
+	const generateRandomLetter = () => {
+		const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+		return characters.charAt(Math.floor(Math.random() * characters.length))
+	}
+
+	const generateRandomWord = (long) =>
+		Array(long)
+			.fill(0)
+			.map(() => generateRandomLetter())
+			.join('')
+
+	function generatePassword() {
+		const slider = (document.getElementById('slider') as HTMLInputElement).value
+		const sliderLength = parseInt(slider)
+		if (sliderLength < 1) return
+		document.getElementById('pass').innerHTML = generateRandomWord(sliderLength)
+	}
+
+	function copyCipboard() {
+		const passValue = document.getElementById('pass').innerHTML
+		if (passValue === '...') return
+		navigator.clipboard.writeText(passValue)
+
+		document.getElementById('copied').classList.remove('hidden')
+
+		setTimeout(() => {
+			document.getElementById('copied').classList.add('hidden')
+		}, 2000)
+	}
+</script>

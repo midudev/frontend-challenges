@@ -1,0 +1,17 @@
+{
+  "c-manga": "#E5E1E6",
+  "c-void": "#170F1E",
+  "c-spark": "#FFE27D",
+  "c-surf": "#64E3FF",
+  "c-psybeam": "#9092FF",
+  "c-giga": "#B4FF39",
+  "c-manga--inverted": "#1A1E19",
+  "c-void--inverted": "#E8F0E1",
+  "c-spark--inverted": "#001D82",
+  "c-surf--inverted": "#9B1C00",
+  "c-psybeam-inverted": "#6F6D00",
+  "c-giga--inverted": "#4B00C6",
+  "ff-orbitron": "orbitron, -apple-system, sans-serif",
+  "ff-jet-brains-mono": "'JetBrains Mono', -apple-system, sans-serif",
+  "b-holo": "linear-gradient(90deg, var(--a87-c-spark) 0%, var(--a87-c-surf) 30%, var(--a87-c-psybeam) 85%) 0% 0% / 200% 100%"
+}

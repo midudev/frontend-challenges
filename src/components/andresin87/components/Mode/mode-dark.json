@@ -1,0 +1,13 @@
+{
+  "c-text": "var(--a87-c-manga)",
+  "c-background": "var(--a87-c-void)",
+  "c-primary": "var(--a87-c-psybeam)",
+  "c-secondary:": "var(--a87-c-spark)",
+  "c-tertiary:": "var(--a87-c-surf)",
+  "ff-default": "orbitron, -apple-system, sans-serif",
+  "ff-mono": "'JetBrains Mono', monospace",
+  "i-background": "url('/andresin87/grain-dark.png')",
+  "c-hover": "var(--a87-c-spark)",
+  "c-focus": "var(--a87-c-surf)",
+  "mbm": "darken"
+}

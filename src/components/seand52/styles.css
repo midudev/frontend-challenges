@@ -1,28 +1,31 @@
-.container {
+.seand52-container {
 	color: white;
 	display: flex;
 	flex-direction: column;
 	width: 300px;
 	gap: 10px;
-	margin: auto;
+	margin: 200px auto;
+	border: 1px solid white;
+	border-radius: 10px;
+	padding: 50px;
 }
 
-.password-display {
+.seand52-password-display {
 	height: 30px;
 	background-color: white;
 	color: black;
 	display: flex;
 }
 
-.message__success {
+.seand52-message-success {
 	color: green;
 }
 
-.generate-btn {
+.seand52-generate-btn {
 	border-radius: 6px;
 	border: 1px solid white;
 }
 
-.copy-icon {
+.seand52-copy-icon {
 	margin-left: auto;
 }

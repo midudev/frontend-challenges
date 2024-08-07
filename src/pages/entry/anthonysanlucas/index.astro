@@ -1,0 +1,100 @@
+---
+import Layout from '@layout'
+---
+
+<Layout title='anthonysanlucas'>
+	<main class='flex min-w-full min-h-screen items-center justify-center bg-neutral-100'>
+		<div
+			class='bg-neutral-50 text-slate-900 w-[min(90%,40rem)] pt-16 pb-10 px-6 rounded-md ring-1 ring-slate-200'
+		>
+			<h1 class='mb-8 text-center text-4xl font-semibold'>Random Password Generator</h1>
+			<form id='anthonysanlucasForm' class='flex flex-col gap-y-2'>
+				<label class='text-xl font-normal' for='anthonysanlucasRange'
+				>Select your password length</label
+				>
+				<div class='flex items-center justify-between mb-3 gap-x-2'>
+					<input
+						id='anthonysanlucasRange'
+						class='bg-green-200 w-[90%] accent-teal-400 focus:ring-1 focus:ring-teal-400 focus:outline-teal-400 focus:ring-opacity-50'
+						type='range'
+						name='anthonysanlucasRange'
+						min='6'
+						max='20'
+						value='8'
+						oninput='updateRangeValue()'
+					/>
+					<span
+						id='anthonyanlucasRangeValue'
+						class='bg-teal-500 text-white font-bold text-xl min-w-[2rem] h-8 grid place-content-center rounded-sm'
+					>10</span
+					>
+				</div>
+				<label class='text-xl font-normal' for='anthonysanlucasOutput'
+				>Your new password is shown here</label
+				>
+				<div class='flex justify-between mb-4 gap-x-2'>
+					<input
+						id='anthonysanlucasOutput'
+						class='w-[90%] h-8 rounded-sm focus:outline-none'
+						type='text'
+						name='anthonysanlucasOutput'
+						tabindex='-1'
+						readonly
+					/>
+					<button
+						id='anthonysanlucasCopyButton'
+						class='focus:ring-1 focus:ring-teal-400 focus:outline-teal-400 focus:ring-opacity-50'
+						type='button'
+					>
+						<svg
+							class='w-8 h-8 fill-current text-slate-700 transition-colors duration-200 hover:text-teal-500 sm:h-6 sm:w-6'
+							xmlns='http://www.w3.org/2000/svg'
+							viewBox='0 0 512 512'
+						>
+							<path
+								d='M224 0c-35.3 0-64 28.7-64 64V288c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H224zM64 160c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H288c35.3 0 64-28.7 64-64V384H288v64H64V224h64V160H64z'
+							></path>
+						</svg>
+					</button>
+				</div>
+				<button
+					class='bg-teal-400 h-9 w-[80%] mx-auto rounded-md text-white text-xl font-medium shadow-md shadow-teal-400/50 transition-colors duration-200 hover:bg-teal-500 focus:ring-1 focus:ring-teal-400 focus:outline-teal-400 focus:ring-opacity-50'
+					type='submit'>Generate new password</button
+				>
+			</form>
+		</div>
+	</main>
+</Layout>
+
+<script defer>
+	const output = document.getElementById('anthonysanlucasOutput')
+	const range = document.getElementById('anthonysanlucasRange')
+
+	document.getElementById('anthonysanlucasForm').addEventListener('submit', (e) => {
+		e.preventDefault()
+		output.value = generatePassword(range.value)
+	})
+
+	document.getElementById('anthonysanlucasCopyButton').addEventListener('click', () => {
+		const textContent = output.value
+		navigator.clipboard.writeText(textContent)
+		console.log('I want Copy the Password')
+	})
+
+	function generatePassword(passwordLength) {
+		const ValidCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_@#+*%'
+		let password = ''
+
+		for (let i = 0; i <= passwordLength; i++) {
+			password += ValidCharacters.charAt(Math.floor(Math.random() * ValidCharacters.length))
+		}
+		return password
+	}
+
+	/*eslint-disable */
+	function updateRangeValue() {
+		const rangeValue = document.getElementById('anthonyanlucasRangeValue')
+
+		rangeValue.textContent = range.value
+	}
+</script>

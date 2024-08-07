@@ -1,0 +1,54 @@
+#andresin87 .fingerprint {
+	display: flex;
+	justify-content: center;
+	margin: 1em;
+}
+
+#andresin87 .fingerprint .security {
+	width: 3em;
+	height: 3em;
+
+	--c-fingerprint: 'inherit';
+	--tr-fingerprint: 1s;
+
+	border-radius: 100%;
+	outline-offset: 0.15em;
+	transition-property: outline-color;
+	transition-duration: var(--tr-fingerprint);
+	transition-timing-function: ease-in-out;
+	stroke: var(--c-fingerprint);
+	outline: 0.08em solid var(--c-fingerprint);
+}
+
+#andresin87 .fingerprint .security.security-1 {
+	--c-fingerprint: #ffaa84;
+}
+
+#andresin87 .fingerprint .security.security-2 {
+	--c-fingerprint: #ffc484;
+}
+
+#andresin87 .fingerprint .security.security-3 {
+	--c-fingerprint: #ffff84;
+}
+
+#andresin87 .fingerprint .security.security-4 {
+	--c-fingerprint: #0fa;
+}
+
+#andresin87 .fingerprint .security .path-line {
+	stroke: var(--c-fingerprint);
+	stroke-width: 15px;
+	fill: none;
+	transition-property: stroke;
+	transition-duration: var(--tr-fingerprint);
+	transition-timing-function: ease-in-out;
+	animation: dash 5s linear forwards;
+}
+
+#andresin87 .fingerprint .security .path-background {
+	fill: none;
+	stroke-width: 15px;
+	stroke: var(--a87-c-text);
+	opacity: 0.1;
+}

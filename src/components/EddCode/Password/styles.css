@@ -1,0 +1,45 @@
+.eddcode-password-box {
+	display: flex;
+	border-radius: 5px;
+	background-color: #374151;
+}
+
+.eddcode-password-box span:first-of-type {
+	width: 200px;
+}
+
+.eddcode-password-box span, .eddcode-password-box button {
+	padding: .3rem;
+}
+
+.eddcode-svg-container{
+	cursor: pointer;
+	background-color: #1d2633;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+
+.eddcode-tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+}
+
+.eddcode-tooltip .eddcode-tooltiptext {
+	visibility:hidden;
+	width: 120px;
+	background-color: #1d2633;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	top: 45px;
+	right: -50px;
+	z-index: 1;
+}
+
+.eddcode-tooltip:focus .eddcode-tooltiptext {
+	visibility: visible;
+}

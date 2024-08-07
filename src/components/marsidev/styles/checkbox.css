@@ -1,0 +1,82 @@
+.marsidev-checkbox input[type='checkbox'] {
+	opacity: 0;
+	margin-left: -8px;
+}
+
+.marsidev-checkbox label {
+	position: relative;
+	display: inline-block;
+	padding-left: 32px;
+	user-select: none;
+}
+
+.marsidev-checkbox label::before,
+.marsidev-checkbox label::after {
+	position: absolute;
+	content: '';
+	display: inline-block;
+	border-radius: 5px;
+	background-color: white;
+	transition: all 100ms ease-out;
+}
+
+/* Outer box of the fake checkbox */
+.marsidev-checkbox label::before {
+	height: 24px;
+	width: 24px;
+	border: 1px solid;
+	left: 0;
+	top: 0;
+	margin-top: 8px;
+}
+
+/* Check mark of the fake checkbox */
+.marsidev-checkbox label::after {
+	height: 7px;
+	width: 14px;
+	border-left: 3px solid;
+	border-bottom: 3px solid;
+	transform: rotate(-45deg);
+	border-radius: 0;
+	left: 5px;
+	top: 15px;
+	border-color: rgb(167 139 250); /* violet.400 */
+}
+
+/* Hide the check mark by default */
+.marsidev-checkbox input[type='checkbox'] + label::after {
+	content: none;
+}
+
+/* Un-hide mark on the checked state */
+.marsidev-checkbox input[type='checkbox']:checked + label::after {
+	content: '';
+}
+
+/* default outline color */
+.marsidev-checkbox input[type='checkbox'] + label::before {
+	outline: rgb(167 139 250) auto 1px; /* violet.400 */
+}
+
+/* outline color on focus/active/hover */
+.marsidev-checkbox input[type='checkbox']:focus + label::before,
+.marsidev-checkbox input[type='checkbox']:active + label::before,
+.marsidev-checkbox input[type='checkbox']:hover + label::before {
+	outline: rgb(139 92 246) auto 1px; /* violet.500 */
+}
+
+/* check mark color on focus/active/hover */
+.marsidev-checkbox input[type='checkbox']:focus + label::after,
+.marsidev-checkbox input[type='checkbox']:active + label::after,
+.marsidev-checkbox input[type='checkbox']:hover + label::after {
+	border-color: rgb(139 92 246); /* violet.500 */
+}
+
+/* styles on disabled */
+.marsidev-checkbox input[type='checkbox']:disabled + label::before {
+	outline: #b1b1b1 auto 1px;
+}
+
+.marsidev-checkbox input[type='checkbox']:disabled + label::after {
+	border-color: #b1b1b1;
+}

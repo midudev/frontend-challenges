@@ -1,0 +1,12 @@
+/** credits on https://github.com/fkhadra/react-toastify */
+/* stylelint-disable selector-class-pattern */
+
+.toastify--animate {
+	animation-fill-mode: both;
+	animation-duration: 0.7s;
+}
+
+.toastify--animate-icon {
+	animation-fill-mode: both;
+	animation-duration: 0.3s;
+}

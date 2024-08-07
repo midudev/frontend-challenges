@@ -4,14 +4,16 @@ import Layout from '@layout'
 
 <Layout title='Generate Password'>
 	<main>
-		<section class='flex flex-col gap-3 items-center'>
-			<header class='mb-1'>
-				<h1 class='text-4xl font-semibold uppercase'>Generate Password</h1>
+		<section class='flex flex-col md:gap-3 gap-2 items-center'>
+			<header class='md:mb-1'>
+				<h1 class='md:text-4xl text-2xl font-semibold uppercase'>Generate Password</h1>
 			</header>
 			<div class='w-full'>
-				<h3 class='clr-sblue-200 mb-1 text-lg'>Generated Password</h3>
-				<div class='w-full flex justify-between bg-gray-soft px-4 py-4 items-center'>
-					<h2 class='text-3xl font-bold' id='generated-password'></h2>
+				<h3 class='md:text-lg text-base clr-sblue-200 md:mb-1'>Generated Password</h3>
+				<div
+					class='md:px-4 md:py-4 w-full flex justify-between bg-gray-soft px-2 py-2 items-center'
+				>
+					<h2 class='md:text-3xl text-lg font-bold' id='generated-password'></h2>
 					<button id='copy-button' class='button-copy'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -27,7 +29,7 @@ import Layout from '@layout'
 				</div>
 			</div>
 			<form id='form-data' class='w-full text-2xl flex flex-col gap-1'>
-				<h3 class='clr-sblue-200 mb-1 text-lg'>Length</h3>
+				<h3 class='md:text-lg text-base clr-sblue-200 md:mb-1'>Length</h3>
 				<div class='bg-gray-soft flex justify-between px-4 py-2 items-center gap-4'>
 					<input
 						class='range'
@@ -38,30 +40,30 @@ import Layout from '@layout'
 						max='16'
 						id='input-range'
 					/>
-					<p class='w-5' id='valueRange'>4</p>
+					<p class='w-5 md:text-2xl text-lg' id='valueRange'>4</p>
 				</div>
-				<h3 class='clr-sblue-200 mb-1 text-lg'>Settings</h3>
+				<h3 class='md:text-lg text-base clr-sblue-200 md:mb-1'>Settings</h3>
 				<div class='py-2 px-4 flex flex-col bg-gray-soft gap-0.5'>
 					<label for='uppercase' class='flex justify-between'>
-						<span>Include Uppercase Letters</span>
+						<span class='md:text-2xl text-lg'>Include Uppercase Letters</span>
 						<div class='checkbox-con'>
 							<input type='checkbox' name='uppercase' id='uppercase' />
 						</div>
 					</label>
 					<label for='lowercase' class='flex justify-between'>
-						<span>Include Lowercase Letters</span>
+						<span class='md:text-2xl text-lg'>Include Lowercase Letters</span>
 						<div class='checkbox-con'>
 							<input type='checkbox' name='lowercase' id='lowercase' />
 						</div>
 					</label>
-					<label for='numbers' class='flex justify-between'>
-						<span>Include Numbers</span>
+					<label for='numbers' class='flex justify-between items-center'>
+						<span class='md:text-2xl text-lg'>Include Numbers</span>
 						<div class='checkbox-con'>
 							<input type='checkbox' name='numbers' id='numbers' />
 						</div>
 					</label>
 					<label for='symbols' class='flex justify-between'>
-						<span>Include Symbols</span>
+						<span class='md:text-2xl text-lg'>Include Symbols</span>
 						<div class='checkbox-con'>
 							<input type='checkbox' name='symbols' id='symbols' />
 						</div>
@@ -69,9 +71,9 @@ import Layout from '@layout'
 				</div>
 				<!-- TODO: Strength Level -->
 				<div class='flex bg-gray-soft py-4 px-4 justify-between items-center mt-3'>
-					<span>STRENGTH</span>
+					<span class='md:text-2xl text-lg'>STRENGTH</span>
 					<div class='flex gap-4'>
-						<span id='strength-text'></span>
+						<span class='md:text-2xl text-lg' id='strength-text'></span>
 						<div class='flex gap-2 items-center' id='columns-container'>
 							<span class='strength-col inline-flex'></span>
 							<span class='strength-col inline-flex'></span>
@@ -99,10 +101,16 @@ import Layout from '@layout'
 	main {
 		background-color: #262424;
 		width: 100%;
-		height: 100vh;
+		min-height: 100vh;
+		padding-block-start: 3rem;
 		font-family: 'Darker Grotesque', sans-serif;
-		padding-block-start: 10rem;
 		color: var(--clr-soft-blue-400);
+	}
+
+	@media (min-width: 768px) {
+		main {
+			padding-block-start: 5rem;
+		}
 	}
 
 	section {

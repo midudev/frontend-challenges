@@ -1,0 +1,13 @@
+---
+import { PasswordGenerator } from '@components/mgarciaar/organisms/PasswordGenerator'
+import Layout from '@layout'
+---
+
+<Layout title='mgarciaar'>
+	<div class='grid h-screen place-items-center'>
+		<div class='m-4 w-80'>
+			<PasswordGenerator client:load />
+			<p class='mt-2 text-white'><a href='/'>&lt; Return home</a></p>
+		</div>
+	</div>
+</Layout>

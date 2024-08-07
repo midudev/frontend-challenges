@@ -1,0 +1,23 @@
+.container {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	right: 0;
+	top: 4.3rem;
+	border-radius: 5px;
+	padding: 0.4rem 0.7rem;
+	background-color: #34aa44;
+	text-align: center;
+}
+
+.container > span {
+	font-size: 14px;
+	display: block;
+	color: #fff;
+}
+
+.container > svg {
+	fill: #fff;
+	font-size: 18px;
+	margin-right: 4px;
+}

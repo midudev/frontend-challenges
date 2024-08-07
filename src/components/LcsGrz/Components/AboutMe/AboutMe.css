@@ -1,0 +1,13 @@
+.lcsgrz-am-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0 20px;
+	border-radius: 16px;
+	color: #7b32d9;
+	border-width: 2px;
+	border-color: #7b32d9;
+	background-color: #7a32d912;
+	font-size: 32px;
+	font-weight: bold;
+}

@@ -1,0 +1,27 @@
+/* stylelint-disable selector-class-pattern */
+.primaryButton {
+	padding: 10px 14px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	font-size: 17px;
+	font-weight: 600;
+	border-radius: 12px;
+	background-color: #0085ee;
+	color: white;
+	transition: background-color 300ms ease;
+}
+
+.primaryButton > svg {
+	stroke: white;
+}
+
+.primaryButton:hover {
+	background-color: #0096ff;
+}
+
+.disabled {
+	opacity: 0.5;
+	background-color: #0085ee !important;
+}

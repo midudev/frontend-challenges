@@ -1,0 +1,34 @@
+.fedmg-control-section {
+	display: grid;
+	grid-template-columns: 1fr 1fr 6.4em;
+	gap: 0 0.5em;
+	align-items: center;
+}
+
+.fedmg-message-container {
+	grid-column: 1/3;
+}
+
+.fedmg-generate-button {
+	width: 100%;
+	grid-column: 3;
+	padding: 0.23em 0.22em;
+	border-radius: var(--fedmg-elements-bd-rad);
+	border: var(--fedmg-board-secundary-bd);
+	background-color: var(--fedmg-board-secundary-bg-color);
+	color: var(--fedmg-primary-color);
+}
+
+/* status */
+.fedmg-generate-button:hover {
+	/* background-color: rgb(202 214 216 / 50%); */
+	background-color: var(--fedmg-board-third-bg-color);
+	border: var(--fedmg-board-third-bd);
+	color: var(--fedmg-third-color);
+}
+
+.fedmg-generate-button:active {
+	background-color: var(--fedmg-board-primary-bg-color);
+	border: var(--fedmg-board-secundary-bd);
+	color: var(--fedmg-secundary-color);
+}

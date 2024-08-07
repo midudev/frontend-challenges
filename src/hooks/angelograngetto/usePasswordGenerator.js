@@ -10,6 +10,7 @@ const chars = {
 export const usePasswordGenerator = () => {
 	const [pass, setPass] = useState('')
 	const [length, setLength] = useState(8)
+	const [copied, setCopied] = useState(false)
 
 	const generatePass = () => {
 		const characters = chars.lowercase + chars.uppercase + chars.numbers + chars.symbols
@@ -25,12 +26,16 @@ export const usePasswordGenerator = () => {
 	}, [])
 
 	const onSetLength = ({ target: { value } }) => {
-		if (value < 8 || value > 128) return
+		if (value < 8 || value > 20) return
 		setLength(value)
 		generatePass(value)
 	}
 
-	const onCopy = () => navigator.clipboard.writeText(pass)
+	const onCopy = () => {
+		navigator.clipboard.writeText(pass)
+		setCopied(true)
+		setTimeout(() => setCopied(false), 2000)
+	}
 
-	return { pass, generatePass, length, onSetLength, onCopy }
+	return { pass, generatePass, length, onSetLength, onCopy, copied }
 }

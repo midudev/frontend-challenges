@@ -1,0 +1,24 @@
+#range-password-slydragonn[type='range'] {
+	appearance: none;
+	width: 100px;
+	height: 10px;
+	border-radius: 5px;
+	background: black;
+	border: 1px white solid;
+}
+
+#range-password-slydragonn[type='range']::-webkit-slider-thumb {
+	appearance: none;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: #b4ff39;
+	cursor: pointer;
+}
+
+#range-password-slydragonn[type='range']::-webkit-slider-runnable-track {
+	appearance: none;
+	box-shadow: none;
+	border: none;
+	background: transparent;
+}

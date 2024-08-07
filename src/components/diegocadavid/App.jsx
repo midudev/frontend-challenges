@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import './diegocadavid.app.css'
 
 import CliTerminal from './CliTerminal'
 import WindowTerminal from './WindowTerminal'
@@ -10,6 +11,11 @@ import CommandHelp from './CommandHelp'
 import CommandMusic from './CommandMusic'
 import CommandMidu from './CommandMidu'
 import CommandDiego from './CommandDiego'
+
+import HomeNav from './HomeNav'
+import HomeIcons from './HomeIcons'
+import Login from './Login'
+import WindowNotes from './WindowNotes'
 
 const parseCommand = (commandName = '') => {
 	//Obtenemos el comando
@@ -100,6 +106,13 @@ const listDocCommads = [
 
 const App = () => {
 	const [commands, setCommands] = useState([])
+	const [showLogin, setShowLogin] = useState(true)
+
+	const [showTerminal, setShowTerminal] = useState(false)
+	const [showCli, setShowCli] = useState(false)
+	const [showNotes, setShowNotes] = useState(true)
+
+	const [openWindows, setOpenWindows] = useState([])
 
 	const addComponentCommand = (command, Component) => {
 		return (
@@ -231,10 +244,118 @@ const App = () => {
 		])
 	}
 
+	const hiddenLogin = () => {
+		setShowLogin(false)
+	}
+
+	const handleOpenWindow = (window = 'terminal') => {
+		return () => {
+			if (window == 'terminal') {
+				setShowTerminal(true)
+			}
+
+			if (window == 'cli') {
+				setShowCli(true)
+			}
+
+			if (window == 'notes') {
+				setShowNotes(true)
+			}
+		}
+	}
+
+	const handleCloseWindow = (window = 'terminal') => {
+		return () => {
+			if (window == 'terminal') {
+				setShowTerminal(false)
+			}
+
+			if (window == 'cli') {
+				setShowCli(false)
+			}
+
+			if (window == 'notes') {
+				setShowNotes(false)
+			}
+		}
+	}
+
+	useEffect(() => {
+		const openNavWindow = (name = '') => {
+			setOpenWindows((prev) => {
+				if (prev.includes(name)) {
+					return prev
+				}
+
+				return [...prev, name]
+			})
+		}
+
+		const closeNavWindow = (name = '') => {
+			setOpenWindows((prev) => {
+				if (prev.includes(name)) {
+					return prev.filter((w) => {
+						if (w == name) {
+							return false
+						}
+
+						return true
+					})
+				}
+
+				return prev
+			})
+		}
+		// En caso de que se abra una ventana
+		if (showTerminal) {
+			openNavWindow('terminal')
+		}
+
+		if (showCli) {
+			openNavWindow('cli')
+		}
+
+		if (showNotes) {
+			openNavWindow('notes')
+		}
+
+		// En caso de que se cierre una ventana
+		if (!showTerminal) {
+			closeNavWindow('terminal')
+		}
+
+		if (!showCli) {
+			closeNavWindow('cli')
+		}
+
+		if (!showNotes) {
+			closeNavWindow('notes')
+		}
+	}, [showTerminal, showCli, showNotes])
+
 	return (
-		<div className='p-2  md:p-8 lg:p-12 bg-[#3F3F46] h-screen font-sans relative'>
-			<WindowTerminal addCommand={addCommand} commands={commands} />
-			<CliTerminal addCommand={addCommand} />
+		<div className='bg-[url("/image.png")] bg-cover bg-no-repeat bg-center h-screen font-sans relative'>
+			{showLogin && <Login hiddenLogin={hiddenLogin} />}
+			{!showLogin && (
+				<>
+					{showTerminal && (
+						<WindowTerminal
+							handleCloseWindow={handleCloseWindow('terminal')}
+							addCommand={addCommand}
+							commands={commands}
+						/>
+					)}
+					{showCli && (
+						<CliTerminal handleOpenTerminal={handleOpenWindow('terminal')} handleCloseWindow={handleCloseWindow('cli')} addCommand={addCommand} />
+					)}
+
+					{showNotes && (
+						<WindowNotes handleCloseWindow={handleCloseWindow('notes')} addCommand={addCommand} />
+					)}
+				</>
+			)}
+			<HomeIcons handleOpenWindow={handleOpenWindow} />
+			<HomeNav openWindows={openWindows} />
 		</div>
 	)
 }

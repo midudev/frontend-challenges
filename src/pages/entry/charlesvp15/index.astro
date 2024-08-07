@@ -4,8 +4,9 @@ import Layout from '@layout'
 
 <Layout title='CharlsDEV'>
 	<wc-toast />
-	<div class='h-screen flex justify-center items-center'>
-		<div class='w-1/3 border-2 border-gray-100 rounded-lg p-6'>
+
+	<div class='h-screen grid content-center justify-center'>
+		<div class='border-2 border-gray-100 rounded-lg p-6'>
 			<div class='input'>
 				<label
 					for='large-input'
@@ -57,14 +58,66 @@ import Layout from '@layout'
 				>
 					Longitud
 				</label>
-				<input
-					type='range'
-					id='iptLongitud'
-					class='w-full appearance-none h-0.5 bg-emerald-500 hover:bg-red-400'
-					value='8'
-					max='25'
-					step='1'
-				/>
+				<div class='flex justify-center items-center'>
+					<input
+						type='range'
+						id='iptLongitud'
+						class='w-full appearance-none h-0.5 bg-emerald-500 hover:bg-red-400'
+						value='8'
+						min='8'
+						max='25'
+						step='1'
+					/>
+					<label class='mx-2 text-3xl text-cyan-100 font-bold border-1 px-2 long'>8</label>
+				</div>
+			</div>
+
+			<div class='mt-3 px-2'>
+				<div class='flex items-center mb-2'>
+					<input
+						id='iptNumbers'
+						type='checkbox'
+						value='true'
+						checked='true'
+						class='w-4 h-4 bg-gray-50 rounded border-gray-300 focus:ring-3 focus:ring-blue-300 checked:bg-red-400'
+					/>
+					<label for='numbers' class='ml-2 text-base font-medium text-slate-100'>
+						Incluir números <span class='font-semibold italic'>(1,2,3,4,5,...)</span>
+					</label>
+				</div>
+				<div class='flex items-center mb-2'>
+					<input
+						id='iptLower'
+						type='checkbox'
+						value='true'
+						class='w-4 h-4 bg-gray-50 rounded border-gray-300 focus:ring-3 focus:ring-blue-300 checked:bg-red-400'
+					/>
+					<label for='numbers' class='ml-2 text-base font-medium text-slate-100'>
+						Incluir minúsculas <span class='font-semibold italic'>(a, b, c, d, e, f,...)</span>
+					</label>
+				</div>
+				<div class='flex items-center mb-2'>
+					<input
+						id='iptUppercase'
+						type='checkbox'
+						value='true'
+						class='w-4 h-4 bg-gray-50 rounded border-gray-300 focus:ring-3 focus:ring-blue-300 checked:bg-red-400'
+					/>
+					<label for='numbers' class='ml-2 text-base font-medium text-slate-100'>
+						Incluir mayúsculas <span class='font-semibold italic'>(A, B, C, D, E, F,...)</span>
+					</label>
+				</div>
+				<div class='flex items-center mb-2'>
+					<input
+						id='iptSymbols'
+						type='checkbox'
+						value='true'
+						class='w-4 h-4 bg-gray-50 rounded border-gray-300 focus:ring-3 focus:ring-blue-300 checked:bg-red-400'
+					/>
+					<label for='numbers' class='ml-2 text-base font-medium text-slate-100'>
+						Incluir símbolos <span class='font-semibold italic'>(@, /, *, -, $, #, &)</span>
+					</label>
+				</div>
 			</div>
 
 			<div class='mt-5 text-center'>
@@ -85,26 +138,48 @@ import Layout from '@layout'
 	const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 	const symbols = ['@', '/', '*', '-', '_', '$', '#', '&']
 	const $iptPass = document.getElementById('iptPassword')
+	const $number = document.getElementById('iptNumbers')
+	const $lower = document.getElementById('iptLower')
+	const $uppers = document.getElementById('iptUppercase')
+	const $symbol = document.getElementById('iptSymbols')
+	const $lgtCharacters = document.getElementById('iptLongitud')
 	const generatePass = () => {
-		const $lgtCharacters = document.getElementById('iptLongitud').value
 		const optCharacter = [
-			...symbols,
-			...lettersLower,
-			...numbers,
-			...symbols,
-			...lettersUpper,
-			...numbers,
-			...symbols
+			...($symbol.checked ? symbols : []),
+			...($lower.checked ? lettersLower : []),
+			...($number.checked ? numbers : []),
+			...($uppers.checked ? lettersUpper : []),
+			...($symbol.checked ? symbols : []),
+			...($uppers.checked ? lettersUpper : []),
+			...($number.checked ? numbers : []),
+			...($lower.checked ? lettersLower : []),
+			...($symbol.checked ? symbols : [])
 		]
 		let pass = ''
-		if ($lgtCharacters === 0) $iptPass.value = ''
-		for (let a = 0; a < $lgtCharacters; a++) {
+		for (let a = 0; a < $lgtCharacters.value; a++) {
 			const idx = Math.floor(Math.random() * optCharacter.length)
 			pass += optCharacter[idx]
 		}
 		$iptPass.value = pass
 	}
 	generatePass()
+
+	$number.addEventListener('change', () => {
+		generatePass()
+	})
+	$lower.addEventListener('change', () => {
+		generatePass()
+	})
+	$uppers.addEventListener('change', () => {
+		generatePass()
+	})
+	$symbol.addEventListener('change', () => {
+		generatePass()
+	})
+	$lgtCharacters.addEventListener('change', () => {
+		document.querySelector('.long').innerHTML = document.getElementById('iptLongitud').value
+		generatePass()
+	})
 </script>
 
 <script type='module'>

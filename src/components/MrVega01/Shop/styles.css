@@ -1,0 +1,18 @@
+@font-face {
+	font-family: Undertale-font;
+	src: url('./media/undertaleFont.woff');
+  }
+#mrvega01{
+	font-family: Undertale-font;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#mrvega01 .card{
+	width: 80vw;
+}
+#mrvega01 .card img{
+	width: 100%;
+}

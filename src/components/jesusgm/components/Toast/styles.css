@@ -1,0 +1,29 @@
+#jesusgm .toast {
+	position: absolute;
+	top: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0.8;
+	border: medium none;
+	border-radius: 2px;
+	clip-path: polygon(12px 0, 100% 0, 100% 72%, calc(100% - 12px) 100%, 0 100%, 0 12px);
+	font-family: 'JetBrains Mono', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
+	display: inline-flex;
+	overflow: hidden;
+	padding: 8px 18px;
+	text-decoration: none;
+	transition: all 0.2s ease 0s;
+	filter: drop-shadow(rgba(255 215 77 60%) -1px -1px 2px)
+		drop-shadow(rgba(124 127 255 60%) 1px 1px 2px);
+	animation: 1.5s ease 0s infinite alternate none running jNbght;
+	background: linear-gradient(90deg, rgb(255 215 77) 0%, rgb(64 221 255) 30%, rgb(124 127 255) 85%)
+		0% 0% / 200% 100%;
+	color: rgb(23 15 30);
+}
+
+#jesusgm .toast.hidden {
+	top: -10rem;
+}

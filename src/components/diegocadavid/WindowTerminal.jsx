@@ -2,10 +2,10 @@ import React from 'react'
 import TitleWindow from './TitleWindow'
 import Terminal from './Terminal'
 
-const WindowTerminal = ({ addCommand, commands }) => {
+const WindowTerminal = ({ addCommand, commands, handleCloseWindow }) => {
   return (
-	<div className='bg-[#111111] h-[calc(100%-250px)] mb-3 md:mb-0  md:h-full rounded-lg overflow-hidden'>
-		<TitleWindow name="Terminal"/>
+	<div className='bg-[#111111] h-[700px] absolute top-12 inset-x-48 rounded-lg overflow-hidden diegocadavid_animation-open'>
+		<TitleWindow  handleCloseWindow={handleCloseWindow} name="Terminal"/>
 		<Terminal addCommand={addCommand} commands={commands} />
 	</div>
   )

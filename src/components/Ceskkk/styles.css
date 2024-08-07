@@ -1,0 +1,146 @@
+@font-face {
+  font-family: 'Orbitron';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+  src: url('./fonts/Orbitron-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Jet Brains Mono';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+  src: url('./fonts/JetBrainsMono-Bold.ttf') format('truetype');
+}
+
+#ceskkk {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 4rem 2rem;
+	min-height: 100vh;
+	background-image: url('/grain-dark.png');
+	background-color: rgb(5, 15, 46);
+}
+
+#ceskkk > h1 {
+	font-family: 'Orbitron' ,sans-serif;
+	font-weight: 500;
+	font-size: 1.875rem;
+  line-height: 2.25rem;
+	color: rgb(144 146 255);
+	margin-bottom: 2rem;
+}
+
+#ceskkk > .password_field {
+	position: relative;
+	margin-bottom: 2rem;
+}
+
+#ceskkk > .password_field > input {
+	padding: 0.5rem 3rem;
+	text-align: center;
+	border-radius: 9999px;
+	background-color: rgba(255, 255, 255, 0.3);
+	color: white;
+}
+
+#ceskkk > .password_field > button {
+	position: absolute;
+	width: 22px;
+	height: 24px;
+	top: 50%;
+	translate: 0 -50%;
+	right: 1rem;
+}
+
+#ceskkk > .password_field > button:hover > svg > path {
+	fill: rgba(255, 226, 125, 0.7);
+}
+
+#ceskkk > .password_field > button > span {
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-color: rgb(255, 226, 125);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+#ceskkk > .range_field {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+#ceskkk > .range_field > label {
+	color: white;
+}
+
+#ceskkk > .range_field > input {
+	cursor: pointer;
+}
+
+#ceskkk > .range_field > input[type="range"] {
+  -webkit-appearance: none;
+	width: 120px;
+	height: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 9999px;
+  background-repeat: no-repeat;
+}
+
+#ceskkk > .range_field > input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: rgb(126 34 206);
+	border: unset;
+}
+#ceskkk > .range_field > input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: rgb(126 34 206);
+	border: unset;
+}
+#ceskkk > .range_field > input[type="range"]::-ms-thumb{
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: rgb(126 34 206);
+	border: unset;
+}
+
+#ceskkk > .range_field > output {
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 9999px;
+	padding: 0.5rem 1rem;
+	color: white;
+}
+
+#ceskkk > button {
+	background-color: rgb(126 34 206);
+	padding: 0.5rem 1rem;
+	border-radius: 9999px;
+	font-family: 'Jet Brains Mono', sans-serif;
+	font-weight: 700;
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	color: white;
+	transition: background-color cubic-bezier(.4,0,.2,1) .15s;
+}
+
+#ceskkk > button:hover {
+	background-color: rgb(168 85 247);
+}

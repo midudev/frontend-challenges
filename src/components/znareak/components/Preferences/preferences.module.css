@@ -1,0 +1,47 @@
+.preferences {
+	margin-top: 2rem;
+	background-color: rgba(0, 0, 0, 0.281);
+	padding: 2rem;
+	border-radius: 10px;
+}
+
+.subtitle {
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	list-style: none;
+	margin-top: 1rem;
+}
+
+.list li {
+	display: flex;
+	align-items: baseline;
+	width: 100%;
+}
+
+.list li:not(:last-child) {
+	margin-bottom: 1.2rem;
+}
+
+.list li span {
+	display: block;
+	margin-left: 0.8rem;
+}
+
+.desc {
+	display: block;
+	color: #9fadc65b;
+	margin-left: 0.8rem;
+	width: 100%;
+}
+
+.container {
+	display: flex;
+	align-items: baseline;
+	flex: 0 0 200px;
+}

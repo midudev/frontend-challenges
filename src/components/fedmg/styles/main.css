@@ -1,0 +1,41 @@
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap';
+@import './variables.css';
+@import './input-section.css';
+@import './input.css';
+@import './output-section.css';
+@import './control-section.css';
+@import './icon.css';
+@import './message.css';
+
+.fedmg-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	font-family: var(--fedmg-primary-ff);
+	color: var(--fedmg-secundary-color);
+	background: var(--fedmg-main-bg-url);
+	background-color: var(--fedmg-main-bg-color);
+}
+
+.fedmg-section {
+	width: 100%;
+	text-align: center;
+	padding: clamp(0.3em, 2vw, 1.15em);
+	box-shadow: 0 0 0.9px 0.357px #fff;
+	max-width: var(--fedmg-board-width);
+	max-height: var(--fedmg-board-height);
+	border-radius: var(--fedmg-board-bd-rad);
+	background-color: var(--fedmg-board-primary-bg-color);
+	font-weight: 600;
+}
+
+.fedmg-title {
+	font-size: var(--fedmg-primary-fz);
+	margin: 0 0 0.9em;
+}
+
+.fedmg-form {
+	padding: clamp(0.05em, 2vw, 1.15em);
+}

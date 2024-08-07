@@ -1,0 +1,37 @@
+.container {
+	position: relative;
+	display: flex;
+}
+
+.input {
+	display: block;
+	width: 100%;
+	margin: auto;
+	border: 2px solid #9fadc698;
+	padding: 15px;
+	padding-right: 2.7rem;
+	border-radius: 10px;
+	background-color: transparent;
+	letter-spacing: 1px;
+	font-weight: bold;
+	outline: 0;
+}
+
+.input::placeholder {
+	color: #9fadc65b;
+}
+
+.input:focus {
+	border-color: #e8e8e8be;
+	box-shadow: 0 0 0 0.25rem #9fadc663;
+}
+
+.icon {
+	position: absolute;
+	top: 50%;
+	right: 1rem;
+	transform: translateY(-50%);
+	font-size: 1.5rem;
+	cursor: pointer;
+	z-index: 99;
+}

@@ -1,0 +1,17 @@
+#eyubkh-button {
+	z-index: 1;
+	display: grid;
+	justify-content: center;
+	border-top: 30px solid #bd7fac;
+	border-right: 15px solid #bd7fac;
+	border-left: 15px solid #bd7fac;
+	border-bottom: 10px solid transparent;
+	width: 26px;
+	cursor: pointer;
+	padding-bottom: 10px;
+	transition: border-top ease-in 0.3s;
+}
+
+#eyubkh-button:hover {
+	border-top: 50px solid #bd7fac;
+}

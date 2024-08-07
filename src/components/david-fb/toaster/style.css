@@ -1,0 +1,9 @@
+.david-fb__toaster {
+	position: absolute;
+	top: 20px;
+	z-index: 999;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
+}

@@ -1,0 +1,11 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.result {
+	font-weight: 600;
+	color: #0085ee;
+	font-size: 1.3rem;
+}

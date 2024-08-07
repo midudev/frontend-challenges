@@ -1,0 +1,24 @@
+.rain{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(
+		'/carlos-carsdfj/rain.png');
+	animation: rain 0.4s linear infinite;
+	opacity: 0;
+}
+
+@keyframes rain {
+	0% {
+		background-position: 0 0;
+		opacity: 1;
+	}
+
+	100% {
+		background-position: 8% 80%;
+		opacity: 1;
+	}
+}
+

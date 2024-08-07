@@ -1,0 +1,118 @@
+#jjat00 {
+	--primary-color: #24232b;
+	--secondary-color: #d1d1d1;
+	--tertiary-color: #35e679;
+}
+
+#jjat00 .password-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 100vh;
+	width: 26%;
+	margin: 0 auto;
+	min-width: 300px;
+}
+
+#jjat00 .message {
+	border: 1px solid var(--secondary-color);
+	color: var(--secondary-color);
+	padding: 10px;
+	width: 100%;
+}
+
+#jjat00 .title {
+	font-size: 1.6rem;
+	margin: 10px 0;
+	color: #403f45;
+	font-weight: bold;
+}
+
+#jjat00 .password {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	background-color: var(--primary-color);
+	color: #7e7e7f;
+	height: 50px;
+	font-size: 1.4rem;
+	text-align: left;
+	padding: 0 20px;
+	margin: 10px 0;
+}
+
+#jjat00 .password-confing {
+	width: 100%;
+	background-color: var(--primary-color);
+	color: #56555b;
+	font-size: 1.3rem;
+	text-align: left;
+	padding: 10px 20px;
+	margin: 10px 0;
+}
+
+#jjat00 .password-confing .length {
+	display: flex;
+	justify-content: space-between;
+	color: var(--secondary-color);
+}
+
+#jjat00 .password-confing .length span {
+	color: var(--tertiary-color);
+	font-weight: bold;
+}
+
+#jjat00 .slide-length {
+	width: 100%;
+	margin: 10px 0;
+}
+
+#jjat00 .slider {
+	appearance: none;
+	width: 100%;
+	height: 10px;
+	background: #151515;
+	outline: none;
+	opacity: 0.8;
+	transition: 0.2s;
+	transition: opacity 0.2s;
+}
+
+#jjat00 .slider:hover {
+	opacity: 1;
+}
+
+#jjat00 .slider::-webkit-slider-thumb {
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: var(--secondary-color);
+	cursor: pointer;
+}
+
+#jjat00 .slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: #04aa6d;
+	cursor: pointer;
+}
+
+#jjat00 .password-details {
+	color: var(--secondary-color);
+	margin: 5px 0;
+}
+
+#jjat00 .password-details label {
+	margin-left: 10px;
+}
+
+#jjat00 .btn-generate {
+	width: 100%;
+	height: 50px;
+	margin: 20px 0;
+	background-color: var(--tertiary-color);
+}

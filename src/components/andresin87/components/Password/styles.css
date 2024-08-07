@@ -1,0 +1,137 @@
+#andresin87 .password {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	border-radius: 1em;
+	margin-bottom: 2em;
+}
+
+#andresin87 .password:focus-within {
+	box-shadow: 0 0 0.2em var(--a87-c-focus);
+}
+
+#andresin87 .password:hover {
+	box-shadow: 0 0 0.2em var(--a87-c-hover);
+}
+
+#andresin87 .password-element {
+	border-color: var(--a87-c-text);
+	border-style: solid;
+	border-top-width: 0.1em;
+	border-bottom-width: 0.1em;
+}
+
+#andresin87 .password-element:first-child {
+	border-radius: 1em 0 0 1em;
+	border-left-width: 0.1em;
+	padding: 0 0.2em 0 0.4em;
+}
+
+#andresin87 .password-element:last-child {
+	border-radius: 0 1em 1em 0;
+	border-right-width: 0.1em;
+	padding: 0 0.4em 0 0.2em;
+}
+
+#andresin87 .password-element:focus-visible {
+	outline: none;
+}
+
+#andresin87 .password-element:focus-within,
+#andresin87 .password-element:focus-visible {
+	box-shadow: none;
+}
+
+#andresin87 .password:focus-within .password-element {
+	border-color: var(--a87-c-focus);
+}
+
+#andresin87 .password:hover .password-element {
+	border-color: var(--a87-c-hover);
+}
+
+#andresin87 .password-element:focus-visible .icon {
+	fill: var(--a87-c-focus);
+}
+
+#andresin87 .password-element:hover .icon {
+	fill: var(--a87-c-hover);
+}
+
+#andresin87 .password-element:active .icon {
+	fill: var(--a87-c-focus);
+}
+
+#andresin87 .password-element.password-container {
+	flex-grow: 1;
+	position: relative;
+	box-sizing: content-box;
+	display: flex;
+	align-items: stretch;
+}
+
+#andresin87 .password-element.password-container .password-leyend {
+	position: absolute;
+	top: 100%;
+}
+
+#andresin87 .password-element.password-container .password-strength {
+	position: absolute;
+	top: 100%;
+	height: 0.3em;
+	width: 100%;
+	display: flex;
+	margin-top: 0.28em;
+	gap: 1em;
+}
+
+#andresin87 .password-element.password-container .password-strength .password-strength-node {
+	flex-grow: 1;
+}
+
+#andresin87
+.password-element.password-container
+.password-strength
+.password-strength-node--active {
+	background-color: var(--a87-c-text);
+	border-radius: 0.5em;
+}
+
+#andresin87 .password:focus-within .password-strength .password-strength-node--active {
+	box-shadow: 0 0 0.2em var(--a87-c-focus);
+	background-color: var(--a87-c-focus);
+}
+
+#andresin87 .password:hover .password-strength .password-strength-node--active {
+	box-shadow: 0 0 0.2em var(--a87-c-hover);
+	background-color: var(--a87-c-hover);
+}
+
+#andresin87 .password .password-input {
+	background-color: transparent;
+	overflow: hidden;
+	outline: none;
+	cursor: pointer;
+	width: 100%;
+	padding: 0.4em 0.5em;
+	font-family: var(--a87-ff-mono);
+	font-size: 1em;
+	height: 1.5em;
+}
+
+#andresin87 .password .password-input:focus {
+	color: var(--a87-c-focus);
+}
+
+#andresin87 .password .password-input:focus-visible {
+	outline: none;
+}
+
+#andresin87 .password .password-input:hover {
+	color: var(--a87-c-hover);
+}
+
+#andresin87 .password .password-input::selection {
+	background-color: var(--a87-c-focus);
+	color: var(--a87-c-focus);
+}

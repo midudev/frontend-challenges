@@ -1,15 +1,15 @@
-<script>
-	export let id
-	export let checked
-	export let disabled
+<script lang="ts">
+	export let id: string
+	export let checked: boolean
+	export let disabled: boolean
 </script>
 
 <div class="checkbox-container">
 	<input
 		id={`checkbox-${id}`}
-		checked={checked}
+		{checked}
 		value={id}
-		disabled={disabled}
+		{disabled}
 		type="checkbox"
 		on:change
 	/>

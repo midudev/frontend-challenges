@@ -1,0 +1,19 @@
+.csharls-btn-generate {
+	background: rgb(200 255 150 / 24%);
+	backdrop-filter: blur(5px);
+	font-weight: 500;
+}
+
+.csharls-btn-generate:hover {
+	background: rgb(200 255 150 / 50%);
+}
+
+.csharls-btn-copy {
+	background: rgb(255 254 200 / 24%);
+	backdrop-filter: blur(5px);
+	font-weight: 500;
+}
+
+.csharls-btn-copy:hover {
+	background: rgb(248 255 150 / 50%);
+}

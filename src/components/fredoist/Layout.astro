@@ -1,0 +1,105 @@
+---
+export interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
+		<meta name='theme-color' content='#000000' />
+		<meta
+			name='description'
+			content='Create secure passwords with this Cyberpunk-themed password generator'
+		/>
+
+		<meta name='twitter:card' content='summary_large_image' />
+		<meta name='twitter:site' content='@midudev' />
+		<meta name='twitter:creator' content='@fredoist' />
+		<meta name='twitter:title' content={title} />
+		<meta
+			name='twitter:description'
+			content='A Cyberpunk-themed Password Generator built with Svelte, TailwindCSS, and Astro'
+		/>
+		<meta
+			name='twitter:image'
+			content='https://hacktoberfest-2022.vercel.app/fredoist/og-image.png'
+		/>
+		<meta name='twitter:url' content='https://cyberpunk-password-generator.vercel.app' />
+
+		<meta
+			property='og:image'
+			content='https://hacktoberfest-2022.vercel.app/fredoist/og-image.png'
+		/>
+		<meta property='og:title' content={title} />
+		<meta
+			property='og:description'
+			content='A Cyberpunk-themed password generator built with Svelte, TailwindCSS, and Astro'
+		/>
+		<meta property='og:site_name' content={title} />
+		<meta property='og:type' content='website' />
+		<meta property='og:url' content='https://cyberpunk-password-generator.vercel.app' />
+
+		<meta name='robots' content='index, follow' />
+		<link rel='canonical' href='https://cyberpunk-password-generator.vercel.app/' />
+
+		<link rel='preconnect' href='https://www.mboxdrive.com/' crossorigin />
+		<link rel='dns-prefetch' href='https://www.mboxdrive.com/' />
+
+		<style>
+			/* latin */
+			@font-face {
+				font-family: 'Barlow';
+				font-style: normal;
+				font-weight: 400;
+				font-display: swap;
+				src: url(/fredoist/fonts/Barlow-400.woff2) format('woff2');
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+					U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+			/* latin */
+			@font-face {
+				font-family: 'Tomorrow';
+				font-style: normal;
+				font-weight: 400;
+				font-display: swap;
+				src: url(/fredoist/fonts/Tomorrow-400.woff2) format('woff2');
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+					U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+			/* latin */
+			@font-face {
+				font-family: 'Tomorrow';
+				font-style: normal;
+				font-weight: 600;
+				font-display: swap;
+				src: url(/fredoist/fonts/Tomorrow-600.woff2) format('woff2');
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+					U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+			/* latin */
+			@font-face {
+				font-family: 'Tomorrow';
+				font-style: normal;
+				font-weight: 700;
+				font-display: swap;
+				src: url(/fredoist/fonts/Tomorrow-700.woff2) format('woff2');
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+					U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+		</style>
+
+		<title>{title}</title>
+	</head>
+	<body
+		class='bg-black text-[#fafafa] antialiased leading-tight tracking-wide font-[Tomorrow,sans-serif]'
+	>
+		<slot />
+	</body>
+</html>

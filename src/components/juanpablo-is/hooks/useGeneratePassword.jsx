@@ -16,10 +16,10 @@ const useGeneratePassword = () => {
 	const [password, setPassword] = useState('')
 	const [loading, setLoading] = useState(false)
 
-	const mainProcess = (length, optionsCharacter) => {
+	const mainProcess = (length, count, optionsCharacter) => {
 		let text = ''
 
-		const mapped = optionsCharacter.reduce((acc, allowed) => {
+		const mapped = Object.keys(optionsCharacter).reduce((acc, allowed) => {
 			if (allowed && options[allowed]) {
 				acc.push([[allowed], options[allowed]])
 			}
@@ -31,25 +31,31 @@ const useGeneratePassword = () => {
 			const randomOption = Math.floor(Math.random() * mapped.length + 1)
 			const option = mapped[randomOption - 1]
 
-			const item = option[1][Math.floor(Math.random() * option[1].length)]
+			const randomItem = option[1].length === 1 ? 0 : Math.floor(Math.random() * option[1].length)
+			const item = option[1][randomItem]
 
 			const character = Math.floor(Math.random() * (item.end - item.start + 1) + item.start)
 
 			const charCodeString = String.fromCharCode(character)
 
-			// TODO: option to user, same character
-			if (text.length == 0 || charCodeString !== text[text.length - 1]) {
-				text += String.fromCharCode(character)
+			// Check if the character exists in a range count index
+			if (text.length === 0 || ![...text.substring(text.length - count)].includes(charCodeString)) {
+				text += charCodeString
 			}
 		}
 
 		setPassword(text)
+		return text
 	}
 
-	const generateNewPassword = (length, optionsCharacter) => {
+	const generateNewPassword = ({ length = 0, count = 0, options = {} }) => {
 		setLoading(true)
-		mainProcess(length, optionsCharacter)
+		const password = mainProcess(length, count, options)
 		setLoading(false)
+
+		const passwords = JSON.parse(window.sessionStorage.getItem('password-generated') || '[]')
+		passwords.push({ password, date: +new Date() })
+		window.sessionStorage.setItem('password-generated', JSON.stringify(passwords))
 	}
 
 	return { password, loading, generateNewPassword }

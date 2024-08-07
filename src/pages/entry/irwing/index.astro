@@ -1,0 +1,19 @@
+---
+import View from '@components/irwing/View.svelte'
+import Layout from '@layout'
+import tw from '../../../components/irwing/tw'
+---
+
+<Layout title='Password Generator 🔑'>
+	<div class={tw('wrapper')}>
+		<div>
+			<h1 class={tw('title')}>
+				Generate <br />
+				Password
+			</h1>
+		</div>
+		<div>
+			<View client:visible />
+		</div>
+	</div>
+</Layout>

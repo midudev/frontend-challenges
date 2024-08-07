@@ -1,0 +1,28 @@
+.header,
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.header {
+	margin: 3rem auto 1rem auto;
+}
+
+.logo {
+	width: 100%;
+	justify-content: center;
+}
+
+.logoKeyboard {
+	font-size: 2.2rem;
+	margin-right: 0.5rem;
+}
+
+.title {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-family: 'Lexend Deca', sans-serif;
+	font-size: 1.8rem;
+	text-align: center;
+}
+

@@ -1,0 +1,313 @@
+.maxwolts-panda-pass-main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	background-color: white;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 22px;
+}
+
+.maxwolts-panda-pass {
+	position: relative;
+	width: 100vw;
+	min-width: 300px;
+	max-width: 500px;
+	margin: auto;
+	background-color: #f9f9f9;
+	border: 1px solid #161616;
+	border-radius: 2%;
+	overflow: hidden;
+}
+
+.maxwolts-panda-pass-section-selector button {
+	width: 50%;
+	font-size: 22px;
+	padding: 10px;
+	transition: background 0.3s;
+}
+
+.maxwolts-selected-section {
+	background-color: #f9f9f9;
+	color: #161616;
+}
+
+.maxwolts-unselected-section {
+	background-color: #161616;
+	color: #f9f9f9;
+}
+
+.maxwolts-input-range {
+	padding: 32px 10%;
+}
+
+.maxwolts-result {
+	position: relative;
+	overflow: hidden;
+	margin: 0 10%;
+	border: 1px solid #161616;
+	perspective: 1000px;
+}
+
+.maxwolts-result-content {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 44px;
+	padding: 10px;
+	background-color: #f9f9f9;
+	transform-style: preserve-3d;
+	transform-origin: bottom;
+	transition: transform 1s;
+}
+
+.maxwolts-result-content input {
+	outline: none;
+	overflow: hidden;
+}
+
+.maxwolts-animation-panda-result {
+	animation: maxwolts-animation-rotate 2s ease-out;
+}
+
+@keyframes maxwolts-animation-rotate {
+	30% {
+		transform: rotateX(95deg);
+		transition: transform 1s;
+	}
+
+	70% {
+		transform: rotateX(95deg);
+		transition: transform 1s;
+	}
+}
+
+.maxwolts-result button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 44px;
+	background-color: #161616;
+	color: #f9f9f9;
+}
+
+.maxwolts-result-content div {
+	height: 40px;
+	overflow-x: auto;
+}
+
+.maxwolts-result-content div::-webkit-scrollbar-thumb {
+	background: #161616;
+	border-radius: 4px;
+}
+
+.maxwolts-result-content div::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+	background: #ccc;
+	border-radius: 4px;
+}
+
+.maxwolts-result button svg {
+	margin: auto;
+}
+
+.maxwolts-generate {
+	display: block;
+	margin: 32px auto;
+	padding: 10px;
+	background-color: #161616;
+	color: #f9f9f9;
+	border-radius: 2%;
+}
+
+.maxwolts-animation-selection {
+	margin: 32px 10%;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.maxwolts-animation-selection input {
+	height: 20px;
+	width: 20px;
+}
+
+.maxwolts-add-words {
+	height: 1px;
+	margin: 0 10%;
+	overflow: hidden;
+	transition: height 0.2s, margin 0.2s;
+}
+
+.maxwolts-appear-animation {
+	height: 90px;
+	margin-bottom: 32px;
+	transition: height 0.2s, margin-bottom 0.1s;
+}
+
+.maxwolts-add-words-border {
+	border: 1px solid #161616;
+}
+
+.maxwolts-add-words input {
+	width: 100%;
+	padding: 10px;
+}
+
+.maxwolts-add-words div:focus-within {
+	background-color: #303030;
+}
+
+.maxwolts-add-words input:focus-visible {
+	outline: none;
+	background-color: #303030;
+	color: #f9f9f9;
+}
+
+.maxwolts-panda {
+	position: absolute;
+	bottom: 0.7%;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(236 235 235);
+}
+
+.maxwolts-panda-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.maxwolts-panda-animation-face-front {
+	animation: maxwolts-panda-animation-face-front 2s linear;
+}
+
+@keyframes maxwolts-panda-animation-face-front {
+	40% {
+		transform: rotateX(-40deg);
+	}
+
+	60% {
+		transform: rotateX(-40deg);
+	}
+
+	100% {
+		transform: rotateX(0deg);
+	}
+}
+
+.maxwolts-panda-face {
+	height: 180px;
+	width: 180px;
+	background-color: #f9f9f9;
+	border: 1px solid black;
+	border-radius: 50%;
+	transition: transform 0.5s;
+}
+
+.maxwolts-panda-face::before,
+.maxwolts-panda-face::after {
+	content: '';
+	position: absolute;
+	top: 5%;
+	height: 65px;
+	width: 65px;
+	background-color: #161616;
+	border-radius: 50%;
+}
+
+.maxwolts-panda-face::after {
+	right: -50px;
+}
+
+.maxwolts-panda-face::before {
+	left: -50px;
+}
+
+.maxwolts-panda-eyes {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	width: 109px;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.maxwolts-panda-eye-left,
+.maxwolts-panda-eye-right {
+	position: relative;
+	height: 49px;
+	width: 34px;
+	background-color: #161616;
+	border-radius: 50%;
+}
+
+.maxwolts-panda-nose {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 10px 0;
+	border-color: #161616 transparent transparent;
+}
+
+.maxwolts-panda-sign {
+	z-index: 1;
+	position: absolute;
+	top: 50%;
+	left: 70%;
+	transform: translate(0%, -50%) rotateX(90deg);
+	transform-origin: bottom;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	width: 100px;
+	margin: auto;
+	background-color: burlywood;
+	text-align: center;
+}
+
+.maxwolts-panda-sign-activate-animation {
+	animation: maxwolts-animation-panda-sign 3s linear;
+}
+
+.maxwolts-panda-sign::before {
+	z-index: 0;
+	content: '';
+	position: absolute;
+	bottom: -50%;
+	height: 20px;
+	width: 8px;
+	background-color: burlywood;
+}
+
+@keyframes maxwolts-animation-panda-sign {
+	20% {
+		transform: translate(0%, -50%) rotateX(0deg);
+	}
+
+	70% {
+		transform: translate(0%, -50%) rotateX(0deg);
+	}
+
+	100% {
+		transform: translate(0%, -50%) rotateX(90deg);
+	}
+}
+
+.maxwolts-panda-rotate-head-animation {
+	transform: rotateZ(-10deg);
+	transition: transform 1s;
+}
+
+.maxwolts-no-add-words-border {
+	border: 1px solid red;
+}

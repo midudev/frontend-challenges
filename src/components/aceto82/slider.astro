@@ -1,0 +1,19 @@
+---
+const { min, max, id } = Astro.props
+---
+
+<div class='slidecontainer'>
+	<input type='range' min={min} max={max} value={min} id={id} />
+	<span id='labelSlider'>{min}</span>
+</div>
+<span id='idSlide' style='display:none'>{id}</span>
+
+<script is:inline>
+	const idSlide = document.getElementById('idSlide').innerText
+	const slide = document.getElementById(idSlide)
+	const labelSlider = document.getElementById('labelSlider')
+
+	slide.addEventListener('input', () => {
+		labelSlider.innerText = slide.value
+	})
+</script>

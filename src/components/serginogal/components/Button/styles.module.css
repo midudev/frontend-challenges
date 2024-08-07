@@ -1,0 +1,51 @@
+@keyframes gradient {
+	100% {
+		background-size: 100% 100%;
+	}
+}
+
+.btn {
+	border: none;
+	border-radius: 2px;
+	clip-path: polygon(12px 0px, 100% 0px, 100% 72%, calc(100% - 12px) 100%, 0px 100%, 0px 12px);
+	font-family: 'JetBrains Mono', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
+	display: inline-block;
+	overflow: hidden;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 0.2s ease 0s;
+	color: rgb(23, 15, 30);
+	background: linear-gradient(
+			90deg,
+			rgb(255, 215, 77) 0%,
+			rgb(64, 221, 255) 30%,
+			rgb(124, 127, 255) 85%
+		)
+		0% 0% / 200% 100%;
+	animation: gradient 1.5s ease 0s infinite alternate none running;
+}
+
+.btn:hover {
+	transform: rotate(2deg);
+}
+
+.btn:active {
+	transform: scale(0.95);
+}
+
+.btn:hover > svg {
+	transform: translateX(50%);
+	opacity: 1;
+}
+
+.btn svg {
+	left: -24px;
+	opacity: 0.3;
+	position: absolute;
+	top: -2px;
+	transition: all 0.4s cubic-bezier(0.5, -0.5, 0.5, 1.5) 0s;
+}

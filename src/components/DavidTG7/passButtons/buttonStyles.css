@@ -1,0 +1,35 @@
+#dtg-buttons-pass-wrapper {
+	display: flex;
+	justify-content: space-around;
+	width: 45rem;
+}
+
+.dtg-buttons-pass {
+	margin: 30px 0 0;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.9rem;
+	width: 12rem;
+	color: rgb(246 245 232);
+	height: min-content;
+	background: var(--neon-lightoff-color);
+	padding: 0.5rem;
+	border-radius: 50px;
+}
+
+.dtg-buttons-pass:hover {
+	color: rgb(61 61 61);
+	background: rgb(231 230 171);
+	transition: 0.2s;
+}
+
+.dtg-buttons-pass:not(:hover) {
+	transition: 0.2s;
+}
+
+.dtg-buttons-active {
+	color: rgb(61 61 61);
+	background: rgb(231 230 171);
+	box-shadow: 0 0 40px var(--yellow-color);
+	transform: scale(1.1);
+}

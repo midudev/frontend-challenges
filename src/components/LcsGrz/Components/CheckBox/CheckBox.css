@@ -1,0 +1,39 @@
+.lcsgrz-cb-container-checked {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 12px;
+	border-radius: 10px;
+	font-size: 14px;
+	color: white;
+	background-color: #7b32d9;
+	border-width: 2px;
+	border-color: #7b32d9;
+}
+
+.lcsgrz-cb-container-unchecked {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 12px;
+	border-radius: 10px;
+	font-size: 14px;
+	color: white;
+	border-width: 2px;
+	border-color: #7b32d9;
+	background-color: #7a32d932;
+}
+
+.lcsgrz-cb-label-box {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	pointer-events: none;
+}
+
+.lcsgrz-cb-hint {
+	font-size: 11px;
+	pointer-events: none;
+}

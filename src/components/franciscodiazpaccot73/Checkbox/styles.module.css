@@ -1,0 +1,17 @@
+.checkbox::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	width: 12px;
+	height: 12px;
+	background-color: #d97706;
+	border-radius: 4px;
+	transition: 0.3s;
+}
+
+.checkboxInput:checked + label .checkbox::after {
+	transform: translate(-50%, -50%) scale(1);
+}

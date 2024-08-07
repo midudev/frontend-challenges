@@ -1,4 +1,4 @@
-button {
+#rafa-lozano button {
 	padding: 8px 16px;
 	border-radius: 10px;
 	outline: none;
@@ -7,28 +7,33 @@ button {
 	color: #101010;
 }
 
-.primary {
+#rafa-lozano .primary {
 	background-color: var(--primary-color-active);
 	color: #101010;
 }
-.primary:hover {
+
+#rafa-lozano .primary:hover {
 	background-color: var(--primary-color-hover);
 	transform: scale(1.05);
 }
-.default {
+
+#rafa-lozano .default {
 	background-color: var(--secondary-color-active);
 	color: var(--secondary-color-hover);
 }
-.default:hover {
+
+#rafa-lozano .default:hover {
 	background-color: var(--secondary-color-hover);
 	color: var(--secondary-color-active);
 	transform: scale(1.05);
 }
-.disabled {
+
+#rafa-lozano .disabled {
 	background-color: #d3d3d3;
 	cursor: not-allowed;
 }
-button:disabled {
+
+#rafa-lozano button:disabled {
 	background-color: #d3d3d3;
 	cursor: not-allowed;
 }

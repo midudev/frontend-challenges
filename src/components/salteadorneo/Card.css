@@ -1,0 +1,83 @@
+.salteadorneo {
+	--primary-color: #a4ffaf;
+	--hover: #8aff8a;
+	--background: #24232b;
+}
+
+.card-salteadorneo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	max-width: 480px;
+	background: var(--background);
+	padding: 20px;
+	color: white;
+}
+
+.card-salteadorneo .title {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+	margin: 0 0 20px;
+}
+
+.card-salteadorneo .input-container {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin: 0 0 20px;
+}
+
+.card-salteadorneo .input-container button {
+	position: absolute;
+	right: 4px;
+}
+
+.card-salteadorneo .input-container button:hover {
+	fill: var(--hover);
+}
+
+.card-salteadorneo .result {
+	width: 100%;
+	font-size: 2em;
+	color: black;
+	padding: 2px 10px;
+	outline: none;
+	appearance: none;
+}
+
+.card-salteadorneo .length {
+	display: flex;
+	justify-content: space-between;
+}
+
+.card-salteadorneo .range-length {
+	width: 100%;
+	margin: 0 0 20px;
+}
+
+.card-salteadorneo .btn {
+	width: 100%;
+	padding: 10px 0;
+	text-transform: uppercase;
+	color: #24232b;
+	font-weight: bold;
+	background: var(--primary-color);
+}
+
+.card-salteadorneo .btn:hover {
+	background: #8aff8a;
+}
+
+.tooltip-salteadorneo {
+	position: fixed;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: white;
+	background: var(--background);
+	padding: 5px 10px;
+	opacity: 1;
+}

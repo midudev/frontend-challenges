@@ -1,0 +1,14 @@
+.fedmg-message-success,
+.fedmg-message-wrong {
+	text-overflow: ellipsis;
+	font-size: clamp(0.9em, 3vw, 1.05em);
+	font-weight: 600;
+}
+
+.fedmg-message-wrong {
+	color: rgb(200 20 20 / 100%);
+}
+
+.fedmg-message-success {
+	color: rgb(20 140 40 / 100%);
+}

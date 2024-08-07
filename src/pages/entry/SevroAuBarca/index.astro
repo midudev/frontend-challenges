@@ -1,0 +1,16 @@
+---
+import Layout from '@layout'
+import { Main } from '@components/SevroAuBarca/Main.jsx'
+import { Component } from '@components/SevroAuBarca/Component'
+import { Header as HeaderPassword } from '@components/SevroAuBarca/Header'
+import { Random as RandomPassword } from '@components/SevroAuBarca/Random'
+---
+
+<Layout title='SevroAuBarca'>
+	<Main client:load>
+		<Component>
+			<HeaderPassword />
+			<RandomPassword client:load />
+		</Component>
+	</Main>
+</Layout>

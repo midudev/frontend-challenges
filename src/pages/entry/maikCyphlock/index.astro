@@ -1,0 +1,142 @@
+---
+import Layout from '@layout'
+import GeneratorContainer from '@components/maikCyphlock/passwordGenerator'
+---
+
+<style is:inline>
+	@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700&display=swap';
+
+	#maikcyphlock {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background: #23272b;
+		font-family: Montserrat, sans-serif;
+	}
+
+	:root {
+		--maikcyphlock-mint-green: #aaf683;
+		--maikcyphlock-medium-aquamarine: #60d394;
+		--maikcyphlock-fire-opal: #ee6055;
+		--maikcyphlock-white-crew: #e5e2e2;
+		--maikcyphlock-orange-yellow-crayola: #ffd97d;
+		--maikcyphlock-vivid-tangerine: #ff9b85;
+	}
+
+	#maikcyphlock button {
+		display: inline-block;
+	}
+
+	#maikcyphlock #landing-heading {
+		all: revert;
+		font-size: 4vmax;
+		font-weight: 800;
+		color: var(--maikcyphlock-white-crew);
+	}
+
+	#maikcyphlock #generate-output-label {
+		font-weight: 400;
+		font-size: 14px;
+		opacity: 0.8;
+		color: var(--maikcyphlock-medium-aquamarine);
+	}
+
+	#maikcyphlock #generate-output {
+		margin: 6rem 0;
+		padding: 1.5rem;
+		height: 80px;
+		text-align: center;
+		width: 50vw;
+		background: #d3d3d3;
+	}
+
+	#maikcyphlock #btn-container {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+	}
+
+	#maikcyphlock #copy-btn {
+		background: var(--maikcyphlock-orange-yellow-crayola);
+		font-size: 2rem;
+		font-weight: 400;
+		color: rgb(0 38 55);
+		padding: 0 1rem;
+		height: 80px;
+		line-height: 0;
+	}
+
+	#maikcyphlock #generate-btn {
+		background: var(--maikcyphlock-mint-green);
+		font-size: 2rem;
+		font-weight: 400;
+		margin-top: 2rem;
+		line-height: 0;
+		padding: 2rem;
+		color: rgb(0 38 55);
+	}
+
+	#maikcyphlock #slider {
+		appearance: none;
+		width: 60vw;
+		margin: 1rem 0;
+		height: 10px;
+		background: #d3d3d3;
+		outline: none;
+		opacity: 0.8;
+		transition: 0.2s;
+		transition: opacity 0.2s;
+	}
+
+	#maikcyphlock #slider:hover {
+		opacity: 1;
+	}
+
+	#maikcyphlock #slider::-webkit-slider-thumb {
+		appearance: none !important;
+		width: 25px !important;
+		height: 25px !important;
+		background: var(--maikcyphlock-medium-aquamarine) !important;
+		cursor: pointer !important;
+	}
+
+	#maikcyphlock #slider::-moz-range-thumb {
+		width: 25px !important;
+		height: 25px !important;
+		background: var(--maikcyphlock-medium-aquamarine);
+		cursor: pointer;
+	}
+
+	#maikcyphlock *[data-tooltip] {
+		position: relative;
+	}
+
+	#maikcyphlock *[data-tooltip]::after {
+		content: attr(data-tooltip);
+		position: absolute;
+		top: -40px;
+		right: -30px;
+		min-width: 120px;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.15s ease-in-out;
+		display: block;
+		font-size: 14px;
+		line-height: 16px;
+		background: var(--maikcyphlock-white-crew);
+		padding: 0.5rem;
+	}
+
+	#maikcyphlock *[data-tooltip]:hover::after {
+		opacity: 1;
+	}
+</style>
+
+<Layout title='Maikcyphlock'>
+	<GeneratorContainer client:only='react' />
+</Layout>

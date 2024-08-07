@@ -1,0 +1,19 @@
+{
+  "generating": "Generating...",
+  "btnGenerate": "Generate",
+  "preferences": "Preferences",
+  "symbols": "Symbols",
+  "numbers": "Numbers",
+  "uppercase": "Uppercase",
+  "lowercase": "Lowercase",
+  "passwordCopied": "Password Copied",
+  "insecurePassword": "We recommend you that use symbols, numbers, uppercase and lowercase letters",
+  "wrongPassword": "You must choose minimum 1 preference to create the password",
+  "toggleLang": "Change language to spanish",
+
+  "symbolsDesc": "Do you want symbols in your password?",
+  "numbersDesc": "Do you want numbers in your password?",
+  "uppercaseDesc": "Do you want uppercase letters in your password?",
+  "lowercaseDesc": "Do you want uppercase letters in your password?",
+  "length": "Define the password length"
+}

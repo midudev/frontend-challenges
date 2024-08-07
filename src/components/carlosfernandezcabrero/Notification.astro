@@ -1,0 +1,49 @@
+---
+const { text } = Astro.props
+---
+
+<div id='modal' class='fixed flex justify-center w-full top-2 scale-0'>
+	<div
+		class='flex items-center gap-x-1.5 text-[#363636] bg-[#fff] rounded-[10px] py-[8px] px-[10px]'
+	>
+		<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 fill-green-500' viewBox='0 0 24 24'>
+			<path
+				d='M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1.999 14.413-3.713-3.705L7.7 11.292l2.299 2.295 5.294-5.294 1.414 1.414-6.706 6.706z'
+			></path>
+		</svg>
+		<span class='text-lg'>{text}</span>
+	</div>
+</div>
+
+<style>
+	.show {
+		transform: scale(1);
+		animation: show 0.3s ease-in;
+	}
+
+	.hide {
+		animation: hide 1s linear;
+	}
+
+	@keyframes show {
+		from {
+			transform: scale(0);
+			opacity: 0;
+		}
+		to {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	@keyframes hide {
+		from {
+			transform: scale(1);
+			opacity: 1;
+		}
+		to {
+			transform: scale(1);
+			opacity: 0;
+		}
+	}
+</style>

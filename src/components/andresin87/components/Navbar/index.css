@@ -1,0 +1,54 @@
+#andresin87 .navbar {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 1em;
+	padding: 1em 0;
+}
+
+#andresin87 .navbar .navbar-menu {
+	display: flex;
+	gap: 0.2em;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+
+#andresin87 .navbar .navbar-home {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1em;
+	width: 1em;
+	height: 1em;
+}
+
+#andresin87 .navbar .navbar-home:focus-visible {
+	outline: var(--a87-c-focus) solid 0.1em;
+}
+
+#andresin87 .navbar .navbar-home:hover {
+	box-shadow: 0 0 0.2em var(--a87-c-hover);
+	outline: var(--a87-c-hover) solid 0.1em;
+}
+
+#andresin87 .navbar .navbar-home:active {
+	box-shadow: inset 0 0 0.2em var(--a87-c-focus);
+	outline: var(--a87-c-focus) solid 0.1em;
+}
+
+#andresin87 .navbar .navbar-home .icon {
+	font-size: 0.7em;
+}
+
+#andresin87 .navbar .navbar-home:focus-visible .icon {
+	fill: var(--a87-c-focus);
+}
+
+#andresin87 .navbar .navbar-home:hover .icon {
+	fill: var(--a87-c-hover);
+}
+
+#andresin87 .navbar .navbar-home:active .icon {
+	fill: var(--a87-c-focus);
+}

@@ -1,0 +1,164 @@
+---
+import Layout from '@layout'
+---
+
+<Layout title='neil-chavez'>
+	<main class='main-password-generator'>
+
+		<div class='password-generator-wrapper'>
+			<h2 class='title-password-generator'>Password Generator</h2>
+			<div class='text-area-copy-icon'>
+				<article class='password-text' id='input-text-password'> </article>
+				<div class='copy-icon'>Copy!</div>
+			</div>
+			<label>How long do you want your password to be?</label>
+			<input type='range' class='input-range-password' id='range-password' min='1' max='21' value='11' >
+			<label for='range-password' id='label-range-password'>10</label>
+			<button class='btn-password'>New Password!</button>
+		</div>
+	</main>
+
+</Layout>
+
+<style>
+.main-password-generator{
+		font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+		background: linear-gradient(45deg, #4ab67b, #b8d16d);
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #031c36;
+		font-size: 1.2rem;
+	}
+	.password-generator-wrapper{
+		border: thick solid #ffff;
+		border-radius: 1rem;
+		width: 100vw;
+		max-width: 400px;
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
+	.password-generator-wrapper  *{
+		text-align: center;
+		width: 100%;
+	}
+	.password-generator-wrapper label{
+		width: 75%;
+	}
+	.title-password-generator{
+		font-size: 1.6rem;
+	}
+
+	.password-text{
+		background-color: transparent;
+		border: medium solid #05386b;
+		border-radius: .5rem;
+		resize: none;
+	}
+	.btn-password{
+		border: thick solid #ffff;
+		border-radius: 1rem;
+		transition: transform 0.3s linear;
+		width: 50%;
+	}
+	.btn-password:hover{
+		transform: scale(1.05)
+	}
+	.text-area-copy-icon{
+		position: relative;
+		width: 100%;
+		height: 3rem;
+	}
+	.password-text{
+		height: 100%;
+		display: block;
+		position: absolute;
+		padding: 0.5rem;
+	}
+	.copy-icon{
+		position: absolute;
+		top: 50%;
+		right: 0.5rem;
+		transform: translateY(-50%);
+		border: thin solid #2D4964;
+		border-radius: 1rem;
+		width: fit-content;
+		padding: 0 0.5rem;
+		font-size: 0.8rem;
+		cursor: pointer
+	}
+input[type='range']{
+  background: #fff;
+  border-radius: 0.3em;
+  height: 7px;
+  width: 100%;
+  -webkit-appearance: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width:  1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: #2D4964;;
+}
+
+	.copy-icon:hover,
+	.copied{
+		background-color: #05386b;
+		color: #ffff;
+	}
+</style>
+
+<script type='module'>
+const $ = selector => document.querySelector(selector)
+const $main = $('.main-password-generator')
+const $rangeLetters = $('#range-password')
+const $labelRange = $('#label-range-password')
+const $passwordTxt = $('#input-text-password')
+const $copyIcon = $('.copy-icon')
+const upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Á', 'É', 'Í', 'Ó', 'Ú', 'Ü', 'Ñ']
+const lowerCaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'á', 'é', 'í', 'ó', 'ú', 'ü', 'ñ']
+const symbols = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '/', '{', '[', '}', ';', ']', '.', '|', '"', ':', '<', ',', '>', '?', '/']
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+const allCharacters = [
+	...upperCaseLetters,
+	...lowerCaseLetters,
+	...symbols,
+	...numbers]
+
+
+const handleChange = e => {
+	$labelRange.textContent = $rangeLetters.value
+}
+
+const handleClick = e => {
+	if (e.target.matches('.btn-password')) {
+		const passwordLength = $rangeLetters.value
+		const result = []
+		while (result.length < passwordLength) {
+			allCharacters.sort(() => 0.5 - Math.random())
+			const randomCharIndex = Math.floor(allCharacters.length * Math.random())
+			result.push(allCharacters[randomCharIndex])
+		}
+		$passwordTxt.textContent = result.join('')
+	}
+	if (e.target.matches('.copy-icon')) {
+		navigator.clipboard.writeText($passwordTxt.textContent)
+		$copyIcon.classList.add('copied')
+		$copyIcon.textContent = 'Copied!'
+		setTimeout(() => {
+			$copyIcon.textContent = 'Copy!'
+			$copyIcon.classList.remove('copied')
+		}, 1500)
+	}
+}
+
+$rangeLetters.addEventListener('change', handleChange)
+$main.addEventListener('click', handleClick)
+
+</script>

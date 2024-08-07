@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { formStore } from '@components/renatomendozac/store'
 	import Checkbox from '@components/renatomendozac/components/Checkbox.svelte'
 
@@ -30,10 +30,10 @@
 		}
 	]
 
-	let numberOfSelected = uppercases + lowercases + numbers + symbols
+	let numberOfSelected = Number(uppercases) + Number(lowercases) + Number(numbers) + Number(symbols)
 
-	const onChange = (event) => {
-		const { checked, value: name } = event.target
+	const onChange = (event: Event) => {
+		const { checked, value: name } = event.target as HTMLInputElement
 		formStore.update({ [name]: checked })
 
 		checked === true ? numberOfSelected++ : numberOfSelected--

@@ -5,3 +5,7 @@ yarn.lock
 .DS_Store
 dist
 .idea
+
+# Linters cache
+.eslintcache
+.stylelintcache

@@ -1,0 +1,93 @@
+#andresin87 .toggle {
+	display: block;
+	border-color: var(--a87-c-text);
+	border-width: 0.1em;
+	width: 2em;
+	height: 1em;
+	border-radius: 1em;
+	box-sizing: content-box;
+	overflow: hidden;
+}
+
+#andresin87 .toggle:focus-within {
+	outline: none;
+	box-shadow: 0 0 0.2em var(--a87-c-focus);
+	border-color: var(--a87-c-focus);
+}
+
+#andresin87 .toggle:hover {
+	box-shadow: 0 0 0.2em var(--a87-c-hover);
+	border-color: var(--a87-c-hover);
+}
+
+#andresin87 .toggle:disabled {
+	cursor: not-allowed;
+	opacity: 0.2;
+}
+
+#andresin87 .toggle .toggle-nodes {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	margin-top: -1em;
+}
+
+#andresin87 .toggle .toggle-node {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	width: 1em;
+	height: 1em;
+	padding: 0.2em;
+	overflow: hidden;
+	z-index: 1;
+}
+
+#andresin87 .toggle:focus-within .toggle-node .icon {
+	fill: var(--a87-c-focus);
+	color: var(--a87-c-focus);
+}
+
+#andresin87 .toggle:hover .toggle-node .icon {
+	fill: var(--a87-c-hover);
+	color: var(--a87-c-hover);
+}
+
+#andresin87 .toggle .toggle-node > * {
+	font-size: 0.6em;
+}
+
+#andresin87 .toggle .toggle-button {
+	display: block;
+	border-width: 1px;
+	width: 1em;
+	min-width: 1em;
+	height: 1em;
+	min-height: 1em;
+	border-radius: 1em;
+	box-sizing: border-box;
+	background-color: var(--a87-c-text);
+	z-index: 2;
+	margin-left: 0;
+	transition: margin-left 0.3s ease-in-out;
+}
+
+#andresin87 .toggle:focus-within .toggle-button {
+	box-shadow: 0 0 0.2em var(--a87-c-focus);
+	border-color: var(--a87-c-focus);
+	background-color: var(--a87-c-focus);
+}
+
+#andresin87 .toggle:hover .toggle-button {
+	box-shadow: 0 0 0.2em var(--a87-c-hover);
+	border-color: var(--a87-c-hover);
+	background-color: var(--a87-c-hover);
+}
+
+#andresin87 .toggle[aria-checked='true'] .toggle-button {
+	margin-left: 1em;
+}

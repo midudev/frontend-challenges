@@ -3,5 +3,5 @@ export const copyToClipboard = (password, callback) => {
 		return
 	}
 	navigator.clipboard.writeText(password)
-	callback()
+	typeof callback === 'function' && callback()
 }

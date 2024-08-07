@@ -1,12 +1,4 @@
 @font-face {
-	font-family: 'Orbitron';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url('/Orbitron-ExtraBold.woff2') format('woff2');
-}
-
-@font-face {
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
