@@ -9,7 +9,11 @@ module.exports = {
 				psybeam: '#9092ff',
 				giga: '#b4ff39',
 				manga: '#e5e1e6',
-				body: '#170F1E'
+				body: '#170F1E',
+				'black-currant': '#0E0318',
+				'pastel-green': '#7ae582',
+				'red-orange': '#ff331f',
+				'terra-cota': '#ed6a5a'
 			}
 		},
 		fontFamily: {
